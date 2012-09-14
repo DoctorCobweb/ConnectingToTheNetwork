@@ -28,17 +28,17 @@
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/showTextView" />
+    
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/dateTextView" />
     
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/descriptionTextView" />
-    
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/headlineTextView" />
     
     <TextView
         android:layout_width="fill_parent"
