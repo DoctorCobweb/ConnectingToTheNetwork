@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="An entry"
-        android:id="@+id/textText"     />
+        android:orientation="vertical" >
+        
+        <TextView android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/textMainAct"
+            android:textStyle="bold"
+            android:textSize="20sp" />
+        <!-- 
+        <TextView android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:id="@+id/textSupportAct"
+            android:text="Misty, Jerk Chicken" /> -->
+    </LinearLayout>

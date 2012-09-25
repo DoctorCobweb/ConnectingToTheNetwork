@@ -12,27 +12,54 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
+        public static final int textview_border=0x7f020001;
     }
     public static final class id {
-        public static final int authorTextView=0x7f050003;
-        public static final int dateTextView=0x7f050005;
-        public static final int descriptionTextView=0x7f050006;
-        public static final int idTextView=0x7f050002;
-        public static final int myOnlyButton=0x7f050001;
-        public static final int myUrl=0x7f050000;
-        public static final int priceTextView=0x7f050007;
-        public static final int showTextView=0x7f050004;
-        public static final int textText=0x7f050009;
-        public static final int tixUrlTextView=0x7f050008;
+        public static final int authorTextView=0x7f060006;
+        public static final int dateLabelTextView=0x7f060010;
+        public static final int dateTableRow=0x7f06000f;
+        public static final int dateTextView=0x7f060008;
+        public static final int descriptionLabelTextView=0x7f060012;
+        public static final int descriptionTableRow=0x7f060011;
+        public static final int descriptionTextView=0x7f060009;
+        public static final int gigTextView=0x7f060000;
+        public static final int idTextView=0x7f060005;
+        public static final int listGigTimeline=0x7f060002;
+        public static final int myOnlyButton=0x7f060004;
+        public static final int myUrl=0x7f060003;
+        public static final int priceLabelTextView=0x7f060014;
+        public static final int priceTableRow=0x7f060013;
+        public static final int priceTextView=0x7f06000a;
+        public static final int showLabelTextView=0x7f06000e;
+        public static final int showTableRow=0x7f06000d;
+        public static final int showTextView=0x7f060007;
+        public static final int textMainAct=0x7f06000c;
+        public static final int textView1=0x7f060001;
+        public static final int tixUrlLabelTextView=0x7f060016;
+        public static final int tixUrlTableRow=0x7f060015;
+        public static final int tixUrlTextView=0x7f06000b;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
-        public static final int row=0x7f030001;
+        public static final int gig_list_item=0x7f030000;
+        public static final int gigtimeline=0x7f030001;
+        public static final int main=0x7f030002;
+        public static final int row=0x7f030003;
+        public static final int view_gig=0x7f030004;
     }
     public static final class string {
         public static final int app_name=0x7f040001;
         public static final int hello=0x7f040000;
         public static final int jersey_jaxrs_gigs=0x7f040003;
+        public static final int label_date=0x7f040006;
+        public static final int label_description=0x7f040007;
+        public static final int label_price=0x7f040008;
+        public static final int label_show=0x7f040005;
+        public static final int label_tixUrl=0x7f040009;
         public static final int search=0x7f040002;
+        public static final int titleGigTimeline=0x7f040004;
+    }
+    public static final class style {
+        public static final int GigLabelTextView=0x7f050000;
+        public static final int GigTextView=0x7f050001;
     }
 }

@@ -5,5 +5,11 @@
     <string name="app_name">ConnectingToTheNetwork</string>
     <string name="search">CONNECT TO WEBSITE</string>
     <string name="jersey_jaxrs_gigs">http://www.spinning-half-jersey-jaxrs.appspot.com/rest/gigs</string>
+    <string name="titleGigTimeline">Gig Listing</string>
+    <string name="label_show">Show</string>
+    <string name="label_date">Date</string>
+    <string name="label_description">Description</string>
+    <string name="label_price">Price</string>
+    <string name="label_tixUrl">Ticket Link</string>
 
 </resources>
