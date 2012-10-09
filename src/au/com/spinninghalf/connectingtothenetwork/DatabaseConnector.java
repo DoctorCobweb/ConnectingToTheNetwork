@@ -1,7 +1,5 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
-//import com.deitel.addressbook.DatabaseConnector.DatabaseOpenHelper;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -162,4 +160,3 @@ public class DatabaseConnector
       } 
    }
 } 
-

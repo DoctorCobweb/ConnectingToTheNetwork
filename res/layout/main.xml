@@ -4,11 +4,12 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
     
-    
+    <!-- 
     <EditText android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/myUrl"
         android:text="@string/jersey_jaxrs_gigs"/>
+    -->
     
     <Button android:id="@+id/myOnlyButton"
         android:layout_width="fill_parent"

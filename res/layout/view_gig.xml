@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
    android:layout_width="match_parent" 
-   android:layout_height="wrap_content" android:layout_weight="1">
+   android:layout_height="wrap_content" 
+   android:layout_weight="1">
    <TableLayout android:layout_width="match_parent" 
       android:layout_height="wrap_content"
-      android:stretchColumns="1" android:layout_margin="5dp">
+      android:stretchColumns="1"
+      android:shrinkColumns="1" 
+      android:layout_margin="5dp">
       <TableRow android:id="@+id/showTableRow"
-         android:layout_width="match_parent" 
+         android:layout_width="wrap_content" 
          android:layout_height="wrap_content">
          <TextView android:id="@+id/showLabelTextView" 
             style="@style/GigLabelTextView"
             android:text="@string/label_show"></TextView>
-         <TextView android:id="@+id/showTextView" 
-            style="@style/GigTextView"></TextView>
+         <TextView android:id="@+id/showTextView"
+             style="@style/GigTextView"
+             android:text="@string/blah" 
+            ></TextView>
       </TableRow>
 
       <TableRow android:id="@+id/dateTableRow"
-         android:layout_width="match_parent"
+         android:layout_width="wrap_content"
          android:layout_height="wrap_content">
          <TextView android:id="@+id/dateLabelTextView" 
             style="@style/GigLabelTextView"
             android:text="@string/label_date"></TextView>
          <TextView android:id="@+id/dateTextView"
-            style="@style/GigTextView"></TextView>
+             style="@style/GigTextView"
+            ></TextView>
       </TableRow>
 
       <TableRow android:id="@+id/descriptionTableRow"
@@ -32,11 +38,14 @@
             style="@style/GigLabelTextView"
             android:text="@string/label_description"></TextView>
          <TextView android:id="@+id/descriptionTextView"
-            style="@style/GigTextView"></TextView>
+             android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         style="@style/GigTextView"
+            ></TextView>
       </TableRow>
 
       <TableRow android:id="@+id/priceTableRow"
-         android:layout_width="match_parent"
+         android:layout_width="wrap_content"
          android:layout_height="wrap_content">
          <TextView android:id="@+id/priceLabelTextView" 
             style="@style/GigLabelTextView"
@@ -46,7 +55,7 @@
       </TableRow>
 
       <TableRow android:id="@+id/tixUrlTableRow"
-         android:layout_width="match_parent"
+         android:layout_width="wrap_content"
          android:layout_height="wrap_content">
          <TextView android:id="@+id/tixUrlLabelTextView" 
             style="@style/GigLabelTextView"

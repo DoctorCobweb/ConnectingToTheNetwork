@@ -19,7 +19,8 @@ public class HttpExampleActivity extends Activity {
 	
 	private static final String DEBUG_TAG = "HttpExample";
 	public static final String GIG_LIST_URL_KEY = "au.com.spinninghalf.connectingtothenetwork.giglisturl";
-	private EditText urlText;
+	private static final String SPINNINGHALF_GIGLIST_WEBSERVICE = "http://www.spinning-half-jersey-jaxrs.appspot.com/rest/gigs";
+	//private EditText urlText;
 	private TextView idTextView;
 	private Button goButton;
 	
@@ -28,7 +29,7 @@ public class HttpExampleActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        urlText = (EditText) findViewById(R.id.myUrl);
+        //urlText = (EditText) findViewById(R.id.myUrl);
         goButton = (Button) findViewById(R.id.myOnlyButton);
         
         
@@ -46,12 +47,12 @@ public class HttpExampleActivity extends Activity {
     	public void onClick(View view) {
     		
     		//Get the URL from the UI's text field.
-    		String stringUrl = urlText.getText().toString();
+    		//String stringUrl = urlText.getText().toString();
     		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
     		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
     		if (networkInfo != null && networkInfo.isConnected()) {
     			Intent startGigList = new Intent(getApplicationContext(), GigListActivity.class);
-    			startGigList.putExtra(GIG_LIST_URL_KEY, stringUrl);
+    			startGigList.putExtra(GIG_LIST_URL_KEY, SPINNINGHALF_GIGLIST_WEBSERVICE);
     			startActivity(startGigList);
     		} else {
     			idTextView.setText("No network connection available");

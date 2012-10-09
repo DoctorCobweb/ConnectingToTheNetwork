@@ -1,5 +1,13 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
+/*TODO
+1. Add in an update button with loading animation
+2. fix connection timeout issue
+3. ui layout fix for gig list i.e. the borders for each item
+4. get rid of first screen/change so you dont enter in url
+*/
+
+
 import android.app.Activity;
 
 import java.io.InputStream;
@@ -55,10 +63,12 @@ public class GigListActivity extends Activity {
 	//private ListView contactListView; // the ListActivity's ListView
 	DatabaseConnector dbc;
 	
-	private final static int MAX_NO_OF_GIGS = 1000;
-	private final static int noOfGigElements = 7; //gig_id, author, date, description, show, price, tixUrl
+	//private final static int MAX_NO_OF_GIGS = 1000;
+	//private final static int noOfGigElements = 7; //gig_id, author, date, description, show, price, tixUrl
 	private static int gigCounter;
 	//public String[][] gigsArray = new String[MAX_NO_OF_GIGS][noOfGigElements];
+	
+	//private SpinningHalfApplication spinningHalfApplication;
 	
 	
     /** Called when the activity is first created. */
@@ -87,7 +97,10 @@ public class GigListActivity extends Activity {
         Intent startIntent = getIntent();
         stringUrl = startIntent.getStringExtra(HttpExampleActivity.GIG_LIST_URL_KEY);
         
+        // start the backgroung service which will update the gig list
+        startService(new Intent(this, GigUpdaterService.class));
         
+        new DownloadWebpageText().execute(stringUrl);
         
     }
     
@@ -95,7 +108,7 @@ public class GigListActivity extends Activity {
     protected void onResume() {
     	super.onResume();
     	
-    	new DownloadWebpageText().execute(stringUrl);
+    	
     }
   //Uses AsyncTask to create a task away from the main  UI thread. This task
     //takes a URL string and uses it to create an HttpUrlConnection. Once the 
@@ -103,17 +116,29 @@ public class GigListActivity extends Activity {
     //webpage as an InputStream. Finally, the InputStream is converted into a string, 
     //which is displayed in the UI thread by the onPostExecute method.
     private class DownloadWebpageText extends AsyncTask<String, Void, Cursor> {
+    	
+    	//get reference to the hosting class GigListActivity in order to call getApplication()
+    	GigListActivity gigListActivity = GigListActivity.this;
+    	
     	@Override
     	protected Cursor doInBackground(String...urls) {
     		
-    		dbc = new DatabaseConnector(GigListActivity.this);
+    		//dbc = new DatabaseConnector(GigListActivity.this);
+    		
+    		//get the Application object
+    		SpinningHalfApplication spinningHalfApplication = (SpinningHalfApplication) gigListActivity.getApplication();
+    				
+    		// get a DatabaseConnector object using the Application object. 
+    		dbc = spinningHalfApplication.getDatabaseConnector();
     		
     		dbc.deleteAll(); //use to reset the "gigs" table back to being empty
     		
-    		try {
+    		
+    		
     		//params comes from the execute() call: params[0] is the url.
-   			return downloadUrl(urls[0]);
-    		}   catch (IOException e) {
+   			return spinningHalfApplication.getDownloadUrlAndParse(urls[0]);
+    	/*	
+    	}   catch (IOException e) {
    	    		Log.d(DEBUG_TAG, "IOException : in doInBackground method." + e);
    	    		e.printStackTrace();
    	    		//IO_ERROR;
@@ -125,6 +150,8 @@ public class GigListActivity extends Activity {
    	    		return dbc.getErrorMsgInCursorForm(XPP_ERROR);
    	    		//return error;
    	    	} 
+   	    	
+   	    	*/
     		 
     	}
     	//onPostExecute displays the results of the AsyncTask.
@@ -150,19 +177,21 @@ public class GigListActivity extends Activity {
     	}
     }
     
+    
+//NOT USED-----------------------------------------------------------------------------------------------------
     //given a URL, establishes an HttpURLConnection and retrieves
     //that web page content as an InputStream, which it returns
     //as a string.
     private Cursor downloadUrl(String myUrl) throws IOException, XmlPullParserException {
     	InputStream is = null;
     	gigCounter = 0; //holds the number of gigs read from the xml webservice. used in gigsArray[][]
-    	
+    	Log.i(DEBUG_TAG, "NOT FROM HERE!!!!!!!");
     	
     	try {
     		URL url = new URL(myUrl);
     		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-    		conn.setReadTimeout(10000); /* milliseconds */
-    		conn.setConnectTimeout(15000); /* milliseconds */
+    		conn.setReadTimeout(15000); /* milliseconds */
+    		conn.setConnectTimeout(20000); /* milliseconds */
     		conn.setRequestMethod("GET");
     		conn.setDoInput(true);
     		//Starts the query
@@ -287,8 +316,9 @@ public class GigListActivity extends Activity {
     		}
     	}
     }
-    
- // event listener that responds to the user touching a contact's name
+//NOT USED-----------------------------------------------------------------------------------------------------
+ 
+    // event listener that responds to the user touching a contact's name
     // in the ListView
     OnItemClickListener viewGigListener = new OnItemClickListener() 
     {
