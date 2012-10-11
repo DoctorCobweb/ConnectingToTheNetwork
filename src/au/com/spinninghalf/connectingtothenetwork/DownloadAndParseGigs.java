@@ -16,21 +16,35 @@ public class DownloadAndParseGigs {
 	public static final String DEBUG_TAG = "HttpExample";
 	private static final String NO_XML_CONTENT = "N/A";
 	private DatabaseConnector dbc;
+	private Cursor allGigsCursor; // {_id, show} columns
+	
+	public Cursor getAllGigsCursor() {
+		return allGigsCursor;
+	}
 	
 	//given a URL, establishes an HttpURLConnection and retrieves
-    //that web page content as an InputStream, which it returns
-    //as a string.
-    public Cursor downloadUrl(String myUrl, DatabaseConnector _dbc) throws IOException, XmlPullParserException {
-    	InputStream is = null;
+    //all the gigs listed in goggle datastore online
+    //Also, for each gig it adds the details into the android database.
+	//returns a Cursor with {_id, show} columns
+    public Cursor downloadGigs(String myUrl, DatabaseConnector _dbc) throws IOException, XmlPullParserException {
+    	downloadAndParse(myUrl, _dbc);
+    	return getAllGigsCursor();
+    }
+    
+  //given a URL, establishes an HttpURLConnection and retrieves
+    //all the gigs listed in goggle datastore online
+    //Also, for each gig it adds the details into the android database.
+	//returns a Cursor with {_id, show} columns
+    public void downloadGigs2(String myUrl, DatabaseConnector _dbc) throws IOException, XmlPullParserException {
+    	downloadAndParse(myUrl, _dbc);
+    	allGigsCursor.close();
+    }
+	
+	public void downloadAndParse(String myUrl, DatabaseConnector _dbc) throws IOException, XmlPullParserException {
+		InputStream is = null;
     	dbc = _dbc;
     	int gigCounter = 0; //holds the number of gigs read from the xml webservice. used in gigsArray[][]
     	Log.i(TAG, "using downloadUrl in DownloadAndParseGig");
-    	
-    	//get the Application object
-		//SpinningHalfApplication spinningHalfApplication = (SpinningHalfApplication) getApplication();
-				
-		// get a DatabaseConnector object using the Application object. 
-		//dbc = spinningHalfApplication.getDatabaseConnector();
     	
     	try {
     		URL url = new URL(myUrl);
@@ -63,8 +77,6 @@ public class DownloadAndParseGigs {
     		String show = null;
     		String price = null;
     		String tixUrl = null;
-    		
-    		
     		
     		while (eventType != XmlPullParser.END_DOCUMENT) {
     			if (eventType == XmlPullParser.START_TAG) {
@@ -122,13 +134,11 @@ public class DownloadAndParseGigs {
     			} else if (eventType == XmlPullParser.END_TAG) {
     				//Log.i(DEBUG_TAG, "in end tag");
     				if ("gig".equals(xpp.getName())) {
-    					
     					//Log.i(DEBUG_TAG, "HI from end /"gig/" element");
-    					
-    					
     					boolean flag = false; //set to true if the gig already has been inserted into the db.
     					
-    					Cursor gigIdCursor = dbc.getGigIdColumnVals(); //a cursor with 1 column, namely "gig_id" for every gig in the android db.
+    					//a cursor with 1 column, namely "gig_id" for every gig in the android db.
+    					Cursor gigIdCursor = dbc.getGigIdColumnVals(); 
     					gigIdCursor.moveToFirst();
     					int gig_id_index = gigIdCursor.getColumnIndex("gig_id");
     					for (int i = 0; i < dbc.getGigIdColumnVals().getCount(); i++) {
@@ -139,7 +149,7 @@ public class DownloadAndParseGigs {
     					}
     					//gigIdCursor.close(); //?
     					if (!flag) {
-    					//insert the new gig details into the database
+    					//insert the new gig DETAILS into the database
     					dbc.insertGig(gig_id, author, show, date, description, price, tixUrl);
     					}
     					
@@ -152,17 +162,16 @@ public class DownloadAndParseGigs {
     			//Log.i(DEBUG_TAG, Integer.toString(eventType));
     			//currentTag1 = xpp.getName();
     			//Log.i(DEBUG_TAG, "currentTag1: "+ currentTag1);
-    		}   		
-    		return dbc.getAllGigs();
+    		}
+    		allGigsCursor = dbc.getAllGigs();
+    		
     	}   finally {
+    		//allGigsCursor.close();
     		Log.i(DEBUG_TAG, "in finally block");
     		Log.i(DEBUG_TAG, "gigCounter is= " + gigCounter);
     		if (is != null) {
     			is.close();
     		}
     	}
-    }
-	
-
-
+	}
 }

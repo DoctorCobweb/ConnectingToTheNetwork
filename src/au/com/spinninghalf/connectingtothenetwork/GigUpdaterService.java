@@ -10,6 +10,9 @@ public class GigUpdaterService extends Service {
 	static final int DELAY = 30000; // a minute
 	private boolean runFlag = false;
 	private Updater updater;
+	private DatabaseConnector dbc;
+	
+	private SpinningHalfApplication spinningHalfApplication;
 
 	@Override
 	public IBinder onBind(Intent arg0) {
@@ -20,10 +23,10 @@ public class GigUpdaterService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		
+		this.spinningHalfApplication = (SpinningHalfApplication) getApplication();
 		this.updater = new Updater();
 		
-		Log.d(TAG, "onCreated");
+		Log.d(TAG, "***onCreated***");
 	}
 	
 	@Override
@@ -32,6 +35,7 @@ public class GigUpdaterService extends Service {
 		
 		this.runFlag = true;
 		this.updater.start();
+		this.spinningHalfApplication.setServiceRunning(true);
 		
 		Log.d(TAG, "***onStartCommand***");
 		return START_STICKY;
@@ -44,6 +48,7 @@ public class GigUpdaterService extends Service {
 		this.runFlag = false;
 		this.updater.interrupt();
 		this.updater = null;
+		this.spinningHalfApplication.setServiceRunning(false);
 		
 		Log.d(TAG, "***onDestroyed***");
 	}
@@ -52,6 +57,7 @@ public class GigUpdaterService extends Service {
 	 * Thread that performs the actual update from the online service
 	 */
 	private class Updater extends Thread {
+		
 		
 		public Updater() {
 			super("GigUpdaterService-Updater");
@@ -64,7 +70,16 @@ public class GigUpdaterService extends Service {
 				Log.d(TAG, "***GigUpdaterService running***");
 				
 				try {
-					Log.d(TAG, "***GigUpdaterService ran***");
+					Log.d(TAG, "***GigUpdaterService ran1***");
+					SpinningHalfApplication spinningHalfApplication = (SpinningHalfApplication) gigUpdaterService.getApplication();
+					Log.d(TAG, "***GigUpdaterService ran2***");
+					dbc = spinningHalfApplication.getDatabaseConnector();
+					Log.d(TAG, "***GigUpdaterService ran3***");
+					dbc.deleteAll();
+					Log.d(TAG, "***GigUpdaterService ran4***");
+				    spinningHalfApplication.updateAllGigsCursor();
+				    //dbc.close();
+					Log.d(TAG, "***GigUpdaterService ran5***");
 					Thread.sleep(DELAY);
 				} catch (InterruptedException e) {
 					gigUpdaterService.runFlag = false;

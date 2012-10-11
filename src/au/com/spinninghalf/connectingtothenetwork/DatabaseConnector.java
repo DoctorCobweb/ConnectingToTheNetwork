@@ -38,6 +38,7 @@ public class DatabaseConnector
       if (database != null) {
          database.close(); // close the database connection
       }
+      Log.d(GigListActivity.DEBUG_TAG, "in database close().");
    } 
 
    // inserts a new gig in the database
@@ -61,7 +62,7 @@ public class DatabaseConnector
       newGig.put("tixUrl", _tixUrl);	  
     	  
       database.insert(GIGS_TABLE, null, newGig);
-      close(); // close the database
+      //close(); // close the database
    }
 
    // inserts a new gig in the database
@@ -85,7 +86,7 @@ public class DatabaseConnector
 
       open(); // open the database
       database.update(GIGS_TABLE, editGig, "_id=" + id, null);
-      close(); // close the database
+      //close(); // close the database
    } 
 
    //return a Cursor with all contact information in the database
@@ -116,12 +117,13 @@ public class DatabaseConnector
    {
       open(); // open the database
       database.delete(GIGS_TABLE, "_id=" + id, null);
-      close(); // close the database
+      //close(); // close the database
    } 
    
    public void deleteAll() {
 	   open();
 	   database.delete(GIGS_TABLE, null, null);
+	   //close();
    }
    
    public Cursor getErrorMsgInCursorForm(String error) {
