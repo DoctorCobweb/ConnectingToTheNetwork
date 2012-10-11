@@ -2,6 +2,4 @@ prototype android app which talks to a google app engine RESTful web service whi
 
 it uses http as the protocol and XmlPullParser to parse the document.
 
-atm it is really basic and can only handle one 'show' of a specific structure. 
-
 more soon dudes.

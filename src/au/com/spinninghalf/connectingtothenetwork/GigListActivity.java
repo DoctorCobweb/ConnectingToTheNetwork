@@ -124,6 +124,7 @@ public class GigListActivity extends Activity {
     	protected Cursor doInBackground(String...urls) {
     		Log.i(DEBUG_TAG, "in doInBackground");
     		
+    		//this calls onProgressUpdate() to begin the ProgressBar circle animation.
     		publishProgress();
     				
     		// get a DatabaseConnector object using the Application object. 
@@ -139,6 +140,8 @@ public class GigListActivity extends Activity {
     	@Override
     	protected void onProgressUpdate(Void... values) {
     		super.onProgressUpdate();
+    		
+    		//make the ProgressBar circle appear. Hey Presto.
     		progress.setVisibility(View.VISIBLE);
     	}
     	
@@ -148,7 +151,7 @@ public class GigListActivity extends Activity {
     		super.onPostExecute(cursor);
     		Log.i(DEBUG_TAG, "in onPostExecute");
     		
-    		//get rid of progress circle once you have the cursor
+    		//get rid of progress circle once you have the cursor.
     		progress.setVisibility(View.GONE);
     		
     		spinningHalfApplication = (SpinningHalfApplication) getApplication();
