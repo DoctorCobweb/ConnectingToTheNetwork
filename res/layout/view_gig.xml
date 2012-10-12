@@ -61,6 +61,7 @@
             style="@style/GigLabelTextView"
             android:text="@string/label_tixUrl"></TextView>
          <TextView android:id="@+id/tixUrlTextView"
+             android:autoLink="web"
             style="@style/GigTextView"></TextView>
       </TableRow>
    </TableLayout>

@@ -1,6 +1,13 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
+/*TODO
+ * 1. custom action bar. compatibility for devices running api level< 11. Follow the Action Bar Compatibility sample app from Google.
+ */
+
+
+
 import android.app.Activity;
+//import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -20,7 +27,6 @@ public class HttpExampleActivity extends Activity {
 	private static final String DEBUG_TAG = "HttpExample";
 	public static final String GIG_LIST_URL_KEY = "au.com.spinninghalf.connectingtothenetwork.giglisturl";
 	private static final String SPINNINGHALF_GIGLIST_WEBSERVICE = "http://www.spinning-half-jersey-jaxrs.appspot.com/rest/gigs";
-	//private EditText urlText;
 	private TextView idTextView;
 	private Button goButton;
 	
@@ -29,10 +35,11 @@ public class HttpExampleActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        //urlText = (EditText) findViewById(R.id.myUrl);
+        
+        //ActionBar actionBar = getActionBar();
+        
+        
         goButton = (Button) findViewById(R.id.myOnlyButton);
-        
-        
         idTextView = (TextView) findViewById(R.id.idTextView);
         
         

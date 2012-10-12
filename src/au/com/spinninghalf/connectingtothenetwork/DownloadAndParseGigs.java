@@ -15,34 +15,34 @@ public class DownloadAndParseGigs {
 	private static final String TAG = DownloadAndParseGigs.class.getSimpleName();
 	public static final String DEBUG_TAG = "HttpExample";
 	private static final String NO_XML_CONTENT = "N/A";
-	private DatabaseConnector dbc;
-	private Cursor allGigsCursor; // {_id, show} columns
+	private static final String XPP_ERROR = "XmlPullParser Error";
+	private static final String IO_ERROR = "IO Error";
 	
-	public Cursor getAllGigsCursor() {
-		return allGigsCursor;
-	}
 	
 	//given a URL, establishes an HttpURLConnection and retrieves
     //all the gigs listed in goggle datastore online
     //Also, for each gig it adds the details into the android database.
 	//returns a Cursor with {_id, show} columns
-    public Cursor downloadGigs(String myUrl, DatabaseConnector _dbc) throws IOException, XmlPullParserException {
-    	downloadAndParse(myUrl, _dbc);
-    	return getAllGigsCursor();
-    }
-    
-  //given a URL, establishes an HttpURLConnection and retrieves
-    //all the gigs listed in goggle datastore online
-    //Also, for each gig it adds the details into the android database.
-	//returns a Cursor with {_id, show} columns
-    public void downloadGigs2(String myUrl, DatabaseConnector _dbc) throws IOException, XmlPullParserException {
-    	downloadAndParse(myUrl, _dbc);
-    	allGigsCursor.close();
+    public Cursor downloadAllGigs(String myUrl, DatabaseConnector dbc) {
+    	
+    	try {
+			 return downloadAndParse(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE, dbc);
+			//allGigsCursor = d_p_g.getAllGigsCursor();
+			//databaseConnector.close(); // needed?
+		} 
+		catch (XmlPullParserException e) {
+   	    		Log.d(DEBUG_TAG, "XmlPullParserException : Unable to retrieve web page. URL may be invalid." + e);
+   	    		e.printStackTrace();
+   	    		return dbc.getErrorMsgInCursorForm(XPP_ERROR);
+		} catch (IOException e) {
+	    		Log.d(DEBUG_TAG, "IOException : in doInBackground method." + e);
+	    		e.printStackTrace();
+	    		return dbc.getErrorMsgInCursorForm(IO_ERROR);
+		}
     }
 	
-	public void downloadAndParse(String myUrl, DatabaseConnector _dbc) throws IOException, XmlPullParserException {
+	public Cursor downloadAndParse(String myUrl, DatabaseConnector dbc) throws IOException, XmlPullParserException {
 		InputStream is = null;
-    	dbc = _dbc;
     	int gigCounter = 0; //holds the number of gigs read from the xml webservice. used in gigsArray[][]
     	Log.i(TAG, "using downloadUrl in DownloadAndParseGig");
     	
@@ -163,7 +163,7 @@ public class DownloadAndParseGigs {
     			//currentTag1 = xpp.getName();
     			//Log.i(DEBUG_TAG, "currentTag1: "+ currentTag1);
     		}
-    		allGigsCursor = dbc.getAllGigs();
+    		return dbc.getAllGigs();
     		
     	}   finally {
     		//allGigsCursor.close();
@@ -174,4 +174,12 @@ public class DownloadAndParseGigs {
     		}
     	}
 	}
+	
+	//given a URL, establishes an HttpURLConnection and retrieves
+    //all the gigs listed in goggle datastore online
+    //Also, for each gig it adds the details into the android database.
+	//returns a Cursor with {_id, show} columns
+    public void downloadGigsUpdate(String myUrl, DatabaseConnector dbc) throws IOException, XmlPullParserException {
+    	downloadAndParse(myUrl, dbc);
+    }
 }

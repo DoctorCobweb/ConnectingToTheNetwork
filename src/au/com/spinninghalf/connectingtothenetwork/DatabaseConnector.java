@@ -67,7 +67,7 @@ public class DatabaseConnector
 
    // inserts a new gig in the database
    public void updateGig(long id,
-		   		         String _gig_id, 
+		   		         String _gig_id, //returns a Cursor containing  {_id, shows} columns
 				         String _author, 
 				         String _show, 
 				         String _date, 

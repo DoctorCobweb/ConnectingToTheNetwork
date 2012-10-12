@@ -1,10 +1,9 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
 /*TODO
-1. Add in an update button with loading animation
-2. fix connection timeout issue
-3. ui layout fix for gig list i.e. the borders for each item
-4. get rid of first screen/change so you dont enter in url
+ * 1 SERVICE: add it for automatically updating gig database. 
+ * 1.5 DATABASE: may need to change logic on downloading i.e. make database queries to only update when the online service has changed, instead of ALWAYS DELETING rows in the database in onCreate()
+ * 2. NETWORK: fix connection timeout issue.
 */
 
 
@@ -45,6 +44,7 @@ public class GigListActivity extends Activity {
 	DatabaseConnector dbc;
 	//Cursor allGigsCursor;
 	private SpinningHalfApplication spinningHalfApplication;
+	private Cursor cursor = null;
 	
     /** Called when the activity is first created. */
     @Override
@@ -75,6 +75,7 @@ public class GigListActivity extends Activity {
         final ProgressBar progress = (ProgressBar)findViewById(R.id.progressBarGigActivity);
         
         new DownloadWebpageText(progress).execute(stringUrl);
+        
     }
     
     @Override
@@ -100,6 +101,9 @@ public class GigListActivity extends Activity {
     @Override
     protected void onDestroy() {
     	super.onDestroy();
+    	    	    	
+    	this.cursor.close();
+    	
     	//start the background service which will update the gig list
         //startService(new Intent(this, GigUpdaterService.class));
     	//allGigsCursor.close();
@@ -127,14 +131,19 @@ public class GigListActivity extends Activity {
     		//this calls onProgressUpdate() to begin the ProgressBar circle animation.
     		publishProgress();
     				
+    		Cursor cursor;
     		// get a DatabaseConnector object using the Application object. 
-    		dbc = spinningHalfApplication.getDatabaseConnector();
+    		//dbc = spinningHalfApplication.getDatabaseConnector();
+    		//dbc.deleteAll(); //use to reset the "gigs" table back to being empty
+    		DatabaseConnector dbc = new DatabaseConnector(GigListActivity.this);
+    		dbc.deleteAll();
+    		DownloadAndParseGigs d_p_g = new DownloadAndParseGigs();
+    		cursor = d_p_g.downloadAllGigs(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE, dbc);
     		
-    		dbc.deleteAll(); //use to reset the "gigs" table back to being empty
-    		//allGigsCursor = spinningHalfApplication.getDownloadUrlAndParse(urls[0]);
+    		return cursor;
     		
     		//params comes from the execute() call: params[0] is the url.
-   			return spinningHalfApplication.getDownloadUrlAndParse(urls[0]);
+   			//return spinningHalfApplication.getDownloadUrlAndParse(urls[0]);
     	}
     	
     	@Override
@@ -149,16 +158,11 @@ public class GigListActivity extends Activity {
     	@Override
     	protected void onPostExecute(Cursor cursor) {
     		super.onPostExecute(cursor);
+    		GigListActivity.this.cursor = cursor;
     		Log.i(DEBUG_TAG, "in onPostExecute");
-    		
     		//get rid of progress circle once you have the cursor.
     		progress.setVisibility(View.GONE);
     		
-    		spinningHalfApplication = (SpinningHalfApplication) getApplication();
-    			
-    		//use LOADER instead of startManagingCursor as its deprecated. 
-    		//startManagingCursor.(gigAdapter);
-    			
     		cursor.moveToFirst();
     		int show_index = cursor.getColumnIndex("show");
     		String errorMessage = cursor.getString(show_index);
@@ -174,14 +178,18 @@ public class GigListActivity extends Activity {
     				        
     				//cursor.close(); //close the cursor
     				//Log.d(DEBUG_TAG, "in onPostExecute. JUST BEFORE close() database");
-    				spinningHalfApplication.getDatabaseConnector().close(); //close the database
+    				
+    				//spinningHalfApplication.getDatabaseConnector().close(); //close the database
+    				
     				//cursor.close(); //close the cursor
     				//gigAdapter.changeCursor(cursor);
     				//dbc.close();
     		}
+    		
     		//cursor.close(); //?
     	}
     }
+    
  
     // event listener that responds to the user touching a contact's name in the ListView
     OnItemClickListener viewGigListener = new OnItemClickListener() 

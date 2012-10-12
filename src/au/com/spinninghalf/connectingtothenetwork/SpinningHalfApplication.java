@@ -22,10 +22,8 @@ public class SpinningHalfApplication extends Application {
 	public static final String SPINNINGHALF_GIGLIST_WEBSERVICE = "http://www.spinning-half-jersey-jaxrs.appspot.com/rest/gigs";
 	
 	private DatabaseConnector databaseConnector;
+	private DownloadAndParseGigs d_p_g;
 	private boolean serviceRunning;
-	//private Cursor allGigsCursor;
-	
-	
 	
 	@Override
 	public void onCreate() {
@@ -39,6 +37,7 @@ public class SpinningHalfApplication extends Application {
 		Log.i(TAG, "onTerminate");
 	}
 	
+	
 	public DatabaseConnector getDatabaseConnector() {
 		if (databaseConnector == null) {
 			databaseConnector = new DatabaseConnector(this);
@@ -46,46 +45,19 @@ public class SpinningHalfApplication extends Application {
 		return databaseConnector;
 	}
 	
-	//TODO
-	public synchronized int fetchGigUpdates() {
-		Log.i(TAG, "fetching gig updates");
-		int count = 0;
-		
-		return count;
-	}
-	
-	//returns a Cursor containing  {_id, shows} columns
-	public synchronized Cursor getDownloadUrlAndParse(String url) {
-		DownloadAndParseGigs d_p_g = new DownloadAndParseGigs();
-		databaseConnector = this.getDatabaseConnector();
-		try {
-			d_p_g.downloadGigs(url, databaseConnector);
-			return d_p_g.getAllGigsCursor();
-			//return allGigsCursor;
-		} 
-		catch (XmlPullParserException e) {
-   	    		Log.d(DEBUG_TAG, "XmlPullParserException : Unable to retrieve web page. URL may be invalid." + e);
-   	    		e.printStackTrace();
-   	    		//XPP_ERROR;
-   	    		return databaseConnector.getErrorMsgInCursorForm(XPP_ERROR);
-   	    		//return error;
-		} catch (IOException e) {
-	    		Log.d(DEBUG_TAG, "IOException : in doInBackground method." + e);
-	    		e.printStackTrace();
-	    		//IO_ERROR;
-	    		return databaseConnector.getErrorMsgInCursorForm(IO_ERROR);
-	    		//return error
+	public synchronized DownloadAndParseGigs getDownloadAndParseGigsInstance() {
+		if (d_p_g == null) {
+			d_p_g = new DownloadAndParseGigs();
 		}
+		return d_p_g;
 	}
-	
-	
 	
 	public synchronized void  updateAllGigsCursor() {
 		DownloadAndParseGigs d_p_g = new DownloadAndParseGigs();
 		databaseConnector = this.getDatabaseConnector();
 		
 		try {
-			d_p_g.downloadGigs2(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE, databaseConnector);
+			d_p_g.downloadGigsUpdate(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE, databaseConnector);
 			//allGigsCursor = d_p_g.getAllGigsCursor();
 			//databaseConnector.close(); // needed?
 		} 
