@@ -11,6 +11,6 @@
     <string name="label_description">Description</string>
     <string name="label_price">Price</string>
     <string name="label_tixUrl">Ticket Link</string>
-    <string name="blah">blahblahblahblahblahblahblahblahblahblahblahblahblahblahblah</string>
+    <string name="showGreeting">Please select a gig to view.</string>
 
 </resources>

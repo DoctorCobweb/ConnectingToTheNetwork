@@ -155,7 +155,8 @@ public class GigListActivity extends Activity {
     	}
     	
     	//onPostExecute displays the results of the AsyncTask.
-    	@Override
+    	@SuppressWarnings("deprecation")
+		@Override
     	protected void onPostExecute(Cursor cursor) {
     		super.onPostExecute(cursor);
     		GigListActivity.this.cursor = cursor;

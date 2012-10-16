@@ -49,8 +49,8 @@ public class DownloadAndParseGigs {
     	try {
     		URL url = new URL(myUrl);
     		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-    		conn.setReadTimeout(15000); /* milliseconds */
-    		conn.setConnectTimeout(20000); /* milliseconds */
+    		conn.setReadTimeout(0); /* in milliseconds. A default time of 0 will disable read timeouts. */
+    		conn.setConnectTimeout(0); /* milliseconds. A defaukt time of 0 will disable connect timeouts. */
     		conn.setRequestMethod("GET");
     		conn.setDoInput(true);
     		//Starts the query

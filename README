@@ -1,5 +1,9 @@
 prototype android app which talks to a google app engine RESTful web service which is outputtin xml from its datastore.
 
-it uses http as the protocol and XmlPullParser to parse the document.
+-it uses http as the protocol and XmlPullParser to parse the document.
+-using fragments for display on different screen sizes.
+-support for fragment use on platforms using API < 11. Done using the support li brary-v4.
+
+
 
 more soon dudes.

@@ -16,7 +16,7 @@
             android:text="@string/label_show"></TextView>
          <TextView android:id="@+id/showTextView"
              style="@style/GigTextView"
-             android:text="@string/blah" 
+             android:text="@string/showGreeting" 
             ></TextView>
       </TableRow>
 

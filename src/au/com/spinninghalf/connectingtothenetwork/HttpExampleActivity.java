@@ -58,7 +58,7 @@ public class HttpExampleActivity extends Activity {
     		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
     		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
     		if (networkInfo != null && networkInfo.isConnected()) {
-    			Intent startGigList = new Intent(getApplicationContext(), GigListActivity.class);
+    			Intent startGigList = new Intent(getApplicationContext(), MainFragmentGigListActivity.class);
     			startGigList.putExtra(GIG_LIST_URL_KEY, SPINNINGHALF_GIGLIST_WEBSERVICE);
     			startActivity(startGigList);
     		} else {
