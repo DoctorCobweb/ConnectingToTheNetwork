@@ -12,11 +12,12 @@ import android.util.Log;
 
 public class DatabaseConnector 
 {
-   // database name
+   private static final String TAG = "DatabaseConnector";	
    private static final String DATABASE_NAME = "GigList";
    private static final String GIGS_TABLE = "gigs";
    private SQLiteDatabase database; // database object
    private DatabaseOpenHelper databaseOpenHelper; // database helper
+   public boolean databaseOpen = false;
 
    // public constructor for DatabaseConnector
    public DatabaseConnector(Context context) 
@@ -38,7 +39,12 @@ public class DatabaseConnector
       if (database != null) {
          database.close(); // close the database connection
       }
-      Log.d(GigListActivity.DEBUG_TAG, "in database close().");
+      
+      if (database.isOpen()) {
+    	  Log.d(TAG, "in close() + ******DATABASE IS NOT CLOSED****");
+    	  this.databaseOpen = true;
+      }
+      Log.d(TAG, "in close().");
    } 
 
    // inserts a new gig in the database
@@ -127,7 +133,7 @@ public class DatabaseConnector
    }
    
    public Cursor getErrorMsgInCursorForm(String error) {
-	   Log.d(GigListActivity.DEBUG_TAG, "in getErrorMsgInCursorForm.");
+	   Log.d(TAG, "in getErrorMsgInCursorForm.");
 	   insertGig(error, error, error, error, error, error, error);
 	   
 	   return database.query(GIGS_TABLE, null, "gig_id=" + error, null, null, null, null);

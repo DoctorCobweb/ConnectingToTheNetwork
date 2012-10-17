@@ -14,8 +14,7 @@ import android.database.Cursor;
 import android.util.Log;
 
 public class SpinningHalfApplication extends Application {
-	private static final String TAG = SpinningHalfApplication.class.getSimpleName();
-	public static final String DEBUG_TAG = "HttpExample";
+	public static final String TAG = SpinningHalfApplication.class.getSimpleName();
 	private static final String NO_XML_CONTENT = "N/A";
 	private static final String XPP_ERROR = "XmlPullParser Error";
 	private static final String IO_ERROR = "IO Error";
@@ -62,13 +61,13 @@ public class SpinningHalfApplication extends Application {
 			//databaseConnector.close(); // needed?
 		} 
 		catch (XmlPullParserException e) {
-   	    		Log.d(DEBUG_TAG, "XmlPullParserException : Unable to retrieve web page. URL may be invalid." + e);
+   	    		Log.d(TAG, "XmlPullParserException : Unable to retrieve web page. URL may be invalid." + e);
    	    		e.printStackTrace();
    	    		//XPP_ERROR;
    	    		//return databaseConnector.getErrorMsgInCursorForm(XPP_ERROR);
    	    		//return error;
 		} catch (IOException e) {
-	    		Log.d(DEBUG_TAG, "IOException : in doInBackground method." + e);
+	    		Log.d(TAG, "IOException : in doInBackground method." + e);
 	    		e.printStackTrace();
 	    		//IO_ERROR;
 	    		//return databaseConnector.getErrorMsgInCursorForm(IO_ERROR);

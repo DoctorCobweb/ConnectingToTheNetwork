@@ -18,8 +18,15 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 public class ViewGigFragment extends Fragment {
+	private final String TAG = "ViewGigFrament";
 	final static String ARG_ID = "id";
 	final static String ARG_INIT = "init";
+	final static String ARG_SHOW = "show_text";
+	final static String ARG_DATE = "date_text";
+	final static String ARG_DESCRIPTION = "description_text";
+	final static String ARG_PRICE = "price_text";
+	final static String ARG_TIX_URL = "tix_url_text";
+	private static long sCurrentId = -1;
 	long mCurrentId = -1;
 	int mInit = -1;
 	TextView showTextView;
@@ -27,25 +34,40 @@ public class ViewGigFragment extends Fragment {
     TextView descriptionTextView;
     TextView priceTextView;
     TextView  tixUrlTextView;
+    DatabaseConnector dbc;
+    
+    //used for setting the Bundle strings of the textViews when using a savedInstanceState
+    private String defaultShowString = "";
+    private String defaultDateString = "";
+    private String defaultDescriptionString = "";
+    private String defaultPriceString = "";
+    private String defaultTixUrlString = "";
 	
+    
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+    	super.onCreate(savedInstanceState);
+    	
+    	Log.i(TAG, "in onCreate()");
+    }
+    
+    
 	@Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, 
         Bundle savedInstanceState) {
 		
-		//first time user has opened the gig listing page
-		//set the ViewGigFragment to a splash screen
-		//if(savedInstanceState == null || savedInstanceState.getInt(ARG_INIT) == -1 ) {
-		//	mInit = 1;
-		//	return inflater.inflate(R.layout.view_gig_splash_screen, container, false);
-		//}
-
         // If activity recreated (such as from screen rotate), restore
         // the previous article selection set by onSaveInstanceState().
         // This is primarily necessary when in the two-pane layout.
         if (savedInstanceState != null) {
         	mCurrentId = savedInstanceState.getLong(ARG_ID);
+        	defaultShowString = savedInstanceState.getString(ARG_SHOW);
+        	defaultDateString = savedInstanceState.getString(ARG_DATE);
+        	defaultDescriptionString = savedInstanceState.getString(ARG_DESCRIPTION);
+        	defaultPriceString = savedInstanceState.getString(ARG_PRICE);
+        	defaultTixUrlString = savedInstanceState.getString(ARG_TIX_URL);
+        	Log.i(TAG, "in onCreateView() + and checking savedInstanceState existence" + Long.toString(mCurrentId));
         }
-
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.view_gig, container, false);
     }
@@ -53,6 +75,7 @@ public class ViewGigFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
+        Log.i(TAG, "in onStart()");
 
         // During startup, check if there are arguments passed to the fragment.
         // onStart is a good place to do this because the layout has already been
@@ -61,15 +84,23 @@ public class ViewGigFragment extends Fragment {
         Bundle args = getArguments();
         if (args != null) {
             // Set article based on argument passed in
+        	Log.i(TAG, "in onStart() and  ARG_ID is " + Long.toString(args.getLong(ARG_ID)));
             updateGigView(args.getLong(ARG_ID));
         } else if (mCurrentId != -1) {
+        	Log.i(TAG, "in onStart(), args is equal to null");
             // Set article based on saved instance state defined during onCreateView
             updateGigView(mCurrentId);
         }
     }
+    
+    @Override
+    public void onPause() {
+    	super.onPause();
+    	
+    	
+    }
 	
 	public void updateGigView(long id) {
-		//Activity activity;
 		// get the TextViews
 	    showTextView = (TextView) getActivity().findViewById(R.id.showTextView);
 	    dateTextView = (TextView) getActivity().findViewById(R.id.dateTextView);
@@ -78,9 +109,10 @@ public class ViewGigFragment extends Fragment {
 	    tixUrlTextView = (TextView) getActivity().findViewById(R.id.tixUrlTextView);
 		
 	    if(showTextView == null) {
-	    Log.i("in updateGigView ","showTextView is null");
+	    Log.i(TAG, "in updateGigView " + "showTextView is null");
 	    }
 	    
+	    Log.i(TAG, "in updateGigView(), id is " + id);
 		new LoadContactTask().execute(id);
 		
 		mCurrentId = id;
@@ -89,8 +121,8 @@ public class ViewGigFragment extends Fragment {
 	// performs database query outside GUI thread
 	   private class LoadContactTask extends AsyncTask<Long, Object, Cursor> 
 	   {
-	      DatabaseConnector databaseConnector = 
-	         new DatabaseConnector(getActivity());
+	     DatabaseConnector databaseConnector = new DatabaseConnector(getActivity());
+	     //ViewGigFragment.this.dbc = databaseConnector;
 
 	      // perform the database access
 	      @Override
@@ -107,25 +139,42 @@ public class ViewGigFragment extends Fragment {
 	      protected void onPostExecute(Cursor result)
 	      {
 	         super.onPostExecute(result);
+	         
+	      // move to the first item 
+	         if (result.moveToFirst()) { 
 	   
-	         result.moveToFirst(); // move to the first item 
-	   
-	         // get the column index for each data item
-	         int showIndex = result.getColumnIndex("show");
-	         int dateIndex = result.getColumnIndex("date");
-	         int descriptionIndex = result.getColumnIndex("description");
-	         int priceIndex = result.getColumnIndex("price");
-	         int tixUrlIndex = result.getColumnIndex("tixUrl");
-	   
-	         // fill TextViews with the retrieved data
-	         showTextView.setText(result.getString(showIndex));
-	         dateTextView.setText(result.getString(dateIndex));
-	         descriptionTextView.setText(result.getString(descriptionIndex));
-	         priceTextView.setText(result.getString(priceIndex));
-	         tixUrlTextView.setText(result.getString(tixUrlIndex));
-	   
-	         result.close(); // close the result cursor
-	         databaseConnector.close(); // close database connection
+		         // get the column index for each data item
+		         int showIndex = result.getColumnIndex("show");
+		         int dateIndex = result.getColumnIndex("date");
+		         int descriptionIndex = result.getColumnIndex("description");
+		         int priceIndex = result.getColumnIndex("price");
+		         int tixUrlIndex = result.getColumnIndex("tixUrl");
+		   
+		         // fill TextViews with the retrieved data
+		         showTextView.setText(result.getString(showIndex));
+		         dateTextView.setText(result.getString(dateIndex));
+		         descriptionTextView.setText(result.getString(descriptionIndex));
+		         priceTextView.setText(result.getString(priceIndex));
+		         tixUrlTextView.setText(result.getString(tixUrlIndex));
+		   
+		         result.close(); // close the result cursor
+		         Log.i(TAG, "closing Database in ViewGigFragnent");
+		         databaseConnector.close(); // close database connection
+		         
+		         if (!databaseConnector.databaseOpen) {
+		        	 Log.i(TAG, "****database is CLOSED*****");
+		         }
+	         } else {
+	        	// fill TextViews with the strings saved in the Bundle data passed into onCreate().
+		         showTextView.setText(defaultShowString);
+		         dateTextView.setText(defaultDateString);
+		         descriptionTextView.setText(defaultDescriptionString);
+		         priceTextView.setText(defaultPriceString);
+		         tixUrlTextView.setText(defaultTixUrlString);
+	         
+		         result.close();
+		         databaseConnector.close();
+	         }
 	      } // end method onPostExecute
 	   } // end class LoadContactTask
 	
@@ -136,7 +185,15 @@ public class ViewGigFragment extends Fragment {
 
         // Save the current article selection in case we need to recreate the fragment
         outState.putLong(ARG_ID, mCurrentId);
-        //outState.putInt(ARG_INIT, mInit);
+        
+        //save the text fields in the TextViews to the Bundle.
+        outState.putString(ARG_SHOW, (showTextView.getText()).toString());
+        outState.putString(ARG_DATE, (dateTextView.getText()).toString());
+        outState.putString(ARG_DESCRIPTION, (descriptionTextView.getText()).toString());
+        outState.putString(ARG_PRICE, (priceTextView.getText()).toString());
+        outState.putString(ARG_TIX_URL, (tixUrlTextView.getText()).toString());
+        
+        Log.i(TAG, "in onSaveInstanceState, mCurrentId is " + Long.toString(mCurrentId));
     }
 
 }
