@@ -198,7 +198,8 @@ public class ViewGigFragment extends Fragment {
         super.onSaveInstanceState(outState);
 
         //Save the current article selection in case we need to recreate the fragment
-        outState.putLong(ARG_ID, mCurrentId);
+        //outState.putLong(ARG_ID, mCurrentId);
+        outState.putLong(ARG_ID, shapp.getSelectedGigId());
         
         
         //if there has not been a gig selected then updateGigView has NOT been called!
@@ -214,6 +215,6 @@ public class ViewGigFragment extends Fragment {
         outState.putString(ARG_TIX_URL, (tixUrlTextView.getText()).toString());
         }
         
-        Log.i(TAG, "in onSaveInstanceState, mCurrentId is " + Long.toString(mCurrentId));
+        Log.i(TAG, "in onSaveInstanceState, mCurrentId is " + Long.toString(shapp.getSelectedGigId()));
     }
 }

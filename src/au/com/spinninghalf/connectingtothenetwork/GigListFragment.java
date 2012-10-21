@@ -27,8 +27,8 @@ public class GigListFragment extends ListFragment {
 	DatabaseConnector dbc;
 	private Cursor cursor = null;
 	int layout;
-	long _selectedGigId = -1;
-	int _selectedGigPosition = -1;
+	//long _selectedGigId = -1;
+	//int _selectedGigPosition = -1;
 	private static final String ARG_ID = "GigListFragment_id";
 	private static final String ARG_POS = "GigListFragment_position";
 	
@@ -70,11 +70,11 @@ public class GigListFragment extends ListFragment {
         if(savedInstanceState != null) {
         	//_selectedGigId = savedInstanceState.getLong(ARG_ID);
         	//_selectedGigPosition = savedInstanceState.getInt(ARG_POS);
-        	_selectedGigId = shapp.getSelectedGigId();
-        	_selectedGigPosition = shapp.getSelectedGigPosition();
+        	//_selectedGigId = shapp.getSelectedGigId();
+        	//_selectedGigPosition = shapp.getSelectedGigPosition();
         	
-        	Log.i(TAG, "in onCreate() and savedInstanceState is != null. _selectedGigId = " + _selectedGigId 
-        			+ " _selectedGigPosition " + _selectedGigPosition);
+        	Log.i(TAG, "in onCreate() and savedInstanceState is != null. selectedGigId = " + shapp.getSelectedGigId() 
+        			+ " selectedGigPosition " + shapp.getSelectedGigPosition());
         }
     }
 
@@ -103,8 +103,8 @@ public class GigListFragment extends ListFragment {
 	   		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
    		 
 	   		if (shapp.getSelectedGigId() != -1) {
-	    		Log.i(TAG, "in onPostExecute() and after setListAdapter(). _selectedGigId is " 
-	    				+ _selectedGigId + " _selectedGigPosition " + _selectedGigPosition);
+	    		Log.i(TAG, "in onPostExecute() and after setListAdapter(). selectedGigId is " 
+	    				+ shapp.getSelectedGigId() + " selectedGigPosition " + shapp.getSelectedGigPosition());
 	       	    // Set the item as checked to be highlighted when in two-pane layout
 	            //getListView().setItemChecked(_selectedGigPosition, true);
 	            getListView().setItemChecked(shapp.getSelectedGigPosition(), true);
@@ -159,7 +159,7 @@ public class GigListFragment extends ListFragment {
     }
 
     
-  //Uses AsyncTask to create a task away from the main  UI thread. This task
+    //Uses AsyncTask to create a task away from the main  UI thread. This task
     //takes a URL string and uses it to create an HttpUrlConnection. Once the 
     //connection has been established, the AsyncTask downloads the contents of the 
     //webpage as an InputStream. Finally, the InputStream is converted into a string, 
@@ -183,6 +183,7 @@ public class GigListFragment extends ListFragment {
     		
     		Cursor cursor;
     		DatabaseConnector dbc = new DatabaseConnector(getActivity());
+    		dbc.open();
     		dbc.deleteAll();
     		DownloadAndParseGigs d_p_g = new DownloadAndParseGigs();
     		cursor = d_p_g.downloadAllGigs(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE, dbc);
@@ -235,13 +236,13 @@ public class GigListFragment extends ListFragment {
     		    //you can only start altering the Items in the listview AFTER the setListAdapter has created the listview.
     		    //otherwise if you try to before it has been created, even in say onResume(), you get NullPointerException!
     		    ///LEARNT THE HARDWAY
-    		    if (_selectedGigId != -1) {
-    	    		Log.i(TAG, "in onPostExecute() and after setListAdapter(). _selectedGigId is " 
-    	    				+ _selectedGigId + " _selectedGigPosition " + _selectedGigPosition);
+    		    if (shapp.getSelectedGigId() != -1) {
+    	    		Log.i(TAG, "in onPostExecute() and after setListAdapter(). selectedGigId is " 
+    	    				+ shapp.getSelectedGigId() + " selectedGigPosition " + shapp.getSelectedGigPosition());
     	       	 // Set the item as checked to be highlighted when in two-pane layout
-    	            getListView().setItemChecked(_selectedGigPosition, true);
-    	       }
-    		}
+    	            getListView().setItemChecked(shapp.getSelectedGigPosition(), true);
+    	        }
+    	    }
     	}
     }
 }

@@ -12,7 +12,7 @@ public class MainFragmentGigListActivity extends FragmentActivity
 	private final String TAG = "MainFragmentGigListActivity";
 	private static final String ARG_ID = "id";
 	private SpinningHalfApplication shapp;
-	private long selectedGigId = -1;
+	//private long selectedGigId = -1;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -62,7 +62,6 @@ public class MainFragmentGigListActivity extends FragmentActivity
 	public void onSaveInstanceState(Bundle outState) {
 		super.onSaveInstanceState(outState);
 		
-		shapp.setSelectedGigId(selectedGigId);
 		
 		//pass in the selected gig id to the bundle of data saved when activity is destroyed.
 		//outState.putLong(ARG_ID, selectedGigId);
@@ -74,7 +73,6 @@ public class MainFragmentGigListActivity extends FragmentActivity
 	//used in communicating user selections made in the GigListFragment to the Activity.
 	public void onGigSelected(long id) {
 		//The user selected the show name of a gig from the GigListFragment
-		this.selectedGigId = id;
 		shapp.setSelectedGigId(id);
 
         //Capture the viewGig fragment from the activity layout
