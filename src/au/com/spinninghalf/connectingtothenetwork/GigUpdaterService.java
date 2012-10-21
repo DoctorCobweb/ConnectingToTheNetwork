@@ -23,7 +23,7 @@ public class GigUpdaterService extends Service {
 	@Override
 	public void onCreate() {
 		super.onCreate();
-		this.spinningHalfApplication = (SpinningHalfApplication) getApplication();
+		this.spinningHalfApplication = SpinningHalfApplication.getInstance();
 		this.updater = new Updater();
 		
 		Log.d(TAG, "***onCreated***");
@@ -71,7 +71,7 @@ public class GigUpdaterService extends Service {
 				
 				try {
 					Log.d(TAG, "***GigUpdaterService ran1***");
-					SpinningHalfApplication spinningHalfApplication = (SpinningHalfApplication) gigUpdaterService.getApplication();
+					SpinningHalfApplication spinningHalfApplication = (SpinningHalfApplication) gigUpdaterService.getApplication(); //??????
 					Log.d(TAG, "***GigUpdaterService ran2***");
 					dbc = spinningHalfApplication.getDatabaseConnector();
 					Log.d(TAG, "***GigUpdaterService ran3***");

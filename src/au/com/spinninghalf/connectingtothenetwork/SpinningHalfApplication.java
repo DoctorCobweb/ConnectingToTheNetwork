@@ -11,23 +11,136 @@ import org.xmlpull.v1.XmlPullParserFactory;
 
 import android.app.Application;
 import android.database.Cursor;
+import android.os.AsyncTask;
 import android.util.Log;
 
 public class SpinningHalfApplication extends Application {
 	public static final String TAG = SpinningHalfApplication.class.getSimpleName();
-	private static final String NO_XML_CONTENT = "N/A";
-	private static final String XPP_ERROR = "XmlPullParser Error";
-	private static final String IO_ERROR = "IO Error";
 	public static final String SPINNINGHALF_GIGLIST_WEBSERVICE = "http://www.spinning-half-jersey-jaxrs.appspot.com/rest/gigs";
 	
 	private DatabaseConnector databaseConnector;
 	private DownloadAndParseGigs d_p_g;
 	private boolean serviceRunning;
+	private boolean downloadFinished = false;
+	private long selectedGigId = -1;
+	private int selectedGigPosition = -1;
+	
+	private static SpinningHalfApplication singleton;
+	
+	
+	//Returns the application instance. It is a SINGLETON
+	public static SpinningHalfApplication getInstance() {
+		return singleton;
+	}
+	
+	
+	public long getSelectedGigId () {
+		return selectedGigId;
+	}
+	
+	
+	public void setSelectedGigId(long id) {
+		selectedGigId = id;
+	}
+	
+	
+	public int getSelectedGigPosition () {
+		return selectedGigPosition;
+	}
+	
+	
+	public void setSelectedGigPosition (int position) {
+		selectedGigPosition = position;
+	}
+	
+	
+	public void setDownloadFinished(boolean downloadFinished) {
+		this.downloadFinished = downloadFinished;
+	}
+
+	
+	public boolean getDownloadFinished() {
+		return this.downloadFinished;
+	}
+	
+	
+	//returns the DatabaseConnector
+	public DatabaseConnector getDatabaseConnector() {
+		if (databaseConnector == null) {
+			databaseConnector = new DatabaseConnector(this);
+		}
+		return databaseConnector;
+	}
+	
+	
+	//returns the DownloadAndParseGigs instance
+	public synchronized DownloadAndParseGigs getDownloadAndParseGigsInstance() {
+		if (d_p_g == null) {
+			d_p_g = new DownloadAndParseGigs();
+		}
+		return d_p_g;
+	}
+	
 	
 	@Override
 	public void onCreate() {
 		super.onCreate();
+		singleton = this;
 		Log.i(TAG, "onCreate");
+		new DownloadGigs().execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
+	}
+
+	
+	private class DownloadGigs extends AsyncTask<String, Void, Void> {
+		
+		@Override
+		protected Void doInBackground(String...value) {
+			
+			//start from a fresh clean database. NOT OPTIMAL. MUST FIX.
+			getDatabaseConnector().deleteAll();
+			//start downloading the gigs as soon as the application is started.
+			//it is in the application singleton because we only want to do this ONCE.
+			//It's a time expensive operation
+			downloadGigsParseAndCreateDatabase(value[0]);
+			return null;
+		}
+		
+		@Override
+		protected void onPostExecute(Void values) {
+			super.onPostExecute(values);
+			setDownloadFinished(true);
+		}
+	}
+
+	
+	public void downloadGigsParseAndCreateDatabase(String url) {
+		try {
+			getDownloadAndParseGigsInstance().downloadAndParse_VoidVersion(url, getDatabaseConnector());
+		} 
+		catch (XmlPullParserException e) {
+  	    	Log.d(TAG, "XmlPullParserException : Unable to retrieve web page. URL may be invalid." + e);
+  	    	e.printStackTrace();
+		} catch (IOException e) {
+	    	Log.d(TAG, "IOException : in doInBackground method." + e);
+	    	e.printStackTrace();
+		}
+	}
+	
+	
+	public synchronized void  updateAllGigsCursor() {
+		DownloadAndParseGigs d_p_g = new DownloadAndParseGigs();
+		databaseConnector = this.getDatabaseConnector();
+		
+		try {
+			d_p_g.downloadGigsUpdate(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE, databaseConnector);
+		} 
+		catch (XmlPullParserException e) {
+   	    		Log.d(TAG, "XmlPullParserException : Unable to retrieve web page. URL may be invalid." + e);
+   	    		e.printStackTrace();
+		} catch (IOException e) {
+	    		Log.d(TAG, "IOException : in doInBackground method." + e);
+	    		e.printStackTrace();
+		}
 	}
 	
 	@Override 
@@ -37,67 +150,12 @@ public class SpinningHalfApplication extends Application {
 	}
 	
 	
-	public DatabaseConnector getDatabaseConnector() {
-		if (databaseConnector == null) {
-			databaseConnector = new DatabaseConnector(this);
-		}
-		return databaseConnector;
-	}
-	
-	public synchronized DownloadAndParseGigs getDownloadAndParseGigsInstance() {
-		if (d_p_g == null) {
-			d_p_g = new DownloadAndParseGigs();
-		}
-		return d_p_g;
-	}
-	
-	public synchronized void  updateAllGigsCursor() {
-		DownloadAndParseGigs d_p_g = new DownloadAndParseGigs();
-		databaseConnector = this.getDatabaseConnector();
-		
-		try {
-			d_p_g.downloadGigsUpdate(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE, databaseConnector);
-			//allGigsCursor = d_p_g.getAllGigsCursor();
-			//databaseConnector.close(); // needed?
-		} 
-		catch (XmlPullParserException e) {
-   	    		Log.d(TAG, "XmlPullParserException : Unable to retrieve web page. URL may be invalid." + e);
-   	    		e.printStackTrace();
-   	    		//XPP_ERROR;
-   	    		//return databaseConnector.getErrorMsgInCursorForm(XPP_ERROR);
-   	    		//return error;
-		} catch (IOException e) {
-	    		Log.d(TAG, "IOException : in doInBackground method." + e);
-	    		e.printStackTrace();
-	    		//IO_ERROR;
-	    		//return databaseConnector.getErrorMsgInCursorForm(IO_ERROR);
-	    		//return error
-		}
-		
-		//Cursor cursor = getDownloadUrlAndParse(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
-		
-	}
-	
-	/*
-	public Cursor getAllGigsCursor() {
-		return allGigsCursor;
-	}
-	*/
-	
 	public boolean isServiceRunning() {
 		return serviceRunning;
 	}
 	
+	
 	public void setServiceRunning(boolean serviceRunning) {
 		this.serviceRunning = serviceRunning;
 	}
-	
-//NOT USED-----------------------------------------------------------------------------------------------------
-	
-	//given a URL, establishes an HttpURLConnection and retrieves
-    //that web page content as an InputStream, which it returns
-    //as a string.
-	//  private Cursor downloadUrl(String myUrl) throws IOException, XmlPullParserException {
-//NOT USED-----------------------------------------------------------------------------------------------------
-
 }

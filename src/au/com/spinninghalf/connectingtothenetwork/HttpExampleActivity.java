@@ -24,9 +24,8 @@ import java.io.IOException;
 
 public class HttpExampleActivity extends Activity {
 	
-	private static final String DEBUG_TAG = "HttpExample";
+	private static final String TAG = "HttpExampleActivity";
 	public static final String GIG_LIST_URL_KEY = "au.com.spinninghalf.connectingtothenetwork.giglisturl";
-	private static final String SPINNINGHALF_GIGLIST_WEBSERVICE = "http://www.spinning-half-jersey-jaxrs.appspot.com/rest/gigs";
 	private TextView idTextView;
 	private Button goButton;
 	
@@ -59,7 +58,7 @@ public class HttpExampleActivity extends Activity {
     		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
     		if (networkInfo != null && networkInfo.isConnected()) {
     			Intent startGigList = new Intent(getApplicationContext(), MainFragmentGigListActivity.class);
-    			startGigList.putExtra(GIG_LIST_URL_KEY, SPINNINGHALF_GIGLIST_WEBSERVICE);
+    			startGigList.putExtra(GIG_LIST_URL_KEY, SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
     			startActivity(startGigList);
     		} else {
     			idTextView.setText("No network connection available");

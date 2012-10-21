@@ -21,66 +21,33 @@ public class GigListFragment extends ListFragment {
 	private static final String ERROR = "Error";
 	private static final String IO_ERROR = "IO Error";
 	private static final String XPP_ERROR = "XmlPullParser Error";
-	private String stringUrl = null; 
 	// map each gigs's show name to a TextView in the ListView layout
     public static String[] from = new String[] { "show" };
     public static int[] to = new int[] { android.R.id.text1 }; 
-	//private TextView idTextView;
-	//private SimpleCursorAdapter gigAdapter; // adapter for ListView
 	DatabaseConnector dbc;
 	private Cursor cursor = null;
 	int layout;
-	long selectedGigId = -1;
 	long _selectedGigId = -1;
 	int _selectedGigPosition = -1;
-	int selectedGigPosition = -1;
 	private static final String ARG_ID = "GigListFragment_id";
 	private static final String ARG_POS = "GigListFragment_position";
 	
+	private SpinningHalfApplication shapp;
+
 	
 	//the container activity must implement this interface in order for this
 	//fragment to communicate to it user events/selections.
 	public interface OnGigListSelectedListener {
 		public void onGigSelected(long id);
 	}
+
 	
 	@Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
-        // We need to use a different list item layout for devices older than Honeycomb
-        this.layout = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ?
-                android.R.layout.simple_list_item_activated_1 : android.R.layout.simple_list_item_1;
-        
-        if(savedInstanceState != null) {
-        	_selectedGigId = savedInstanceState.getLong(ARG_ID);
-        	_selectedGigPosition = savedInstanceState.getInt(ARG_POS);
-        	Log.i(TAG, "in onCreate() and savedInstanceState is != null. _selectedGigId = " + _selectedGigId + " _selectedGigPosition " + _selectedGigPosition);
-        }
-
-        
-        new DownloadWebpageText().execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // When in two-pane layout, set the listview to highlight the selected list item
-        // (We do this during onStart because at the point the listview is available.)
-        if (getFragmentManager().findFragmentById(R.id.view_gig_fragment) != null) {
-            getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
-        }
-        
-        
-    }
-
-    @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
 
-        // This makes sure that the container activity has implemented
-        // the callback interface. If not, it throws an exception.
+        //This makes sure that the container activity has implemented
+        //the callback interface. If not, it throws an exception.
         try {
             mCallback = (OnGigListSelectedListener) activity;
         } catch (ClassCastException e) {
@@ -88,30 +55,95 @@ public class GigListFragment extends ListFragment {
                     + " must implement OnHeadlineSelectedListener");
         }
     }
+	
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        shapp = SpinningHalfApplication.getInstance();
+        
+        //We need to use a different list item layout for devices older than Honeycomb
+        this.layout = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ?
+                android.R.layout.simple_list_item_activated_1 : android.R.layout.simple_list_item_1;
+        
+        if(savedInstanceState != null) {
+        	//_selectedGigId = savedInstanceState.getLong(ARG_ID);
+        	//_selectedGigPosition = savedInstanceState.getInt(ARG_POS);
+        	_selectedGigId = shapp.getSelectedGigId();
+        	_selectedGigPosition = shapp.getSelectedGigPosition();
+        	
+        	Log.i(TAG, "in onCreate() and savedInstanceState is != null. _selectedGigId = " + _selectedGigId 
+        			+ " _selectedGigPosition " + _selectedGigPosition);
+        }
+    }
+
+	
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        //When in two-pane layout, set the listview to highlight the selected list item
+        //(We do this during onStart because at the point the listview is available.)
+        if (getFragmentManager().findFragmentById(R.id.view_gig_fragment) != null) {
+            getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+        }
+        
+        //check to see if the gigs have already been downloaded, parsed and put into the database
+        //from the onCreate() method in SpinningHalfApplication. 
+        //Otherwise, start downloading again...not optimal, i know. a TODO
+        if (!shapp.getDownloadFinished()) {
+        	Log.i(TAG, "in onCreate(). HAVENT_FINISHED_ORIGINAL_GIGLIST_DOWNLOAD: The downloading in SpinningHalfApplication's " +
+        			"onCreate() has not finished. Start Again with download.");
+    	    new DownloadWebpageText().execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
+        } else {
+        	Log.i(TAG,"in onCreate(). SUCCESSFUL_ORIGINAL_GIGLIST_DOWNLOAD: Using SpinningHalfApplication's downloaded gig content.");
+	   		DatabaseConnector dbc = shapp.getDatabaseConnector();
+	   		cursor = dbc.getAllGigs();
+	   		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
+   		 
+	   		if (shapp.getSelectedGigId() != -1) {
+	    		Log.i(TAG, "in onPostExecute() and after setListAdapter(). _selectedGigId is " 
+	    				+ _selectedGigId + " _selectedGigPosition " + _selectedGigPosition);
+	       	    // Set the item as checked to be highlighted when in two-pane layout
+	            //getListView().setItemChecked(_selectedGigPosition, true);
+	            getListView().setItemChecked(shapp.getSelectedGigPosition(), true);
+	        }
+       }
+    }
+    
     
     @Override 
     public void onResume() {
     	super.onResume();
     }
+
     
     @Override
     public void onDestroy() {
     	super.onDestroy();
     	
-    	this.cursor.close();
-    	this.dbc.close();
+    	if ( cursor != null && cursor.moveToFirst()) {
+    		this.cursor.close();
+    	}
+    	shapp.getDatabaseConnector().close();
     }
 
+    
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-    	this._selectedGigId = id;
-    	this._selectedGigPosition = position;
-        // Notify the parent activity of selected item
+    	//this._selectedGigId = id;
+    	//this._selectedGigPosition = position;
+    	
+    	shapp.setSelectedGigId(id);
+    	shapp.setSelectedGigPosition(position);
+    	
+        //Notify the parent activity of selected item
         mCallback.onGigSelected(id);
         
-        // Set the item as checked to be highlighted when in two-pane layout
+        //Set the item as checked to be highlighted when in two-pane layout
         getListView().setItemChecked(position, true);
-        Log.i(TAG, "selectedGigPosiont = " + _selectedGigPosition);
+        Log.i(TAG, "in onListItemClick and selectedGigPosition = " + shapp.getSelectedGigPosition());
     }
 	
     
@@ -119,10 +151,14 @@ public class GigListFragment extends ListFragment {
     public void onSaveInstanceState(Bundle outState) {
     	super.onSaveInstanceState(outState);
     	
-    	outState.putLong(ARG_ID, _selectedGigId);
-    	outState.putInt(ARG_POS, _selectedGigPosition);
+    	//shapp.setSelectedGigId(_selectedGigId);
+    	//shapp.setSelectedGigPosition(_selectedGigPosition);
+    	
+    	outState.putLong(ARG_ID, shapp.getSelectedGigId());
+    	outState.putInt(ARG_POS, shapp.getSelectedGigPosition());
     }
-	
+
+    
   //Uses AsyncTask to create a task away from the main  UI thread. This task
     //takes a URL string and uses it to create an HttpUrlConnection. Once the 
     //connection has been established, the AsyncTask downloads the contents of the 
@@ -137,6 +173,7 @@ public class GigListFragment extends ListFragment {
     	//	this.progress = progress;
     	//}
     	
+    	
     	@Override
     	protected Cursor doInBackground(String...urls) {
     		Log.i(TAG, "in doInBackground");
@@ -150,9 +187,10 @@ public class GigListFragment extends ListFragment {
     		DownloadAndParseGigs d_p_g = new DownloadAndParseGigs();
     		cursor = d_p_g.downloadAllGigs(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE, dbc);
     		GigListFragment.this.cursor = cursor;
-    		GigListFragment.this.dbc = dbc;
+    		
     		return cursor;
     	}
+    	
     	
     	@Override
     	protected void onProgressUpdate(Void... values) {
@@ -161,6 +199,7 @@ public class GigListFragment extends ListFragment {
     		//make the ProgressBar circle appear. Hey Presto.
     		//progress.setVisibility(View.VISIBLE);
     	}
+    	
     	
     	//onPostExecute displays the results of the AsyncTask.
     	@SuppressWarnings("deprecation")
@@ -197,7 +236,8 @@ public class GigListFragment extends ListFragment {
     		    //otherwise if you try to before it has been created, even in say onResume(), you get NullPointerException!
     		    ///LEARNT THE HARDWAY
     		    if (_selectedGigId != -1) {
-    	    		Log.i(TAG, "in onPostExecute() and after setListAdapter(). _selectedGigId is " + _selectedGigId + " _selectedGigPosition " + _selectedGigPosition);
+    	    		Log.i(TAG, "in onPostExecute() and after setListAdapter(). _selectedGigId is " 
+    	    				+ _selectedGigId + " _selectedGigPosition " + _selectedGigPosition);
     	       	 // Set the item as checked to be highlighted when in two-pane layout
     	            getListView().setItemChecked(_selectedGigPosition, true);
     	       }

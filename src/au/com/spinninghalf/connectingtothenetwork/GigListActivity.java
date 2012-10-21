@@ -28,7 +28,7 @@ import android.util.Log;
 
 public class GigListActivity extends Activity {
 	public static final String ROW_ID = "row_id"; // Intent extra key
-	public static final String DEBUG_TAG = "GigListActivity";
+	public static final String TAG = "GigListActivity";
 	private static final String ERROR = "Error";
 	private static final String IO_ERROR = "IO Error";
 	private static final String XPP_ERROR = "XmlPullParser Error";
@@ -58,7 +58,9 @@ public class GigListActivity extends Activity {
         //contactListView = getListView(); // get the built-in ListView
         listGiglist.setOnItemClickListener(viewGigListener);
         
-        spinningHalfApplication = (SpinningHalfApplication) getApplication();
+        //spinningHalfApplication = (SpinningHalfApplication) getApplication(); //old way of getting application object
+        //get it now using the singleton method getInstance()
+        spinningHalfApplication = SpinningHalfApplication.getInstance();
         
         //gigAdapter = new SimpleCursorAdapter(GigListActivity.this, R.layout.gig_list_item, null, from, to);
         //listGiglist.setAdapter(gigAdapter); // set contactView's adapter
@@ -126,7 +128,7 @@ public class GigListActivity extends Activity {
     	
     	@Override
     	protected Cursor doInBackground(String...urls) {
-    		Log.i(DEBUG_TAG, "in doInBackground");
+    		Log.i(TAG, "in doInBackground");
     		
     		//this calls onProgressUpdate() to begin the ProgressBar circle animation.
     		publishProgress();
@@ -160,7 +162,7 @@ public class GigListActivity extends Activity {
     	protected void onPostExecute(Cursor cursor) {
     		super.onPostExecute(cursor);
     		GigListActivity.this.cursor = cursor;
-    		Log.i(DEBUG_TAG, "in onPostExecute");
+    		Log.i(TAG, "in onPostExecute");
     		//get rid of progress circle once you have the cursor.
     		progress.setVisibility(View.GONE);
     		
@@ -172,13 +174,13 @@ public class GigListActivity extends Activity {
     			//display a msg that there was an error with the download.
     			idTextView.setText(errorMessage);
     		} else {
-    			Log.d(DEBUG_TAG, "in onPostExecute." + "number of rows in cursor = " + cursor.getCount());
+    			Log.d(TAG, "in onPostExecute." + "number of rows in cursor = " + cursor.getCount());
     			gigAdapter = new SimpleCursorAdapter(
     		        GigListActivity.this, R.layout.gig_list_item, cursor, from, to);
     				listGiglist.setAdapter(gigAdapter); // set contactView's adapter
     				        
     				//cursor.close(); //close the cursor
-    				//Log.d(DEBUG_TAG, "in onPostExecute. JUST BEFORE close() database");
+    				//Log.d(TAG, "in onPostExecute. JUST BEFORE close() database");
     				
     				//spinningHalfApplication.getDatabaseConnector().close(); //close the database
     				
