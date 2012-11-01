@@ -1,5 +1,9 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
+//import com.actionbarsherlock.app.SherlockListFragment;
+
+import com.actionbarsherlock.app.SherlockListFragment;
+import com.actionbarsherlock.app.SherlockActivity;
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -13,7 +17,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-public class GigListFragment extends ListFragment {
+public class GigListFragment extends SherlockListFragment {
 	OnGigListSelectedListener mCallback;
 	
 	public static final String ROW_ID = "row_id"; // Intent extra key
@@ -89,6 +93,19 @@ public class GigListFragment extends ListFragment {
             getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         }
         
+        DatabaseConnector dbc = shapp.getDatabaseConnector();
+   		cursor = dbc.getAllGigs();
+   		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
+		 
+   		if (shapp.getSelectedGigId() != -1) {
+    		Log.i(TAG, "in onPostExecute() and after setListAdapter(). selectedGigId is " 
+    				+ shapp.getSelectedGigId() + " selectedGigPosition " + shapp.getSelectedGigPosition());
+       	    // Set the item as checked to be highlighted when in two-pane layout
+            //getListView().setItemChecked(_selectedGigPosition, true);
+            getListView().setItemChecked(shapp.getSelectedGigPosition(), true);
+        }
+        
+   		
         //check to see if the gigs have already been downloaded, parsed and put into the database
         //from the onCreate() method in SpinningHalfApplication. 
         //Otherwise, start downloading again...not optimal, i know. a TODO
@@ -98,7 +115,7 @@ public class GigListFragment extends ListFragment {
     	    new DownloadWebpageText().execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
         } else {
         	Log.i(TAG,"in onCreate(). SUCCESSFUL_ORIGINAL_GIGLIST_DOWNLOAD: Using SpinningHalfApplication's downloaded gig content.");
-	   		DatabaseConnector dbc = shapp.getDatabaseConnector();
+	   		//DatabaseConnector dbc = shapp.getDatabaseConnector();
 	   		cursor = dbc.getAllGigs();
 	   		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
    		 
@@ -110,6 +127,7 @@ public class GigListFragment extends ListFragment {
 	            getListView().setItemChecked(shapp.getSelectedGigPosition(), true);
 	        }
        }
+       
     }
     
     
@@ -132,8 +150,6 @@ public class GigListFragment extends ListFragment {
     
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-    	//this._selectedGigId = id;
-    	//this._selectedGigPosition = position;
     	
     	shapp.setSelectedGigId(id);
     	shapp.setSelectedGigPosition(position);
@@ -150,9 +166,7 @@ public class GigListFragment extends ListFragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
     	super.onSaveInstanceState(outState);
-    	
-    	//shapp.setSelectedGigId(_selectedGigId);
-    	//shapp.setSelectedGigPosition(_selectedGigPosition);
+
     	
     	outState.putLong(ARG_ID, shapp.getSelectedGigId());
     	outState.putInt(ARG_POS, shapp.getSelectedGigPosition());

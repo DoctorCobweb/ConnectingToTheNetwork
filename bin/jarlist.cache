@@ -1,3 +1,5 @@
 # cache for current jar dependecy. DO NOT EDIT.
 # format is <lastModified> <length> <SHA-1> <path>
 # Encoding is UTF-8
+1351308589000 349252 612846c9857077a039b533718f72db3bc041d389 /home/andre/workspace/examples/ConnectingToTheNetwork/libs/android-support-v4.jar
+1351313646000 349252 612846c9857077a039b533718f72db3bc041d389 /home/andre/bin/JakeWharton-ActionBarSherlock-e5c2d1c/library/libs/android-support-v4.jar

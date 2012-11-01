@@ -7,6 +7,10 @@ package au.com.spinninghalf.connectingtothenetwork;
  */
 
 
+//import com.actionbarsherlock.app.SherlockFragment;
+
+import com.actionbarsherlock.app.SherlockFragment;
+
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -17,7 +21,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class ViewGigFragment extends Fragment {
+public class ViewGigFragment extends SherlockFragment {
 	private final static String TAG = "ViewGigFrament";
 	final static String ARG_ID = "id";
 	final static String ARG_INIT = "init";
