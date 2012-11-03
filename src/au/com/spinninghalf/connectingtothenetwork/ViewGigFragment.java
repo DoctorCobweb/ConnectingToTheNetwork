@@ -10,11 +10,14 @@ package au.com.spinninghalf.connectingtothenetwork;
 //import com.actionbarsherlock.app.SherlockFragment;
 
 import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -110,6 +113,13 @@ public class ViewGigFragment extends SherlockFragment {
     @Override
     public void onPause() {
     	super.onPause();
+    }
+    
+    @Override
+    public void onStop() {
+    	super.onStop();
+    	
+    	
     }
 
     
@@ -220,5 +230,7 @@ public class ViewGigFragment extends SherlockFragment {
         }
         
         Log.i(TAG, "in onSaveInstanceState, mCurrentId is " + Long.toString(shapp.getSelectedGigId()));
+        
+        //FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
     }
 }
