@@ -1,9 +1,11 @@
-prototype android app which talks to a google app engine RESTful web service which is outputtin xml from its datastore.
+generic_android_application.in_the_making
 
+aim: to have an application supporting mobile + tablet screens sizes which has tabbed navigation for API >= 7. also it must has the ability to connect to a web service, pull down data (in xml), parse it and then persist in sqlite database.
+
+features:
 -it uses http as the protocol and XmlPullParser to parse the document.
--using fragments for display on different screen sizes.
+-using fragments to support both mobile and tablet screen sizes.
 -support for fragment use on platforms using API < 11. Done using the support li brary-v4.
+-using ActionBarSherlock to allow ActionBar and Tabbed Navigation for API < 11.
 
-
-
-more soon dudes.
+will push commits once they're ready, more soon dudes.

@@ -34,6 +34,7 @@ public class MainFragmentGigListActivity extends FragmentActivity
             //we could end up with overlapping fragments.
             if (savedInstanceState != null) {
             	Log.i(TAG, "in onCreate() and savedInstanceState is not null");
+            	
                 return;
             }
             //Create an instance of GigListFragment
@@ -57,7 +58,7 @@ public class MainFragmentGigListActivity extends FragmentActivity
         
         if (savedInstanceState != null && shapp.getSelectedGigId() != -1) {
         	if (viewGigFrag != null) {
-        		viewGigFrag.updateGigView(shapp.getSelectedGigId());
+        		viewGigFrag.updateGigView(shapp.getSelectedGigId(), shapp.getSelectedGigPosition());
         	}
     	}
 	}
@@ -75,9 +76,10 @@ public class MainFragmentGigListActivity extends FragmentActivity
 	
 	//implementation of the single method from GigListFragment inner interface.
 	//used in communicating user selections made in the GigListFragment to the Activity.
-	public void onGigSelected(long id) {
+	public void onGigSelected(long id, int position) {
 		//The user selected the show name of a gig from the GigListFragment
 		shapp.setSelectedGigId(id);
+		shapp.setSelectedGigPosition(position);
 
         //Capture the viewGig fragment from the activity layout
         ViewGigFragment viewGigFrag = (ViewGigFragment)
@@ -87,7 +89,7 @@ public class MainFragmentGigListActivity extends FragmentActivity
             //If article frag is available, we're in two-pane layout...
 
             //Call a method in the ViewGigFragment to update its content
-            viewGigFrag.updateGigView(id);
+            viewGigFrag.updateGigView(id, position);
 
         } else {
             //If the frag is not available, we're in the one-pane layout and must swap frags...
@@ -95,7 +97,7 @@ public class MainFragmentGigListActivity extends FragmentActivity
             //Create fragment and give it an argument for the selected article
             ViewGigFragment newFragment = new ViewGigFragment();
             Bundle args = new Bundle();
-            args.putLong(ViewGigFragment.ARG_ID, id);
+            args.putLong(ViewGigFragment.ARG_SELECTED_GIG_ID, id);
             newFragment.setArguments(args);
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 

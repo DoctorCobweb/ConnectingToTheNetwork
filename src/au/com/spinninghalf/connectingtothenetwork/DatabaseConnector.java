@@ -40,7 +40,7 @@ public class DatabaseConnector
          database.close(); // close the database connection
       }
       
-      if (database.isOpen()) {
+      if (database != null && database.isOpen()) {
     	  Log.d(TAG, "in close() + ******DATABASE IS NOT CLOSED****");
     	  this.databaseOpen = true;
       }

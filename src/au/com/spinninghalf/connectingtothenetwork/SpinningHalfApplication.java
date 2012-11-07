@@ -24,6 +24,7 @@ public class SpinningHalfApplication extends Application {
 	private boolean downloadFinished = false;
 	private long selectedGigId = -1;
 	private int selectedGigPosition = -1;
+	private boolean wasViewingGig = false;
 	
 	private static SpinningHalfApplication singleton;
 	
@@ -31,6 +32,14 @@ public class SpinningHalfApplication extends Application {
 	//Returns the application instance. It is a SINGLETON
 	public static SpinningHalfApplication getInstance() {
 		return singleton;
+	}
+	
+	public boolean getWasViewingGig() {
+		return this.wasViewingGig;
+	}
+	
+	public void setWasViewingGig(boolean wasViewingGig) {
+		this.wasViewingGig = wasViewingGig;
 	}
 	
 	
@@ -87,7 +96,7 @@ public class SpinningHalfApplication extends Application {
 		super.onCreate();
 		singleton = this;
 		Log.i(TAG, "onCreate");
-		new DownloadGigs().execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
+		//new DownloadGigs().execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
 	}
 
 	
