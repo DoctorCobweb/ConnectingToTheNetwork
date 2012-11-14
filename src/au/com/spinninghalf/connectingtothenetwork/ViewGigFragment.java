@@ -123,9 +123,10 @@ public class ViewGigFragment extends SherlockFragment {
         //applied to the fragment at this point so we can safely call the method
         //below that sets the article text.
         Bundle args = getArguments();
-        long mSelectedGigId = args.getLong(ViewGigFragment.ARG_SELECTED_GIG_ID);
-        int mSelectedGigPosition = args.getInt(ViewGigFragment.ARG_SELECTED_GIG_POSITION);
+        
         if (args != null) {
+        	long mSelectedGigId = args.getLong(ViewGigFragment.ARG_SELECTED_GIG_ID);
+            int mSelectedGigPosition = args.getInt(ViewGigFragment.ARG_SELECTED_GIG_POSITION);
             //Set article based on argument passed in
         	Log.i(TAG, "in onStart() and  ARG_ID is " + Long.toString(mSelectedGigId));
             updateGigView(mSelectedGigId, mSelectedGigPosition);

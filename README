@@ -3,9 +3,18 @@ generic_android_application.in_the_making
 aim: to have an application supporting mobile + tablet screens sizes which has tabbed navigation for API >= 7. also it must has the ability to connect to a web service, pull down data (in xml), parse it and then persist in sqlite database.
 
 features:
--it uses http as the protocol and XmlPullParser to parse the document.
+-syncs to an app engine webservice for its gig guide details. it uses http as the protocol and XmlPullParser to parse the document tree. skeletal at this stage but nonetheless is communicating to the backend service properly.
 -using fragments to support both mobile and tablet screen sizes.
 -support for fragment use on platforms using API < 11. Done using the support li brary-v4.
 -using ActionBarSherlock to allow ActionBar and Tabbed Navigation for API < 11.
+
+
+TODOS
+-investigate AsyncTask and it not properly closing the database, and or, the current cursor when there is a configuration change i.e. screen rotation. weird errors in log but then on the surface of the user it seems fine. hmmmm.
+-add in slick content & customize views. black aint back for this app.
+-home landing screen?
+-note to future me: no.fucking.adds okay. keep it slick and dont bug their eyeballs with o. keep it slick and dont bug their eyeballs with obtrusive low res crap. keep it slick and dont bug their eyeballs with obtrusive low res crap. keep it slick and dont bug their eyeballs with obtrusive low res crapbtrusive low res crap.
+
+
 
 will push commits once they're ready, more soon dudes.
