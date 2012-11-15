@@ -6,6 +6,7 @@ package au.com.spinninghalf.connectingtothenetwork;
  */
 
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	public static final String GIG_LIST_URL_KEY = "au.com.spinninghalf.connectingtothenetwork.giglisturl";
 	public static final String ARG_SELECTED_GIG_ID = "HttpExampleActivity_selected_gig_id";
 	public static final String ARG_SELECTED_GIG_POSITION = "HttpExampleActivity_selected_gig_position";
+	private static String ACTION_BAR_INDEX = "ACTION_BAR_INDEX";
 	private long _selectedGigId = -1;
 	private int _selectedGigPosition = -1;
 	
@@ -179,7 +181,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 		      		.setTabListener(managementTabListenerTablet);
 		      actionBar.addTab(managementTab);
 		      
-		      //TAB 5: Create and add the SERVICES tab
+		      //TAB 5: Create and add the SERVICES tab"";
 		      Tab servicesTab = actionBar.newTab();
 		      servicesTabListenerTablet = new TabListenerTablet2<ServicesFragmentOne, ServicesFragmentTwo>
 		         (this,  R.id.TabletFragmentContainer1, R.id.TabletFragmentContainer2,
@@ -223,8 +225,8 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
             viewGigFrag.updateGigView(id, position);
 
         } else {
+        	/*
             //If the viewGigFrag is not available, we're in the MOBILE layout and must swap frags.
-        	
             //Create fragment and give it an argument for the selected article
             ViewGigFragment newFragment = new ViewGigFragment();
             Bundle args = new Bundle();
@@ -240,11 +242,21 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 
             //Commit the transaction
             transaction.commit();
+            */
+        	
+        	
+        	//Start a new activity to display the selected gig
+        	Intent viewGigIntent = new Intent(this, ViewGigActivity.class);
+        	viewGigIntent.putExtra(ViewGigActivity.EXTRA_SELECTED_GIG_POSITION, position);
+        	viewGigIntent.putExtra(ViewGigActivity.EXTRA_SELECTED_GIG_ID, id);
+        	startActivity(viewGigIntent);
+        	
+        	
         }
 	}
     
 	
-	  private static String ACTION_BAR_INDEX = "ACTION_BAR_INDEX";
+	  
 
 	  @Override
 	  public void onSaveInstanceState(Bundle outState) {
@@ -317,6 +329,14 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    super.onSaveInstanceState(outState);
 	  }
 
+	  
+	  @Override 
+	  public void onPause() {
+		  super.onPause();
+		  
+	  }
+
+	  
 	  @Override
 	  public void onRestoreInstanceState(Bundle savedInstanceState) {
 	    super.onRestoreInstanceState(savedInstanceState);
@@ -386,6 +406,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    	
 	    }
 	    
+	    /*
 	    //Restore the previous Action Bar tab selection.    
 	    SharedPreferences sp = getPreferences(Activity.MODE_PRIVATE);
 	    int actionBarIndex = sp.getInt(ACTION_BAR_INDEX, 0);
@@ -393,6 +414,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    //setSelectedNavigationItem() will call the onTabReselected() callback for the associated TabListener
 	    //located at actionBarIndex in the ActionBar
 	    getSupportActionBar().setSelectedNavigationItem(actionBarIndex);
+	    */
 	    
 	  }
 	  
@@ -401,6 +423,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    super.onResume();
 	    
 	    Log.i(TAG, "in onResume()");
+	    
 	    
 	    View fragmentContainer = findViewById(R.id.MainFragmentContainer); 
 	    boolean tabletLayout = fragmentContainer == null;
@@ -414,6 +437,8 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	      getSupportActionBar().setSelectedNavigationItem(actionBarIndex);
 	      
 	    }
+	    
+	    
 	  }
 	  
 	  @Override
@@ -510,7 +535,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	        } else if (vg != null && fragment != null) {
 	    	    Log.i(TAG, "g'day from onTabSelected in TabListenerMobileList. ViewGigFragment != null and GigListFragment != null");
 	    	    
-	    	    
+	    	    /*
 	    	    String fragmentName = fragmentClass.getName();
 	    	    fragment = (SherlockListFragment) Fragment.instantiate(activity, fragmentName); 
 	    	    ft.add(fragmentContainer, fragment, fragmentName);
@@ -518,6 +543,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    	    ft.detach(vg);
 	    	    ft.attach(fragment);
 	    	    //ft.addToBackStack(null);
+	    	     */
 	        } else {
 	    	    Log.i(TAG, "g'day from onTabSelected in TabListenerMobileList. GigListFragment != null");
 	    	    ft.attach(fragment);
@@ -535,10 +561,12 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    		ft.detach(fragment);
 	    	}
 	    	
+	    	
 	    	//you must detach the ViewGigFragment if user selects another Tab whilst viewing ViewGigFragment.
 	    	if (vg != null) {
 	    		ft.detach(vg);
 	    	}
+	    	
 	    }
 	  
 	    //Called when the selected tab is selected.
@@ -546,6 +574,22 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    	Log.i(TAG, "g'day from onTabReselected in TabListenerMobileList");
 	    	
 	    	ViewGigFragment vg = (ViewGigFragment) getSupportFragmentManager().findFragmentByTag("ViewGigTag");
+	    	
+	    	if(fragment != null && vg != null) {
+	    		
+	    		Log.i(TAG, "g'day from onTabReselected in TabListenerMobileList. fragment!= null and vg != null");
+	    		
+	    		/*
+	    		ft.detach(vg);
+		    	String fragmentName = fragmentClass.getName();
+	    	    fragment = (SherlockListFragment) Fragment.instantiate(activity, fragmentName);
+	    	    ft.add(fragmentContainer, fragment, fragmentName);
+	    	    
+	    	    
+	    	    //attach(fragment);
+	    	    //ft.addToBackStack(null);
+	    	     */
+	    	}
 	    	/*
 	    	if (fragment != null && vg != null){
 	    		Log.i(TAG, "g'day from onTabReselected in TabListenerMobileList. fragment!= null and vg != null");

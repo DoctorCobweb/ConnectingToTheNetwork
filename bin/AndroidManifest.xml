@@ -24,10 +24,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ViewGigActivity" />
         <activity android:name=".GigListActivity" />
         <activity android:name=".ViewGig" />
         <activity android:name=".DownloadAndParseGigs" />
-        <activity android:name=".MainFragmentGigListActivity"></activity>
+        <activity android:name=".MainFragmentGigListActivity" />>
         <service android:name=".GigUpdaterService" />
     </application>
 

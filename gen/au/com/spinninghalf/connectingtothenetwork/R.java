@@ -1005,11 +1005,14 @@ containing a value of this type.
         public static final int tabMode=0x7f040003;
         public static final int textMainAct=0x7f04004d;
         public static final int textView1=0x7f040041;
-        public static final int textView2=0x7f04005a;
+        public static final int textView2=0x7f04005d;
         public static final int tixUrlLabelTextView=0x7f040059;
         public static final int tixUrlTableRow=0x7f040058;
         public static final int tixUrlTextView=0x7f04003c;
         public static final int useLogo=0x7f040004;
+        public static final int viewGigActivityMainContainer=0x7f04005c;
+        public static final int viewGigActivtyTextView1=0x7f04005a;
+        public static final int viewGigActivtyTextView2=0x7f04005b;
         public static final int view_gig_fragment=0x7f040040;
         public static final int wrap_content=0x7f040000;
     }
@@ -1059,7 +1062,9 @@ containing a value of this type.
         public static final int sherlock_spinner_dropdown_item=0x7f030027;
         public static final int sherlock_spinner_item=0x7f030028;
         public static final int view_gig=0x7f030029;
-        public static final int view_gig_splash_screen=0x7f03002a;
+        public static final int view_gig_activity_main=0x7f03002a;
+        public static final int view_gig_activity_main_backup=0x7f03002b;
+        public static final int view_gig_splash_screen=0x7f03002c;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
