@@ -45,12 +45,12 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	//Tablisteners for TABLET layout
 	//Tablistener1 has ListFragment + Fragment generics
 	//Tablistener2 has Fragment + Fragment generics
-	TabListenerTablet2<NewsFragmentOne, NewsFragmentTwo> newsTabListenerTablet;
-	TabListenerTablet2<RehearsalsFragmentOne, RehearsalsFragmentTwo> rehearsalsTabListenerTablet;
+	TabListenerTablet2<NewsFragmentTwo, NewsFragmentThree> newsTabListenerTablet;
+	TabListenerTablet2<RehearsalsFragmentTwo, RehearsalsFragmentThree> rehearsalsTabListenerTablet;
 	TabListenerTablet1<GigListFragment, ViewGigFragment> gigGuideTabListenerTablet;
-	TabListenerTablet2<ManagementFragmentOne, ManagementFragmentTwo> managementTabListenerTablet;
-	TabListenerTablet2<ServicesFragmentOne, ServicesFragmentTwo> servicesTabListenerTablet;
-	TabListenerTablet2<ContactFragmentOne, ContactFragmentTwo> contactTabListenerTablet;
+	TabListenerTablet2<ManagementFragmentTwo, ManagementFragmentThree> managementTabListenerTablet;
+	TabListenerTablet2<ServicesFragmentTwo, ServicesFragmentThree> servicesTabListenerTablet;
+	TabListenerTablet2<ContactFragmentTwo, ContactFragmentThree> contactTabListenerTablet;
 	
 	
     /** Called when the activity is first created. */
@@ -140,9 +140,9 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 			
 		      //TAB 1: Create and add the NEWS tab
 		      Tab newsTab = actionBar.newTab();
-		      newsTabListenerTablet = new TabListenerTablet2< NewsFragmentOne, NewsFragmentTwo>
+		      newsTabListenerTablet = new TabListenerTablet2< NewsFragmentTwo, NewsFragmentThree>
 		         (this, R.id.TabletFragmentContainer1, R.id.TabletFragmentContainer2, 
-		        		 NewsFragmentOne.class, NewsFragmentTwo.class);
+		        		 NewsFragmentTwo.class, NewsFragmentThree.class);
 		      newsTab.setText("News")
 		      		.setContentDescription("News updates")
 		      		.setTabListener(newsTabListenerTablet);
@@ -151,9 +151,9 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 		      
 		      //TAB 2: Create and add the REHEARSALS tab
 		      Tab rehearsalsTab = actionBar.newTab();
-		      rehearsalsTabListenerTablet = new TabListenerTablet2<RehearsalsFragmentOne, RehearsalsFragmentTwo>
+		      rehearsalsTabListenerTablet = new TabListenerTablet2<RehearsalsFragmentTwo, RehearsalsFragmentThree>
 		         (this,  R.id.TabletFragmentContainer1, R.id.TabletFragmentContainer2,
-		        		 RehearsalsFragmentOne.class, RehearsalsFragmentTwo.class);
+		        		 RehearsalsFragmentTwo.class, RehearsalsFragmentThree.class);
 		      rehearsalsTab.setText("Rehearsals")
 		      		.setContentDescription("Rehearsals information.")
 		      		.setTabListener(rehearsalsTabListenerTablet);
@@ -173,9 +173,9 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 		      
 		    //TAB 4: Create and add the MANAGEMENT tab
 		      Tab managementTab = actionBar.newTab();
-		      managementTabListenerTablet = new TabListenerTablet2<ManagementFragmentOne, ManagementFragmentTwo>
+		      managementTabListenerTablet = new TabListenerTablet2<ManagementFragmentTwo, ManagementFragmentThree>
 		         (this,  R.id.TabletFragmentContainer1, R.id.TabletFragmentContainer2,
-		        		 ManagementFragmentOne.class, ManagementFragmentTwo.class);
+		        		 ManagementFragmentTwo.class, ManagementFragmentThree.class);
 		      managementTab.setText("Management")
 		      		.setContentDescription("Management updates")
 		      		.setTabListener(managementTabListenerTablet);
@@ -183,9 +183,9 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 		      
 		      //TAB 5: Create and add the SERVICES tab"";
 		      Tab servicesTab = actionBar.newTab();
-		      servicesTabListenerTablet = new TabListenerTablet2<ServicesFragmentOne, ServicesFragmentTwo>
+		      servicesTabListenerTablet = new TabListenerTablet2<ServicesFragmentTwo, ServicesFragmentThree>
 		         (this,  R.id.TabletFragmentContainer1, R.id.TabletFragmentContainer2,
-		        		 ServicesFragmentOne.class, ServicesFragmentTwo.class);
+		        		 ServicesFragmentTwo.class, ServicesFragmentThree.class);
 		      servicesTab.setText("Services")
 		      		.setContentDescription("Services info")
 		      		.setTabListener(servicesTabListenerTablet);
@@ -193,9 +193,9 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 		      
 		      //TAB 6: Create and add the CONTACT tab
 		      Tab contactTab = actionBar.newTab();
-		      contactTabListenerTablet = new TabListenerTablet2<ContactFragmentOne, ContactFragmentTwo>
+		      contactTabListenerTablet = new TabListenerTablet2<ContactFragmentTwo, ContactFragmentThree>
 		         (this,  R.id.TabletFragmentContainer1, R.id.TabletFragmentContainer2,
-		        		 ContactFragmentOne.class, ContactFragmentTwo.class);
+		        		 ContactFragmentTwo.class, ContactFragmentThree.class);
 		      contactTab.setText("Contact Us")
 		      		.setContentDescription("Our Contact infomation")
 		      		.setTabListener(contactTabListenerTablet);

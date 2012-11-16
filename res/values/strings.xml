@@ -12,5 +12,45 @@
     <string name="label_price">Price</string>
     <string name="label_tixUrl">Ticket Link</string>
     <string name="showGreeting">Please select a gig to view.</string>
+    
+    
+    <string name="headOffice">Head Office</string>
+    <string name="headOfficeStreetAddress">Suite 3/2 Fenwick St South</string>
+    <string name="headOfficeCityRegionState">Geelong, VIC 3220</string>
+    <string name="headOfficePhoneNumber">ph: (03) 5222 1186</string>
+    
+    
+    <string name="rehearsalsStreetAddress">313 Bellarine St</string>
+    <string name="rehearsalsCityRegionState">South Geelong 3220</string>
+    <string name="rehearsalsEmail">bookings@spinninghalf.com.au</string>
+    <string name="rehearsalsPhoneNumber">(03) 5222 1186</string>
+    <string name="rehearsals">Rehearsals</string>
+    <string name="spinningHalfRehearsals">Spinning Half Rehearsals</string>
+    <string name="rehearsalsPhrase">A place to make noise that feels like home without the neighbours complaining.</string>
+    <string name="rehearsalsBigRoom">Big Room</string>
+    <string name="rehearsalsSmallRoom">Small Room</string>
+    <string name="rehearsalsBigRoomBlurb1">Premier large room </string>
+    <string name="rehearsalsSmallRoomBlurb1">Original smaller studio room</string>
+    <string name="rehearsalsBigRoomBlurb2">Vocal and Drum PA</string>
+    <string name="rehearsalsSmallRoomBlurb2">Flown vocal PA</string>
+    <string name="rehearsalsBigRoomBlurb3">Kitchen and Couches</string>
+    <string name="rehearsalsSmallRoomBlurb3">Fridge and Microwave</string>
+    <string name="rehearsalsBigRoomBlurb4">4 hour session</string>
+    <string name="rehearsalsSmallRoomBlurb4">4 hour session</string>
+    <string name="rehearsalsBigRoomBlurb5">$50 per session</string>
+    <string name="rehearsalsSmallRoomBlurb5">$40 per session</string>
+    <string name="rehearsalsAdditionalInfo">Additional Info</string>
+    <string name="rehearsalsAdditionalInfo2">There are no curfews. Rehearse through the night if need be.</string>
+    <string name="rehearsalsAdditionalInfo1">5 Piece Drum Kit and Bass Amp Available, $10 each.</string>
+    <string name="rehearsalsAdditionalInfo3">Secure location with lots of Parking Spaces.</string>
+    <string name="rehearsalsLocation">Location</string>
+    <string name="rehearsalsBookings">Bookings</string>
+    <string name="andreMobile">mob: 0421 866 977</string>
+    <string-array name="rehearsalsphotolabels">
+        <item >Big Room. Viewed from kitchen.</item>
+        <item >Big Room. Entrance view.</item>
+        <item >Big Room. Mixer and couch.</item>
+        <item >Big Room. Vocal foldbacks.</item>
+    </string-array>
 
 </resources>

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- OLD LAYOUT
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
@@ -6,7 +8,383 @@
     <TextView android:id="@+id/RehearsalsOneFragmentTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Rehearsals ONE fragment text goes here"
+        android:text="MOBILE MODE: Rehearsals ONE fragment text goes here"
      />
     
 </FrameLayout>
+
+-->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+       android:id="@+id/scrollViewAboutUs"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent" >
+
+<TableLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:stretchColumns="1,2" >
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsHeadingTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:gravity="center"
+            android:text="@string/rehearsals"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/headings"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsBlurbTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_span="2"
+            android:gravity="center"
+            android:padding="5sp"
+            android:text="@string/rehearsalsPhrase"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="15sp" >
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsBigRoomTextView"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/rehearsalsBigRoom"
+            android:textColor="@color/headings"
+            android:textStyle="bold" 
+            android:paddingLeft="10sp"/>
+
+        <TextView
+            android:id="@+id/rehearsalsSmallRoomTextView"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/rehearsalsSmallRoom"
+            android:textColor="@color/headings"
+            android:textStyle="bold" 
+            android:paddingLeft="10sp"/>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsBigRoomBlurb1TextView"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsBigRoomBlurb1" />
+
+        <TextView
+            android:id="@+id/rehearsalsSmallRoomBlurb1TextView"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsSmallRoomBlurb1" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsBigRoomBlurb2TextView"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsBigRoomBlurb2" />
+
+        <TextView
+            android:id="@+id/rehearsalsSmallRoomBlurb2TextView"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsSmallRoomBlurb2" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsBigRoomBlurb3TextView"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsBigRoomBlurb3" />
+
+        <TextView
+            android:id="@+id/rehearsalsSmallRoomBlurb3TextView"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsSmallRoomBlurb3" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsBigRoomBlurb4TextView"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsBigRoomBlurb4" />
+
+        <TextView
+            android:id="@+id/rehearsalsSmallRoomBlurb4TextView"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsSmallRoomBlurb4" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsBigRoomBlurb5TextView"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsBigRoomBlurb5" />
+
+        <TextView
+            android:id="@+id/rehearsalsSmallRoomBlurb5TextView"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsSmallRoomBlurb5" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="15sp" >
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/rehearsalsLocation"
+            android:textColor="@color/headings"
+            android:textStyle="bold" 
+            android:paddingLeft="10sp"/>
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left"
+            android:text="@string/rehearsalsBookings"
+            android:textColor="@color/headings"
+            android:textStyle="bold" 
+            android:paddingLeft="10sp"/>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsStreetAddress" 
+            android:paddingLeft="10sp"/>
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/headOfficePhoneNumber" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="0sp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="@string/rehearsalsCityRegionState" 
+            android:paddingLeft="10sp"/>
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/andreMobile" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/rehearsalsEmail" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minHeight="15sp" >
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsAdditionalInfoTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_span="2"
+            android:gravity="left"
+            android:text="@string/rehearsalsAdditionalInfo"
+            android:textColor="@color/headings"
+            android:textStyle="bold" 
+            android:paddingLeft="10sp"/>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsAdditionalInfo1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp"
+            android:text="@string/rehearsalsAdditionalInfo1" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsAdditionalInfo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp"
+            android:text="@string/rehearsalsAdditionalInfo2" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/rehearsalsTableRow12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/rehearsalsAdditionalInfo3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="2"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp"
+            android:text="@string/rehearsalsAdditionalInfo3" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1" >
+
+        <GridView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/rehearsalsGridView"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_span="2"
+            android:layout_weight="1"
+            android:columnWidth="90dp"
+            android:gravity="center"
+            android:horizontalSpacing="10dp"
+            android:numColumns="4"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="10dp" >
+        </GridView>
+    </TableRow>
+
+</TableLayout>
+
+</ScrollView>

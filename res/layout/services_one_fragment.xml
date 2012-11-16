@@ -6,7 +6,7 @@
     <TextView android:id="@+id/ServicesOneFragmentTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Services ONE fragment text goes here"
+        android:text="MOBILE MODE: Services ONE fragment text goes here"
      />
     
 </FrameLayout>
