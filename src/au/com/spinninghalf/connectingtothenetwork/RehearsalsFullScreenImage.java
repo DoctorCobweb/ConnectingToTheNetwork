@@ -47,6 +47,8 @@ public class RehearsalsFullScreenImage extends Activity {
         //make the toast message and display the photo blurn inside it.
         Toast.makeText(RehearsalsFullScreenImage.this, photoLabels[position], Toast.LENGTH_SHORT).show();
         
+        
+        /*
         //trying out status notifications...
         //get a reference to the NotificationManager
         String ns = Context.NOTIFICATION_SERVICE;
@@ -71,6 +73,7 @@ public class RehearsalsFullScreenImage extends Activity {
         //pass the Notification to the NotificationManger. Voila.
         final int HELLO_ID = 1; //just a int for identification of the notification.
         mNotificationManager.notify(HELLO_ID, notification);
+        */
     }
     
 }

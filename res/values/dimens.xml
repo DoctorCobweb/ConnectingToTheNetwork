@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="buttonwidthmaxmobile">128dip</dimen>
+    <dimen name="buttonheightmaxmobile">128dip</dimen>
+</resources>
