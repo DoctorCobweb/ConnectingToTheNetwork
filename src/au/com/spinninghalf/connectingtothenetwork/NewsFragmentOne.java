@@ -1,7 +1,7 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
 //TODO
-//reattach listeners to the buttons after screen rotation
+//
 
 
 
@@ -24,6 +24,8 @@ public class NewsFragmentOne extends SherlockFragment {
 	public final static String SPINNING_HALF_FACEBOOK_URI = "http://www.facebook.com/pages/Spinning-Half/227917577236619";
 	public final static String SPINNING_HALF_TWITTER_URI = "https://twitter.com/spinninghalf";
 	
+	
+	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View view = inflater.inflate(R.layout.news_one_fragment, container, false);
@@ -38,10 +40,22 @@ public class NewsFragmentOne extends SherlockFragment {
 		Button facebookButton = (Button) getActivity().findViewById(R.id.newsFragmentOneFacebookButton);
 		facebookButton.setOnClickListener(newsFacebookButtonListener);
 		
-		Button twitterButton = (Button) getActivity().findViewById(R.id.newsFragmentOneTwitterButton);
-		twitterButton.setOnClickListener(newsTwitterButtonListener);
+		//Button twitterButton = (Button) getActivity().findViewById(R.id.newsFragmentOneTwitterButton);
+		//twitterButton.setOnClickListener(newsTwitterButtonListener);
 	}
 	
+	
+	@Override
+	public void onResume() {
+		super.onResume();
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		
+		
+	}
 	
 	
 //-------------------  BUTTON LISTENERS------------------------------------------------------------------------------------------

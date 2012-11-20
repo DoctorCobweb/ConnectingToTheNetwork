@@ -19,8 +19,15 @@
     <string name="headOfficeCityRegionState">Geelong, VIC 3220</string>
     <string name="headOfficePhoneNumber">ph: (03) 5222 1186</string>
     
-    <string name="newsBlurb1">Keep up to date with us through our Facebook or Twitter page.</string>
+    <string name="newsBlurb1">Keep up to date with us through our Facebook page. Everything from announcements to photos of some of our recent shows.</string>
     
+    
+    <string name="managementCastIronPinata">Cast Iron Pinata</string>
+    <string name="managementTheSoulenikoes">The Soulenikoes</string>
+    <string name="managementTomMilek">Tom Milek</string>
+    <string name="managementTheUniversal">The Universal</string>
+    <string name="managementCaptainGroove">Captain Groove</string>
+    <string name="managementApply">Apply</string>
     
     <string name="rehearsalsStreetAddress">313 Bellarine St</string>
     <string name="rehearsalsCityRegionState">South Geelong 3220</string>

@@ -273,10 +273,19 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    if (!tabletLayout) {
 	    	//Detach any fragments which are attached in MOBILE layout. 
 	    	if (newsTabListenerMobile.fragment != null) {
+	    		Log.i(TAG, "in onSaveInstanceState. newsTabListenerMobile.fragment  != null");
 	    		ft.detach(newsTabListenerMobile.fragment);
+	    		if (newsTabListenerMobile.fragment.isDetached()) {
+	    			Log.i(TAG, "in onSaveInstanceState. newsTabListenerMobile.fragment  != null and has been successfully detached.");
+	    		}
+	    		
 	    	}
 	    	if (rehearsalsTabListenerMobile.fragment != null) {
+	    		Log.i(TAG, "in onSaveInstanceState. rehearsalsTabListenerMobile.fragment  != null");
 	    		ft.detach(rehearsalsTabListenerMobile.fragment);
+	    		if (rehearsalsTabListenerMobile.fragment.isDetached()) {
+	    			Log.i(TAG, "in onSaveInstanceState. rehearsalsTabListenerMobile.fragment  != null and has been successfully detached.");
+	    		}
 	    	}
 	    	if (gigGuideTabListenerMobile.fragment != null) {
 	    		ft.detach(gigGuideTabListenerMobile.fragment);
@@ -318,6 +327,9 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 				ft.detach(contactTabListenerTablet.fragment2);
 			}
 		 }
+	    
+	    //remember to commit the fragment transactions!
+	    ft.commit();
 	    
 	    //Save the current Action Bar tab selection
     	int actionBarIndex = getSupportActionBar().getSelectedTab().getPosition();
@@ -380,29 +392,29 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    } else {
 	    	//we are in tablet layout. assign the tabs to their tab listeners
 	    	newsTabListenerTablet.fragment1 = (SherlockFragment)
-	    			getSupportFragmentManager().findFragmentByTag(NewsFragmentOne.class.getName());
-	    	newsTabListenerTablet.fragment2 = (SherlockFragment)
 	    			getSupportFragmentManager().findFragmentByTag(NewsFragmentTwo.class.getName());
+	    	newsTabListenerTablet.fragment2 = (SherlockFragment)
+	    			getSupportFragmentManager().findFragmentByTag(NewsFragmentThree.class.getName());
 	    	rehearsalsTabListenerTablet.fragment1 = (SherlockFragment)
-	    			getSupportFragmentManager().findFragmentByTag(RehearsalsFragmentOne.class.getName());
-	    	rehearsalsTabListenerTablet.fragment2 = (SherlockFragment)
 	    			getSupportFragmentManager().findFragmentByTag(RehearsalsFragmentTwo.class.getName());
+	    	rehearsalsTabListenerTablet.fragment2 = (SherlockFragment)
+	    			getSupportFragmentManager().findFragmentByTag(RehearsalsFragmentThree.class.getName());
 	    	servicesTabListenerTablet.fragment1 = (SherlockFragment)
-	    			getSupportFragmentManager().findFragmentByTag(ServicesFragmentOne.class.getName());
-	    	servicesTabListenerTablet.fragment2 = (SherlockFragment)
 	    			getSupportFragmentManager().findFragmentByTag(ServicesFragmentTwo.class.getName());
+	    	servicesTabListenerTablet.fragment2 = (SherlockFragment)
+	    			getSupportFragmentManager().findFragmentByTag(ServicesFragmentThree.class.getName());
 	    	gigGuideTabListenerTablet.fragment1 = (SherlockListFragment)
 	    			getSupportFragmentManager().findFragmentByTag(GigListFragment.class.getName());
 	    	gigGuideTabListenerTablet.fragment2 = (SherlockFragment)
 	    			getSupportFragmentManager().findFragmentByTag(ViewGigFragment.class.getName());
 	    	contactTabListenerTablet.fragment1 = (SherlockFragment)
-	    			getSupportFragmentManager().findFragmentByTag(ContactFragmentOne.class.getName());
-	    	contactTabListenerTablet.fragment2 = (SherlockFragment)
 	    			getSupportFragmentManager().findFragmentByTag(ContactFragmentTwo.class.getName());
+	    	contactTabListenerTablet.fragment2 = (SherlockFragment)
+	    			getSupportFragmentManager().findFragmentByTag(ContactFragmentThree.class.getName());
 	    	managementTabListenerTablet.fragment1 = (SherlockFragment)
-	    			getSupportFragmentManager().findFragmentByTag(ManagementFragmentOne.class.getName());
-	    	managementTabListenerTablet.fragment2 = (SherlockFragment)
 	    			getSupportFragmentManager().findFragmentByTag(ManagementFragmentTwo.class.getName());
+	    	managementTabListenerTablet.fragment2 = (SherlockFragment)
+	    			getSupportFragmentManager().findFragmentByTag(ManagementFragmentThree.class.getName());
 	    	
 	    }
 	    
@@ -589,6 +601,8 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
 	    	    //attach(fragment);
 	    	    //ft.addToBackStack(null);
 	    	     */
+	    	} else if(fragment != null) {
+	    		ft.attach(fragment);
 	    	}
 	    	/*
 	    	if (fragment != null && vg != null){
