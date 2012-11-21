@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android" >
         <item android:state_pressed="true"
-        android:drawable="@drawable/black" /> <!-- pressed -->
+        android:drawable="@drawable/orange" /> <!-- pressed -->
         
     <item android:state_focused="true"
-        android:drawable="@drawable/facebook" /> <!--  focused -->
+        android:drawable="@drawable/the_universal_logo" /> <!--  focused -->
         
-    <item android:drawable="@drawable/facebook" /> <!-- default -->
+    <item android:drawable="@drawable/the_universal_logo" /> <!-- default -->
 
 </selector>

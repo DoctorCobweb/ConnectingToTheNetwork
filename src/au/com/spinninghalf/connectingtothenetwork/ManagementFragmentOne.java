@@ -58,8 +58,8 @@ public class ManagementFragmentOne extends SherlockFragment {
 		
 		@Override
 		public void onClick(View v) {
-			Intent castIronPinataFacebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ManagementFragmentOne.CAST_IRON_PINATA_FACEBOOK_URI));
-			startActivity(castIronPinataFacebookIntent);
+			Intent castIronPinataIntent = new Intent(getActivity(), ManagementCastIronPinataActivity.class);
+			startActivity(castIronPinataIntent);
 		}
 	};
 	
@@ -67,8 +67,8 @@ public class ManagementFragmentOne extends SherlockFragment {
 		
 		@Override
 		public void onClick(View v) {
-			Intent theSoulenikoesFacebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ManagementFragmentOne.THE_SOULENIKOES_FACEBOOK_URI));
-			startActivity(theSoulenikoesFacebookIntent);
+			Intent theSoulenikoesIntent = new Intent(getActivity(), ManagementTheSoulenikoesActivity.class);
+			startActivity(theSoulenikoesIntent);
 		}
 	};
 	
@@ -76,8 +76,8 @@ public class ManagementFragmentOne extends SherlockFragment {
 		
 		@Override
 		public void onClick(View v) {
-			Intent tomMilekFacebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ManagementFragmentOne.TOM_MILEK_FACEBOOK_URI));
-			startActivity(tomMilekFacebookIntent);
+			Intent tomMilekIntent = new Intent(getActivity(), ManagementTomMilekActivity.class);
+			startActivity(tomMilekIntent);
 		}
 	};
 
@@ -85,8 +85,8 @@ public class ManagementFragmentOne extends SherlockFragment {
 		
 		@Override
 		public void onClick(View v) {
-			Intent theUniversalFacebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ManagementFragmentOne.THE_UNIVERSAL_FACEBOOK_URI));
-			startActivity(theUniversalFacebookIntent);
+			Intent theUniversalIntent = new Intent(getActivity(), ManagementTheUniversalActivity.class);
+			startActivity(theUniversalIntent);
 		}
 	};
 	
@@ -94,8 +94,8 @@ public class ManagementFragmentOne extends SherlockFragment {
 		
 		@Override
 		public void onClick(View v) {
-			Intent captainGrooveFacebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ManagementFragmentOne.CAPTAIN_GROOVE_FACEBOOK_URI));
-			startActivity(captainGrooveFacebookIntent);
+			Intent captainGrooveIntent = new Intent(getActivity(), ManagementCaptainGrooveActivity.class);
+			startActivity(captainGrooveIntent);
 		}
 	};
 	
@@ -103,8 +103,8 @@ public class ManagementFragmentOne extends SherlockFragment {
 		
 		@Override
 		public void onClick(View v) {
-			Intent applyFacebookIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ManagementFragmentOne.APPLY_FACEBOOK_URI));
-			startActivity(applyFacebookIntent);
+			Intent applyIntent = new Intent(getActivity(), ManagementApplyActivity.class);
+			startActivity(applyIntent);
 		}
 	};
 }

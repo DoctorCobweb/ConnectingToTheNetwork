@@ -30,6 +30,22 @@
         <activity android:name=".DownloadAndParseGigs" />
         <activity android:name=".MainFragmentGigListActivity" />
         <activity android:name=".RehearsalsFullScreenImage" />
+        <activity android:name=".ManagementCastIronPinataActivity" />
+        <activity android:name=".ManagementTheSoulenikoesActivity" />
+        <activity android:name=".ManagementTomMilekActivity" />
+        <activity android:name=".ManagementTheUniversalActivity" />
+        <activity android:name=".ManagementCaptainGrooveActivity" />
+        <activity android:name=".ManagementApplyActivity" />
+        <activity android:name=".ManagementCastIronPinataInformationActivity" />
+        <activity android:name=".ManagementTheSoulenikoesInformationActivity" />
+        <activity android:name=".ManagementTomMilekInformationActivity" />
+        <activity android:name=".ManagementTheUniversalInformationActivity" />
+        <activity android:name=".ManagementCaptainGrooveInformationActivity" />
+        
+        
+        
+        
+        
         <service android:name=".GigUpdaterService" />
     </application>
 
