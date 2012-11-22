@@ -41,6 +41,17 @@ Nunc commodo erat izzle . Nullizzle shiznit. Its fo rizzle viverra laorizzle dui
     <string name="managementCaptainGroove">Captain Groove</string>
     <string name="managementApply">Apply</string>
     
+    
+    <string name="servicesFunctionPackages">Function Packages</string>
+    <string name="servicesPublicity">Publicity</string>
+    <string name="servicesDistribution">Distribution</string>
+    <string name="servicesTraining">Training</string>
+    <string name="servicesPhotography">Photography</string>
+    <string name="servicesDesign">Design</string>
+    
+    
+    
+    
     <string name="rehearsalsStreetAddress">313 Bellarine St</string>
     <string name="rehearsalsCityRegionState">South Geelong 3220</string>
     <string name="rehearsalsEmail">bookings@spinninghalf.com.au</string>

@@ -1,12 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!-- 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <TextView android:id="@+id/ServicesOneFragmentTextView"
+    <TextView android:id="@+id/ManagementOneFragmentTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="MOBILE MODE: Services ONE fragment text goes here"
+        android:text="MOBILE MODE: Management ONE fragment text goes here"
      />
     
 </FrameLayout>
+
+-->
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <TableRow
+        android:id="@+id/maintablerow0"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/servicesFunctionPackagesButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_function_packages_button_animation"
+            android:text="@string/servicesFunctionPackages"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+        <Button
+            android:id="@+id/servicesPublicityButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_publicity_button_animation"
+            android:text="@string/servicesPublicity"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/maintablerow1"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/servicesDistributionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_distribution_button_animation"
+            android:gravity="center"
+            android:text="@string/servicesDistribution"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+        <Button
+            android:id="@+id/servicesTrainingButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_training_button_animation"
+            android:text="@string/servicesTraining"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/maintablerow2"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/servicesPhotographyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_photography_button_animation"
+            android:text="@string/servicesPhotography"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+        <Button
+            android:id="@+id/servicesDesignButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_design_button_animation"
+            android:text="@string/servicesDesign"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+    </TableRow>
+
+</TableLayout>

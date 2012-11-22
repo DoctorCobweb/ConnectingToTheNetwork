@@ -41,6 +41,12 @@
         <activity android:name=".ManagementTomMilekInformationActivity" />
         <activity android:name=".ManagementTheUniversalInformationActivity" />
         <activity android:name=".ManagementCaptainGrooveInformationActivity" />
+        <activity android:name=".ServicesFunctionPackagesActivity" />
+        <activity android:name=".ServicesPublicityActivity" />
+        <activity android:name=".ServicesDistributionActivity" />
+        <activity android:name=".ServicesTrainingActivity" />
+        <activity android:name=".ServicesPhotographyActivity" />
+        <activity android:name=".ServicesDesignActivity" />
         
         
         

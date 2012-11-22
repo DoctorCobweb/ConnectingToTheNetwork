@@ -47,7 +47,7 @@ public class ManagementFragmentOne extends SherlockFragment {
 		theSoulenikoesButton.setOnClickListener(theSoulenikoesButtonListener);
 		tomMilekButton.setOnClickListener(tomMilekButtonListener);
 		theUniversalButton.setOnClickListener(theUniversalButtonListener);
-		captainGrooveButton.setOnClickListener(captainGrooveListener);
+		captainGrooveButton.setOnClickListener(captainGrooveButtonListener);
 		applyButton.setOnClickListener(applyButtonListener);
 		
 		
@@ -90,7 +90,7 @@ public class ManagementFragmentOne extends SherlockFragment {
 		}
 	};
 	
-	public OnClickListener captainGrooveListener = new OnClickListener() {
+	public OnClickListener captainGrooveButtonListener = new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
