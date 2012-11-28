@@ -1,11 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="fill_parent" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/servicesFunctionPackageHeadingTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/servicesFunctionPackages"
+            android:textSize="@dimen/large_heading" />
+        
+        <TextView
+            android:id="@+id/servicesFunctionPackageBlurb1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/servicesFunctionPackagesBlurb1" />
+
+        <GridView
+            android:id="@+id/servicesFunctionPackageGridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3" >
+        </GridView>
+        
+        <TextView
+            android:id="@+id/servicesFunctionPakageBlurb2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/servicesFunctionPackagesBlurb2" />
+
     </LinearLayout>
     
 

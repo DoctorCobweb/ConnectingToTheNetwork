@@ -39,7 +39,7 @@ public class RehearsalsFullScreenImage extends Activity {
         
         //get the string array resource containing the photo descriptions
         //then convert it to an actual string array.
-        final String[] photoLabels = getResources().getStringArray(R.array.rehearsalsphotolabels);
+        final String[] photoLabels = getResources().getStringArray(R.array.rehearsalsPhotoLabels);
         
         //set the ImageView as the image corresponding to the thumbnail selected.
         mainImageView.setImageResource(thumbnailId);

@@ -5,7 +5,51 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent"
+        android:id="@+id/servicesPhotographyMainLinearLayout"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/servicesPhotographyHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/large_heading"
+            android:text="@string/servicesPhotography" />
+        
+         <TextView
+            android:id="@+id/servicesPhotographyTextView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/servicesPhotographyBlurb1" />
+         
+          <TextView
+            android:id="@+id/servicesPhotographyTextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/servicesPhotographyBlurb1" />
+          
+          
+          <LinearLayout 
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:orientation="horizontal"
+              android:id="@+id/servicesPhotographyButtonLinearLayout"
+              >
+              
+              <Button 
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Brenton Ford"
+                  android:id="@+id/servicesPhotographyBrentonFordButton" />
+                  
+              
+              <Button 
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="Leikography"
+                  android:id="@+id/servicesPhotographyLeikographyButton" />
+              
+          </LinearLayout>
     </LinearLayout>
     
 
