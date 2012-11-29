@@ -1,12 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollViewContact"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
-    <TextView android:id="@+id/ContactOneFragmentTextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MOBILE MODE: Contact ONE fragment text goes here"
-     />
+    <TextView
+        android:id="@+id/contactHeadOfficeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10px"
+        android:text="@string/contactHeadOffice"
+        android:textSize="@dimen/large_heading"
+        android:textColor="@color/headings"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/contactHeadOfficeStreetAddressTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactHeadOfficeStreetAddress"
+        android:textSize="@dimen/medium_text" 
+        android:layout_marginLeft="10px"/>
+
+    <TextView
+        android:id="@+id/contactHeadOfficeCityRegionStateTextView"
+        android:layout_width="wrap_content"
+        android:textSize="@dimen/medium_text"
+        android:layout_height="wrap_content"
+        android:text="@string/contactHeadOfficeCityRegionState" 
+        android:layout_marginLeft="10px"/>
+    <TextView
+        android:id="@+id/contactHeadOfficePhoneNumberTextView"
+        android:textSize="@dimen/medium_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactHeadOfficePhoneNumber" 
+        android:layout_marginLeft="10px"/>
     
-</FrameLayout>
+    <TextView
+        android:id="@+id/contactHeadOfficeEmailTextView"
+        android:textSize="@dimen/medium_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactHeadOfficeEmail" 
+        android:layout_marginLeft="10px"/>
+
+    <TextView
+        android:id="@+id/BlankTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/contactRehearsalsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactRehearsals"
+        android:textSize="@dimen/large_heading"
+        android:textColor="@color/headings" 
+        android:layout_marginLeft="10px" 
+        android:textStyle="bold"/>
+    
+    <TextView
+        android:id="@+id/contactRehearsalsStreetAddressTextView"
+        android:textSize="@dimen/medium_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactRehearsalsStreetAddress" 
+        android:layout_marginLeft="10px"/>
+    
+    <TextView
+        android:id="@+id/contactRehearsalsCityRegionStateTextView"
+        android:textSize="@dimen/medium_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactRehearsalsCityRegionState" 
+        android:layout_marginLeft="10px"/>
+
+
+    <TextView
+        android:id="@+id/contactRehearsalsPhoneNumberTextView"
+        android:textSize="@dimen/medium_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactRehearsalsPhoneNumber" 
+        android:layout_marginLeft="10px"/>
+    
+    <TextView
+        android:id="@+id/contactRehearsalsEmailTextView"
+        android:textSize="@dimen/medium_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactRehearsalsEmail" 
+        android:layout_marginLeft="10px"/>
+
+    <TextView
+        android:id="@+id/BlankTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="" 
+        android:minHeight="50px"/>
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+        android:paddingLeft="10px" 
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/contactFacebookButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:layout_weight="1"
+            android:background="@drawable/facebook_selector"
+            android:gravity="center_horizontal"
+            android:minWidth="125px"
+            android:padding="50px"
+            android:text="" />
+        
+        <Button
+            android:id="@+id/contactTwitterButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/twitter_selector"
+            android:gravity="center_horizontal"
+            android:minWidth="125px"
+            android:padding="50px"
+            android:text="" />
+
+        <Button
+            android:id="@+id/contactYoutubeButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="30px"
+            android:layout_weight="1"
+            android:background="@drawable/youtube_selector"
+            android:gravity="center_horizontal"
+            android:minWidth="125px"
+            android:padding="50px"
+            android:text="" />
+        
+        <Button
+            android:id="@+id/contactSpinningHalfButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20px"
+            android:layout_marginRight="20px"
+            android:background="@drawable/spinning_half_selector"
+            android:minWidth="125px"
+            android:padding="50px"
+            android:text="" />
+      
+
+    </TableRow>
+</TableLayout>
+
+</ScrollView>

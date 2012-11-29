@@ -4,8 +4,8 @@
         android:drawable="@drawable/orange" /> <!-- pressed -->
         
     <item android:state_focused="true"
-        android:drawable="@drawable/spinning_half_logo" /> <!--  focused -->
+        android:drawable="@drawable/spinning_half_stadium" /> <!--  focused -->
         
-    <item android:drawable="@drawable/spinning_half_logo" /> <!-- default -->
+    <item android:drawable="@drawable/spinning_half_stadium" /> <!-- default -->
 
 </selector>

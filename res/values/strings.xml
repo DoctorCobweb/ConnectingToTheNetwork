@@ -63,6 +63,16 @@ Nunc commodo erat izzle . Nullizzle shiznit. Its fo rizzle viverra laorizzle dui
     <string name="servicesDesign">Design</string>
     <string name="servicesDesignBlurb1">ONE yaddda yadddda ydddaaadgdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</string>
     <string name="servicesDesignBlurb2">TWO yaddda yadddda ydddaaadgdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</string>
+    <string name="contactHeadOffice">Head Office</string>
+    <string name="contactHeadOfficeStreetAddress">Suite 3/ 2 Fenwick st South</string>
+    <string name="contactHeadOfficeCityRegionState">Geelong, VIC, 3220</string>
+    <string name="contactHeadOfficePhoneNumber">(03) 5222 1186</string>
+    <string name="contactHeadOfficeEmail">info@spinninghalf.com.au</string>
+    <string name="contactRehearsals">Rehearsals</string>
+    <string name="contactRehearsalsStreetAddress">313 Bellarine St</string>
+    <string name="contactRehearsalsCityRegionState">South Geelong, VIC, 3220</string>
+    <string name="contactRehearsalsPhoneNumber">(03) 5222 1186 or try 0421 866 977</string>
+    <string name="contactRehearsalsEmail">bookings@spinninghalf.com.au</string>
     
     
     
