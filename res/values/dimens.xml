@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="buttonwidthmaxmobile">128dip</dimen>
-    <dimen name="buttonheightmaxmobile">128dip</dimen>
+    <dimen name="buttonwidthmaxmobile">64dip</dimen>
+    <dimen name="buttonheightmaxmobile">64dip</dimen>
     <dimen name="buttonpadding">15dip</dimen>
     <dimen name="textpadding">10dip</dimen>
     <dimen name="large_heading">20dip</dimen>

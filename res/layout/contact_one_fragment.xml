@@ -108,58 +108,47 @@
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" 
-        android:paddingLeft="10px" 
-        android:gravity="center_horizontal">
+        android:layout_height="match_parent" >
 
         <Button
             android:id="@+id/contactFacebookButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
-            android:layout_marginRight="20px"
             android:layout_weight="1"
             android:background="@drawable/facebook_selector"
-            android:gravity="center_horizontal"
-            android:minWidth="125px"
-            android:padding="50px"
+            android:maxWidth="@dimen/buttonwidthmaxmobile"
+            android:minHeight="0dip"
             android:text="" />
         
         <Button
             android:id="@+id/contactTwitterButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="@drawable/twitter_selector"
-            android:gravity="center_horizontal"
-            android:minWidth="125px"
-            android:padding="50px"
+            android:maxWidth="@dimen/buttonwidthmaxmobile"
+            android:minHeight="0dip"
             android:text="" />
 
         <Button
             android:id="@+id/contactYoutubeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
-            android:layout_marginRight="30px"
-            android:layout_weight="1"
+            android:layout_weight="2"
             android:background="@drawable/youtube_selector"
-            android:gravity="center_horizontal"
-            android:minWidth="125px"
-            android:padding="50px"
+            android:maxWidth="@dimen/buttonwidthmaxmobile"
+            android:minHeight="0dip"
             android:text="" />
         
         <Button
             android:id="@+id/contactSpinningHalfButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20px"
-            android:layout_marginRight="20px"
+            android:layout_weight="1"
             android:background="@drawable/spinning_half_selector"
-            android:minWidth="125px"
-            android:padding="50px"
+            android:maxWidth="@dimen/buttonwidthmaxmobile"
+            android:minHeight="0dip"
             android:text="" />
-      
 
     </TableRow>
 </TableLayout>

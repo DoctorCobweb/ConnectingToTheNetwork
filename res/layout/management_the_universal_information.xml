@@ -9,22 +9,77 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/managementTheSoulenikoesInformationHeadingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="The Universal biopgraphy"
-            android:textColor="@color/orange"
+            android:text="The Universal Information"
+            android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
             android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/managementTheSoulenikoesInformationBiographyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loremIpsum" />
+            android:layout_gravity="center"
+            android:text="Biography"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
         
+         <TextView
+            android:id="@+id/managementTheUniversalInformationBiographyBlurb1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTheUniversalInformationBiographyBlurb1" />
+         
+          <TextView
+            android:id="@+id/managementTheUniversalInformationReleasesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Releases"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+          
+          <TextView
+            android:id="@+id/managementTheUniversalInformationDescriptionBlurb2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTheUniversalInformationReleasesBlurb2" />
+          
+           <TextView
+            android:id="@+id/managementTheUniversalInformationBandDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Description"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementTheUniversalInformationDescriptionBlurb3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTheUniversalInformationDescriptionBlurb3" />
+           
+           <TextView
+            android:id="@+id/managementTheUniversalInformationBandInterestsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Band Interests"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementTheUniversalInformationBandInterestsBlurb4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTheUniversalInformationBandInterestsBlurb4" />
     </LinearLayout>
-    
-
 </ScrollView>

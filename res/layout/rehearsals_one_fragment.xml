@@ -39,7 +39,7 @@
             android:gravity="center"
             android:text="@string/rehearsals"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/orange"
+            android:textColor="@color/headings"
             android:textStyle="bold" />
     </TableRow>
 
@@ -79,7 +79,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="@string/rehearsalsBigRoom"
-            android:textColor="@color/orange"
+            android:textColor="@color/headings"
             android:textStyle="bold" 
             android:paddingLeft="10sp"/>
 
@@ -90,7 +90,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="@string/rehearsalsSmallRoom"
-            android:textColor="@color/orange"
+            android:textColor="@color/headings"
             android:textStyle="bold" 
             android:paddingLeft="10sp"/>
     </TableRow>
@@ -243,7 +243,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="@string/rehearsalsLocation"
-            android:textColor="@color/orange"
+            android:textColor="@color/headings"
             android:textStyle="bold" 
             android:paddingLeft="10sp"/>
 
@@ -254,7 +254,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="@string/rehearsalsBookings"
-            android:textColor="@color/orange"
+            android:textColor="@color/headings"
             android:textStyle="bold" 
             android:paddingLeft="10sp"/>
     </TableRow>
@@ -342,7 +342,7 @@
             android:layout_span="2"
             android:gravity="left"
             android:text="@string/rehearsalsAdditionalInfo"
-            android:textColor="@color/orange"
+            android:textColor="@color/headings"
             android:textStyle="bold" 
             android:paddingLeft="10sp"/>
     </TableRow>

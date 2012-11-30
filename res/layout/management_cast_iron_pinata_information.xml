@@ -9,20 +9,78 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/managementCastIronPinataInformationHeadingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Casst iron pinate biopgraphy"
-            android:textColor="@color/orange"
+            android:text="Cast Iron Pinata Information"
+            android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
             android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/managementCastIronPinataInformationBiographyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loremIpsum" />
+            android:layout_gravity="center"
+            android:text="Biography"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+        
+         <TextView
+            android:id="@+id/managementCastIronPinataInformationBiographyBlurb1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementCastIronPinataInformationBiographyBlurb1" />
+         
+          <TextView
+            android:id="@+id/managementCastIronPinataInformationReleasesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Releases"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+          
+          <TextView
+            android:id="@+id/managementCastIronPinataInformationDescriptionBlurb2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementCastIronPinataInformationReleasesBlurb2" />
+          
+           <TextView
+            android:id="@+id/managementCastIronPinataInformationBandDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Description"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+        	android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementCastIronPinataInformationDescriptionBlurb3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementCastIronPinataInformationDescriptionBlurb3" />
+           
+           <TextView
+            android:id="@+id/managementCastIronPinataInformationBandInterestsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Band Interests"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementCastIronPinataInformationBandInterestsBlurb4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementCastIronPinataInformationBandInterestsBlurb4" />
         
     </LinearLayout>
     

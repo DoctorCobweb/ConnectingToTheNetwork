@@ -31,7 +31,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/services_function_packages_button_animation"
-            android:text="@string/servicesFunctionPackages"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -41,7 +40,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/services_publicity_button_animation"
-            android:text="@string/servicesPublicity"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -60,7 +58,6 @@
             android:layout_weight="1"
             android:background="@drawable/services_distribution_button_animation"
             android:gravity="center"
-            android:text="@string/servicesDistribution"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -70,7 +67,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/services_training_button_animation"
-            android:text="@string/servicesTraining"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -88,7 +84,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/services_photography_button_animation"
-            android:text="@string/servicesPhotography"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -98,7 +93,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/services_design_button_animation"
-            android:text="@string/servicesDesign"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 

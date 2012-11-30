@@ -9,22 +9,77 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/managementCaptainGrooveInformationHeadingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Captain Groove biopgraphy"
-            android:textColor="@color/orange"
+            android:text="Captain Groove Information"
+            android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
             android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/managementCaptainGrooveInformationBiographyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loremIpsum" />
+            android:layout_gravity="center"
+            android:text="Biography"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
         
+         <TextView
+            android:id="@+id/managementCaptainGrooveInformationBiographyBlurb1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementCaptainGrooveInformationBiographyBlurb1" />
+         
+          <TextView
+            android:id="@+id/managementCaptainGrooveInformationReleasesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Releases"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+          
+          <TextView
+            android:id="@+id/managementCaptainGrooveInformationDescriptionBlurb2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementCaptainGrooveInformationReleasesBlurb2" />
+          
+           <TextView
+            android:id="@+id/managementCaptainGrooveInformationBandDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Description"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementCaptainGrooveInformationDescriptionBlurb3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementCaptainGrooveInformationDescriptionBlurb3" />
+           
+           <TextView
+            android:id="@+id/managementCaptainGrooveInformationBandInterestsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Band Interests"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementCaptainGrooveInformationBandInterestsBlurb4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementCaptainGrooveInformationBandInterestsBlurb4" />
     </LinearLayout>
-    
-
 </ScrollView>

@@ -1,20 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    
-    <TextView android:id="@+id/ManagementOneFragmentTextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MOBILE MODE: Management ONE fragment text goes here"
-     />
-    
-</FrameLayout>
-
--->
-
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
@@ -41,7 +25,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_the_soulenikoes_button_animation"
-            android:text="@string/managementTheSoulenikoes"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -60,7 +44,7 @@
             android:layout_weight="1"
             android:background="@drawable/management_tom_milek_button_animation"
             android:gravity="center"
-            android:text="@string/managementTomMilek"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -88,7 +72,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_captain_groove_button_animation"
-            android:text="@string/managementCaptainGroove"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -98,10 +82,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_apply_button_animation"
-            android:text="@string/managementApply"
+            android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
     </TableRow>
-
 </TableLayout>

@@ -9,22 +9,77 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/managementTomMilekInformationHeadingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Tom Milek biopgraphy"
-            android:textColor="@color/orange"
+            android:text="Tom Milek Information"
+            android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
             android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/managementTomMilekInformationBiographyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loremIpsum" />
+            android:layout_gravity="center"
+            android:text="Biography"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
         
+         <TextView
+            android:id="@+id/managementTomMilekInformationBiographyBlurb1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTomMilekInformationBiographyBlurb1" />
+         
+          <TextView
+            android:id="@+id/managementTomMilekInformationReleasesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Releases"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+          
+          <TextView
+            android:id="@+id/managementTomMilekInformationDescriptionBlurb2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTomMilekInformationReleasesBlurb2" />
+          
+           <TextView
+            android:id="@+id/managementTomMilekInformationBandDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Description"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementTomMilekInformationDescriptionBlurb3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTomMilekInformationDescriptionBlurb3" />
+           
+           <TextView
+            android:id="@+id/managementTomMilekInformationBandInterestsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Band Interests"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementTomMilekInformationBandInterestsBlurb4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTomMilekInformationBandInterestsBlurb4" />
     </LinearLayout>
-    
-
 </ScrollView>

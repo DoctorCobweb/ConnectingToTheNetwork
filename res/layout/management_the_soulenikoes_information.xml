@@ -9,22 +9,77 @@
         android:orientation="vertical" >
 
         <TextView
-            android:id="@+id/textView1"
+            android:id="@+id/managementTheSoulenikoesInformationHeadingTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="The Soulenikoes biopgraphy"
-            android:textColor="@color/orange"
+            android:text="The Soulenikoes Information"
+            android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
             android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/managementTheSoulenikoesInformationBiographyTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/loremIpsum" />
+            android:layout_gravity="center"
+            android:text="Biography"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
         
+         <TextView
+            android:id="@+id/managementTheSoulenikoesInformationBiographyBlurb1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTheSoulenikoesInformationBiographyBlurb1" />
+         
+          <TextView
+            android:id="@+id/managementTheSoulenikoesInformationReleasesTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Releases"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+          
+          <TextView
+            android:id="@+id/managementTheSoulenikoesInformationDescriptionBlurb2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTheSoulenikoesInformationReleasesBlurb2" />
+          
+           <TextView
+            android:id="@+id/managementTheSoulenikoesInformationBandDescriptionTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Description"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementTheSoulenikoesInformationDescriptionBlurb3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTheSoulenikoesInformationDescriptionBlurb3" />
+           
+           <TextView
+            android:id="@+id/managementTheSoulenikoesInformationBandInterestsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Band Interests"
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
+           
+           <TextView
+            android:id="@+id/managementTheSoulenikoesInformationBandInterestsBlurb4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementTheSoulenikoesInformationBandInterestsBlurb4" />
     </LinearLayout>
-    
-
 </ScrollView>
