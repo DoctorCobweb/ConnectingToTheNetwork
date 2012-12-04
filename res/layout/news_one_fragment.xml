@@ -20,7 +20,13 @@
         android:layout_height="fill_parent"
         android:orientation="vertical" >
         
-
+        <WebView 
+            android:id="@+id/webview"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            />
+        
+<!-- 
         <TextView
             android:id="@+id/textViewSpace1"
             android:layout_width="fill_parent"
@@ -49,7 +55,7 @@
                     android:background="@drawable/facebook_selector"
                     android:layout_gravity="center"
                      />
-        
+  -->      
         <!-- 
                 <Button
                     android:id="@+id/newsFragmentOneTwitterButton"

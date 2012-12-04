@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -28,8 +29,11 @@ public class NewsFragmentOne extends SherlockFragment {
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.news_one_fragment, container, false);
-		return view;
+		View mainView = inflater.inflate(R.layout.news_one_fragment, container, false);
+		WebView webView = (WebView) mainView.findViewById(R.id.webview);
+		webView.loadUrl("http://www.spinninghalf.com.au");
+		
+		return mainView;
 	}
 	
 	@Override
@@ -37,8 +41,8 @@ public class NewsFragmentOne extends SherlockFragment {
 		super.onStart();
 		
 		
-		Button facebookButton = (Button) getActivity().findViewById(R.id.newsFragmentOneFacebookButton);
-		facebookButton.setOnClickListener(newsFacebookButtonListener);
+		//Button facebookButton = (Button) getActivity().findViewById(R.id.newsFragmentOneFacebookButton);
+		//facebookButton.setOnClickListener(newsFacebookButtonListener);
 		
 		//Button twitterButton = (Button) getActivity().findViewById(R.id.newsFragmentOneTwitterButton);
 		//twitterButton.setOnClickListener(newsTwitterButtonListener);
@@ -57,7 +61,7 @@ public class NewsFragmentOne extends SherlockFragment {
 		
 	}
 	
-	
+/*	
 //-------------------  BUTTON LISTENERS------------------------------------------------------------------------------------------
 	
 	public OnClickListener newsFacebookButtonListener = new OnClickListener(){
@@ -79,6 +83,7 @@ public class NewsFragmentOne extends SherlockFragment {
 	};
 	
 //---------------------------------------------------------------------------------------------------------------------------------
-	
+*/
+ 
 	
 }
