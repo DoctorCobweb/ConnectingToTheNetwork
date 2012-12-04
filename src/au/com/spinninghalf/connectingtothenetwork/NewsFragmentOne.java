@@ -24,6 +24,7 @@ import com.actionbarsherlock.app.SherlockFragment;
 public class NewsFragmentOne extends SherlockFragment {
 	public final static String SPINNING_HALF_FACEBOOK_URI = "http://www.facebook.com/pages/Spinning-Half/227917577236619";
 	public final static String SPINNING_HALF_TWITTER_URI = "https://twitter.com/spinninghalf";
+	public final static String SPINNING_HALF_WEBSITE_URI = "http://www.spinninghalf.com.au";
 	
 	
 	
@@ -31,7 +32,9 @@ public class NewsFragmentOne extends SherlockFragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View mainView = inflater.inflate(R.layout.news_one_fragment, container, false);
 		WebView webView = (WebView) mainView.findViewById(R.id.webview);
-		webView.loadUrl("http://www.spinninghalf.com.au");
+		webView.loadUrl(NewsFragmentOne.SPINNING_HALF_WEBSITE_URI);
+		
+		webView.getSettings().setBuiltInZoomControls(true);
 		
 		return mainView;
 	}

@@ -40,7 +40,7 @@ public class ManagementFragmentOne extends SherlockFragment {
 		Button tomMilekButton = (Button) getActivity().findViewById(R.id.managementTomMilekButton);
 		Button theUniversalButton = (Button) getActivity().findViewById(R.id.managementTheUniversalButton);
 		Button captainGrooveButton = (Button) getActivity().findViewById(R.id.managementCaptainGrooveButton);
-		Button applyButton = (Button) getActivity().findViewById(R.id.managementApplyButton);
+		Button leikographyButton = (Button) getActivity().findViewById(R.id.managementLeikographyButton);
 		
 		//assign listeners to the buttons
 		castIronPinataButton.setOnClickListener(castIronPinataButtonListener);
@@ -48,7 +48,7 @@ public class ManagementFragmentOne extends SherlockFragment {
 		tomMilekButton.setOnClickListener(tomMilekButtonListener);
 		theUniversalButton.setOnClickListener(theUniversalButtonListener);
 		captainGrooveButton.setOnClickListener(captainGrooveButtonListener);
-		applyButton.setOnClickListener(applyButtonListener);
+		leikographyButton.setOnClickListener(leikographyButtonListener);
 		
 		
 	}
@@ -99,12 +99,12 @@ public class ManagementFragmentOne extends SherlockFragment {
 		}
 	};
 	
-	public OnClickListener applyButtonListener = new OnClickListener() {
+	public OnClickListener leikographyButtonListener = new OnClickListener() {
 		
 		@Override
 		public void onClick(View v) {
-			Intent applyIntent = new Intent(getActivity(), ManagementApplyActivity.class);
-			startActivity(applyIntent);
+			Intent leikographyIntent = new Intent(getActivity(), ServicesPhotographyLeikographyActivity.class);
+			startActivity(leikographyIntent);
 		}
 	};
 }

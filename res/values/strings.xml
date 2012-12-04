@@ -102,10 +102,9 @@
     <string name="managementCaptainGrooveInformationReleasesBlurb2">Currently in the making.</string>
     <string name="managementCaptainGrooveInformationDescriptionBlurb3">This is your Captain speaking &#8230; GROOVE!</string>
     <string name="managementCaptainGrooveInformationBandInterestsBlurb4">GROOVE!</string>
-    <string name="managementApplyBlurb1">If you would like us to consider management for your band please send us your </string>
-
-    
-    
+    <string name="managementApplyBlurb1">If you would like to be considered for Management under the prestigious Spinning Half banner, please send an email titled accordingly via the Contact Us Section. To help the process 
+        along, please include any documents which you think may be relevant i.e. press kits, links to your music, videos, EPKs &amp; any other useful content that will help us get back to you with an informed offering. 
+        The type of management we can offer you depends on our current roster but nonetheless, we will earnestly try to help out you in some way, shape or form.</string>
 
     <string name="managementTheSoulenikoes">The Soulenikoes</string>
     <string name="managementTomMilek">Tom Milek</string>
@@ -119,7 +118,7 @@
         function packages for you. Depending on the event, you can choose which components you will need: PA system, lighting, Djs, band &amp; PA operators. We have experience all these areas and 
         know how crucial it is to get right, first time. Basically our aim is for you to have the idea of what the event will be and we will sort out all the neccessary details required to 
         deliver the event. Let us figure it out for you! Please have a look at the photos below to get a better idea of what can we do.</string>
-    <string name="servicesFunctionPackagesBlurb2">If you are interested in our rates for a particular function or just want some friendly advice call 0352221186 or email us info@spinninghalf.com.au</string>
+    <string name="servicesFunctionPackagesBlurb2">If you are interested in finding out our rates for a particular function please contact us via the Contact Us Section.</string>
     <string name="servicesPublicity">Publicity</string>
     <string name="servicesPublicityBlurb1">Do you want your newly recorded music to get out there, hitting all forms of media accross the country? And do you want to tour your music around Australia and play it out in 
         prestigious music venues to appreciative punters? These are all questions we aim to answer with our Publicity Initiative. Through the use of our preestablished nationwide networks involving Booking Agents, 
@@ -127,10 +126,9 @@
     <string name="servicesPublicityBlurb2">Through years of working with bands from all around Australia, we have designed an affordable service for bands which allows them to tour their music whilst generating that 
         crucial publicity element via interviews, media features, support tours &amp; music reviews both printed and online. Think of servicing your music as trying to get the attention of as many people as possible, 
         all of which are geographically scattered throughout Australia.</string>
-    <string name="servicesPublicityBlurb3">If you are interested in what we can offer to service your musical art then please contact us, as we want to see you succeed as an Artist much as you do! Call 0352221186 or email 
-        us info@spinninghalf.com.au</string>
+    <string name="servicesPublicityBlurb3">If you are interested in what we can offer to service your musical art then please contact us via the Contact Us Section.</string>
     <string name="servicesTraining">Training</string>
-    <string name="servicesTrainingBlurb1">One of our mantras at Spinning Half is to always allow someone who\'s interested in learning about our field the means to do so. If that means taking on board work experience
+    <string name="servicesTrainingBlurb1">One of our mantras at Spinning Half is to always allow someone who\'s interested in learning about our field the opportunity to do so. If that means taking on board work experience
         students, providing on site mentoring or running dedicated classes then that\'s what it will be. Understanding that there are many areas involved in running a successful event and that they 
         all have to operate together is key. Education in each component and where it is in the event timeline (pre, during or post event) is available and comes from a practical, tried &amp; tested
         music industry angle. </string>
@@ -145,7 +143,7 @@
         handbooks to all Geelong and The Surfcoast Region primary schools thereby encouraging the development of parent-child reading activities. It was a rewarding job for all of us. ii) Music Industry National
         &amp; International Tours have been a consistent area of expertise for us. Past tours we\'ve worked on have been D12 (International), Xzibit(Internation), Boy &amp; Bear (National), Parkway Drive (National)
         to name a few. iii) External Festivals like the Indonesian Arts &amp; Food Festival (2012).</string>
-    <string name="servicesDistributionBlurb3">If you have content that is needing distribution then please call our office 0352221186 or email us info@spinninghalf.com.au</string>
+    <string name="servicesDistributionBlurb3">If you are interested finding out more please contact us via the Contact Us Section.</string>
     <string name="servicesPhotography">Photography</string>
     <string name="servicesPhotographyBlurb1">Band photos are the tip of the iceberg when it comes to dealing with a professional Photographer. They can contribute so much more to any project whether it be
         birthday celebrations, wedding photos, baby photos or creative endevours where the idea is there but the application is needed to get it out of your head and onto (photo) paper. Good quality photos are just as important
@@ -158,7 +156,7 @@
         trusted, established &amp; highly trained inhouse designers. They are able to provide content for a wide variety of media types &amp; form factors: i) Printed Media: posters, flyers, 
         business cards, ticket printing. ii) Online Design: website coding and design. Our designers are also available for freelance work for design criteria falling outside the scope of the 
         music industry. </string>
-    <string name="servicesDesignBlurb2">Please contact us for a further listing of all our design services &amp; their associated rates. Call 0352221186 or email us info@spinninghalf.com.au </string>
+    <string name="servicesDesignBlurb2">Please contact us via the Contact Us Section for a further listing of all our design services &amp; their associated rates.</string>
     <string name="contactHeadOffice">Head Office</string>
     <string name="contactHeadOfficeStreetAddress">Suite 3/ 2 Fenwick st South</string>
     <string name="contactHeadOfficeCityRegionState">Geelong, VIC, 3220</string>

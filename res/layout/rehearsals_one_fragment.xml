@@ -231,6 +231,7 @@
         android:minHeight="15sp" >
     </TableRow>
 
+    <!-- 
     <TableRow
         android:id="@+id/tableRow3"
         android:layout_width="wrap_content"
@@ -321,6 +322,8 @@
             android:gravity="center"
             android:text="@string/rehearsalsEmail" />
     </TableRow>
+
+    -->
 
     <TableRow
         android:id="@+id/tableRow1"
