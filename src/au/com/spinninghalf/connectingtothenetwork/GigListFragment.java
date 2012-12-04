@@ -110,12 +110,12 @@ public class GigListFragment extends SherlockListFragment {
         NetworkInfo networkInfo = cm.getActiveNetworkInfo();
         
         if (networkInfo != null && networkInfo.isAvailable()) {
+        	SpinningHalfApplication _shapp = SpinningHalfApplication.getInstance();
+    		DatabaseConnector _dbc = _shapp.getDatabaseConnector();
+    		cursor = _dbc.getAllGigs();
         	
         	//if the gig guide has already been downloaded, use the database version. dont re-download it!
-        	if (SpinningHalfApplication.getInstance().getDownloadFinished()) {
-        		SpinningHalfApplication _shapp = SpinningHalfApplication.getInstance();
-        		DatabaseConnector _dbc = _shapp.getDatabaseConnector();
-        		cursor = _dbc.getAllGigs();
+        	if (cursor.moveToFirst()) {
         		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
         	} else {
         		//download a fresh copy of the gig guide

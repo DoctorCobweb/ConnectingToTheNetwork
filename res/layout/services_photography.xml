@@ -11,8 +11,11 @@
 
         <TextView
             android:id="@+id/servicesPhotographyHeading"
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/headings"
+            android:textStyle="bold"
+            android:gravity="center"
             android:textSize="@dimen/large_heading"
             android:text="@string/servicesPhotography" />
         
@@ -26,7 +29,7 @@
             android:id="@+id/servicesPhotographyTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/servicesPhotographyBlurb1" />
+            android:text="@string/servicesPhotographyBlurb2" />
           
           
           <LinearLayout 

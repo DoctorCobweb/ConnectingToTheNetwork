@@ -23,19 +23,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficeStreetAddress"
-        android:textSize="@dimen/medium_text" 
         android:layout_marginLeft="10px"/>
 
     <TextView
         android:id="@+id/contactHeadOfficeCityRegionStateTextView"
         android:layout_width="wrap_content"
-        android:textSize="@dimen/medium_text"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficeCityRegionState" 
         android:layout_marginLeft="10px"/>
     <TextView
         android:id="@+id/contactHeadOfficePhoneNumberTextView"
-        android:textSize="@dimen/medium_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficePhoneNumber" 
@@ -43,7 +40,6 @@
     
     <TextView
         android:id="@+id/contactHeadOfficeEmailTextView"
-        android:textSize="@dimen/medium_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficeEmail" 
@@ -75,7 +71,6 @@
     
     <TextView
         android:id="@+id/contactRehearsalsCityRegionStateTextView"
-        android:textSize="@dimen/medium_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsalsCityRegionState" 
@@ -84,7 +79,6 @@
 
     <TextView
         android:id="@+id/contactRehearsalsPhoneNumberTextView"
-        android:textSize="@dimen/medium_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsalsPhoneNumber" 
@@ -92,7 +86,6 @@
     
     <TextView
         android:id="@+id/contactRehearsalsEmailTextView"
-        android:textSize="@dimen/medium_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsalsEmail" 

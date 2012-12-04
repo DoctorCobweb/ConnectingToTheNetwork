@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class ManagementTheUniversalActivity extends Activity {
-	public static final String THE_UNIVERSAL_SOUNDCLOUD = "http://www.triplejunearthed.com/TheUniversal";
+	public static final String THE_UNIVERSAL_SOUNDCLOUD = "http://soundcloud.com/theuniversalrock";
 	public static final String THE_UNIVERSAL_YOUTUBE = "http://www.youtube.com/user/TheUniversalOfficial?feature=watch";
 	public static final String THE_UNIVERSAL_FACEBOOK = "http://www.facebook.com/theuniversalrock";
 	
