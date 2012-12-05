@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- 
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/servicesScrollViewPortrait"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
-    <TextView android:id="@+id/ManagementOneFragmentTextView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="MOBILE MODE: Management ONE fragment text goes here"
-     />
-    
-</FrameLayout>
-
--->
 
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
@@ -97,5 +86,57 @@
             android:textSize="@dimen/large_heading" />
 
     </TableRow>
+    
+    <TableRow
+        android:id="@+id/maintablerow2"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
 
+        <Button
+            android:id="@+id/servicesPhotographyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_photography_button_animation"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+        <Button
+            android:id="@+id/servicesDesignButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_design_button_animation"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/maintablerow2"
+        android:layout_width="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        <Button
+            android:id="@+id/servicesPhotographyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_photography_button_animation"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+        <Button
+            android:id="@+id/servicesDesignButton"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/services_design_button_animation"
+            android:textColor="@color/white"
+            android:textSize="@dimen/large_heading" />
+
+    </TableRow>
 </TableLayout>
+</ScrollView>

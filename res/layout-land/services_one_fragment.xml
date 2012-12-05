@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/managementScrollViewPortrait"
+    android:id="@+id/servicesScrollViewLandscape"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent" >
 
@@ -14,53 +13,51 @@
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_weight="1" >
-
+        
         <Button
-            android:id="@+id/managementCastIronPinataButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesFunctionPackagesButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_cast_iron_pinata_button_animation"
-            android:text=""
+            android:background="@drawable/services_function_packages_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
+
         <Button
-            android:id="@+id/managementTheSoulenikoesButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesPublicityButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_the_soulenikoes_button_animation"
-            android:text=""
+            android:background="@drawable/services_publicity_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
+        
 
     </TableRow>
 
     <TableRow
         android:id="@+id/maintablerow1"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/managementTomMilekButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesDistributionButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_tom_milek_button_animation"
+            android:background="@drawable/services_distribution_button_animation"
             android:gravity="center"
-            android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
         <Button
-            android:id="@+id/managementTheUniversalButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesTrainingButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_the_universal_button_animation"
-            android:text=""
+            android:background="@drawable/services_training_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -69,26 +66,24 @@
     <TableRow
         android:id="@+id/maintablerow2"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/managementCaptainGrooveButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesPhotographyButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_captain_groove_button_animation"
-            android:text=""
+            android:background="@drawable/services_photography_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
         <Button
-            android:id="@+id/managementLeikographyButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesDesignButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_leikography_button_animation"
-            android:text=""
+            android:background="@drawable/services_design_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -97,26 +92,24 @@
     <TableRow
         android:id="@+id/maintablerow2"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/managementCaptainGrooveButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesPhotographyButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_captain_groove_button_animation"
-            android:text=""
+            android:background="@drawable/services_photography_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
         <Button
-            android:id="@+id/managementLeikographyButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesDesignButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_leikography_button_animation"
-            android:text=""
+            android:background="@drawable/services_design_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
@@ -125,30 +118,27 @@
     <TableRow
         android:id="@+id/maintablerow2"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1" >
 
         <Button
-            android:id="@+id/managementCaptainGrooveButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesPhotographyButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_captain_groove_button_animation"
-            android:text=""
+            android:background="@drawable/services_photography_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
         <Button
-            android:id="@+id/managementLeikographyButton"
-            android:layout_width="match_parent"
+            android:id="@+id/servicesDesignButton"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_leikography_button_animation"
-            android:text=""
+            android:background="@drawable/services_design_button_animation"
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
     </TableRow>
-
 </TableLayout>
 </ScrollView>

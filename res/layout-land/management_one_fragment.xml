@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/managementScrollViewPortrait"
+    android:id="@+id/managemnetScrollViewLandscape"
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
-    
-<TableLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+        
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
 
     <TableRow
         android:id="@+id/maintablerow0"
         android:layout_width="wrap_content"
         android:layout_height="fill_parent"
         android:layout_weight="1" >
-
+        
         <Button
             android:id="@+id/managementCastIronPinataButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_cast_iron_pinata_button_animation"
             android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
-
+        
         <Button
             android:id="@+id/managementTheSoulenikoesButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_the_soulenikoes_button_animation"
@@ -35,28 +35,29 @@
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
+        
+        
     </TableRow>
 
     <TableRow
         android:id="@+id/maintablerow1"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1" >
 
         <Button
             android:id="@+id/managementTomMilekButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_tom_milek_button_animation"
-            android:gravity="center"
             android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
 
         <Button
             android:id="@+id/managementTheUniversalButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_the_universal_button_animation"
@@ -69,12 +70,12 @@
     <TableRow
         android:id="@+id/maintablerow2"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1" >
 
         <Button
             android:id="@+id/managementCaptainGrooveButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_captain_groove_button_animation"
@@ -84,7 +85,7 @@
 
         <Button
             android:id="@+id/managementLeikographyButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_leikography_button_animation"
@@ -95,14 +96,14 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/maintablerow2"
+        android:id="@+id/maintablerow3"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1" >
 
         <Button
             android:id="@+id/managementCaptainGrooveButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_captain_groove_button_animation"
@@ -112,7 +113,7 @@
 
         <Button
             android:id="@+id/managementLeikographyButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_leikography_button_animation"
@@ -123,14 +124,14 @@
     </TableRow>
     
     <TableRow
-        android:id="@+id/maintablerow2"
+        android:id="@+id/maintablerow3"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_weight="1" >
 
         <Button
             android:id="@+id/managementCaptainGrooveButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_captain_groove_button_animation"
@@ -140,7 +141,7 @@
 
         <Button
             android:id="@+id/managementLeikographyButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/management_leikography_button_animation"
@@ -149,6 +150,5 @@
             android:textSize="@dimen/large_heading" />
 
     </TableRow>
-
 </TableLayout>
 </ScrollView>
