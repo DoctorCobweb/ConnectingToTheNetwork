@@ -32,7 +32,7 @@ public class ServicesFunctionPackagesActivity extends Activity {
 	public void onStart() {
 		super.onStart();
 		
-Log.i(TAG, "in onStart()");
+		Log.i(TAG, "in onStart()");
 		
 		GridView gridview = (GridView) findViewById(R.id.servicesFunctionPackageGridView);
         gridview.setAdapter(new ServicesFunctionPackagesImageAdapter(this));

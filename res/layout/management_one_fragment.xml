@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/services_photography_leikography_button_animation"
+            android:background="@drawable/management_leikography_button_animation"
             android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />

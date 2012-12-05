@@ -103,7 +103,7 @@ public class ManagementFragmentOne extends SherlockFragment {
 		
 		@Override
 		public void onClick(View v) {
-			Intent leikographyIntent = new Intent(getActivity(), ServicesPhotographyLeikographyActivity.class);
+			Intent leikographyIntent = new Intent(getActivity(), ManagementLeikographyActivity.class);
 			startActivity(leikographyIntent);
 		}
 	};

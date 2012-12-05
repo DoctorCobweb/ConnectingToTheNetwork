@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/managementLeikographyHeadingTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/headings"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@string/managementLeikography"
+            android:textSize="@dimen/large_heading" />
+        
+        <TextView
+            android:id="@+id/managementLeikographyBlurb1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementLeikographyBlurb1" />
+
+        <GridView
+            android:id="@+id/managementLeikographyGridView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="4" >
+        </GridView>
+        
+        <TextView
+            android:id="@+id/managementLeikographyBlurb2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/managementLeikographyBlurb2" />
+
+    </LinearLayout>
+    
+
+</ScrollView>

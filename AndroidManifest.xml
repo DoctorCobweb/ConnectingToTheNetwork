@@ -41,6 +41,8 @@
         <activity android:name=".ManagementTomMilekInformationActivity" />
         <activity android:name=".ManagementTheUniversalInformationActivity" />
         <activity android:name=".ManagementCaptainGrooveInformationActivity" />
+        <activity android:name=".ManagementLeikographyActivity" />
+        <activity android:name=".ManagementLeikographyFullScreenImage" />
         <activity android:name=".ServicesFunctionPackagesActivity" />
         <activity android:name=".ServicesFunctionPackagesFullScreenImage" />
         <activity android:name=".ServicesPublicityActivity" />
@@ -49,8 +51,6 @@
         <activity android:name=".ServicesPhotographyActivity" />
         <activity android:name=".ServicesDesignActivity" />
         <activity android:name=".ServicesDesignFullScreenImage" />
-        <activity android:name=".ServicesPhotographyBrentonFordActivity"/>
-        <activity android:name=".ServicesPhotographyLeikographyActivity"/>
         
         
         

@@ -106,6 +106,10 @@
         along, please include any documents which you think may be relevant i.e. press kits, links to your music, videos, EPKs &amp; any other useful content that will help us get back to you with an informed offering. 
         The type of management we can offer you depends on our current roster but nonetheless, we will earnestly try to help out you in some way, shape or form.</string>
 
+    <string name="managementLeikography">Leikography</string>
+    <string name="managementLeikographyBlurb1">ONE yayayayayayayayayayyyyayaaaafdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</string>
+    <string name="managementLeikographyBlurb2">TWO ahaaaaaaaaaaaaaaaaaaaaaaaaaaaahhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</string>
+    
     <string name="managementTheSoulenikoes">The Soulenikoes</string>
     <string name="managementTomMilek">Tom Milek</string>
     <string name="managementTheUniversal">The Universal</string>
@@ -213,6 +217,12 @@
         <item >The Universal poster design</item>
         <item >Tom Milek National Tour poster design.</item>
         <item >Local Venue poster design.</item>
+    </string-array>
+    <string-array name="managementLeikographyPhotoLabels">
+        <item >LeikographyPhotoLabel0</item>
+        <item >LeikographyPhotoLabels1</item>
+        <item >LeikographyPhotoLabels2</item>
+        <item >LeikographyPhotoLabels3</item>
     </string-array>
 
 </resources>
