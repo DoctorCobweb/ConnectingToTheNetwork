@@ -8,6 +8,7 @@ package au.com.spinninghalf.connectingtothenetwork;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.support.v4.app.Fragment;
@@ -62,6 +63,14 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
         Log.i(TAG, "in onCreate()");
         
         shapp = SpinningHalfApplication.getInstance();
+        
+        PackageManager pm = getPackageManager();
+        
+        //determine whether the device has telephony capabilities i.e. can make a phone call
+        boolean telephonySupported = 
+        		pm.hasSystemFeature(PackageManager.FEATURE_TELEPHONY);
+        // set the result to the application variable 'hasDeviceTelephonyCapabilities'.
+        shapp.setTelephonyCapability(telephonySupported);
         
         View fragmentContainer = findViewById(R.id.MainFragmentContainer);
         

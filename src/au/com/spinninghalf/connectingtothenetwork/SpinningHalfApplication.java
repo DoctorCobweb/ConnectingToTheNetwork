@@ -25,6 +25,7 @@ public class SpinningHalfApplication extends Application {
 	private long selectedGigId = -1;
 	private int selectedGigPosition = -1;
 	private boolean wasViewingGig = false;
+	private boolean hasDeviceTelephonyCapabilities = false;
 	
 	private static SpinningHalfApplication singleton;
 	
@@ -32,6 +33,14 @@ public class SpinningHalfApplication extends Application {
 	//Returns the application instance. It is a SINGLETON
 	public static SpinningHalfApplication getInstance() {
 		return singleton;
+	}
+	
+	public boolean getTelephonyCapability() {
+		return this.hasDeviceTelephonyCapabilities;
+	}
+	
+	public void setTelephonyCapability(boolean hasDeviceTelephonyCapabilities) {
+		this.hasDeviceTelephonyCapabilities = hasDeviceTelephonyCapabilities;
 	}
 	
 	public boolean getWasViewingGig() {

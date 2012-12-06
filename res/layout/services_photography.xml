@@ -4,9 +4,9 @@
     android:layout_height="match_parent" >
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
         android:id="@+id/servicesPhotographyMainLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical" >
 
         <TextView
@@ -30,29 +30,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/servicesPhotographyBlurb2" />
-          
-          
-          <LinearLayout 
+
+          <TextView
+              android:id="@+id/textView1"
               android:layout_width="fill_parent"
               android:layout_height="wrap_content"
-              android:orientation="horizontal"
-              android:id="@+id/servicesPhotographyButtonLinearLayout"
-              >
+              android:text="" />
+          
+          <Button
+              android:id="@+id/servicesPhotographyBrentonFordButton"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:text="Brenton Ford Photography" />
               
-              <Button 
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:background="@drawable/services_photography_brenton_ford_button_animation"
-                  android:id="@+id/servicesPhotographyBrentonFordButton" />
-                  
-              
-              <Button 
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:background="@drawable/services_photography_leikography_button_animation"
-                  android:id="@+id/servicesPhotographyLeikographyButton" />
-              
-          </LinearLayout>
+          <Button
+              android:id="@+id/servicesPhotographyLeikographyButton"
+              android:layout_width="fill_parent"
+              android:layout_height="wrap_content"
+              android:text="Leikography" />
+          
     </LinearLayout>
     
 

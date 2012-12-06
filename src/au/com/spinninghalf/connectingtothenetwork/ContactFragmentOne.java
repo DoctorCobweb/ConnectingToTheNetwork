@@ -1,6 +1,7 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -20,6 +21,8 @@ public class ContactFragmentOne extends SherlockFragment {
 	public final static String SPINNING_HALF_TWITTER_URI = "https://twitter.com/spinninghalf";
 	public final static String SPINNING_HALF_YOUTUBE_URI = "http://www.youtube.com/user/spinninghalfstudios?feature=mhee";
 	public final static String SPINNING_HALF_WEBSITE_URI = "http://www.spinninghalf.com.au";
+	
+	SpinningHalfApplication shapp;
 	
 	@Override
 	public void onAttach(Activity activity) {
@@ -50,18 +53,95 @@ public class ContactFragmentOne extends SherlockFragment {
 		
 		Log.i(TAG, "in onStart()");
 		
-		//find all the button references
+		shapp = SpinningHalfApplication.getInstance();
+		
+		//only assign listeners which will intent a call if the device has telephony capabilities.
+		if(shapp.getTelephonyCapability()){
+			//find all the button references
+			Button headOfficePhoneNumberButton = (Button) getActivity().findViewById(R.id.contactHeadOfficePhoneNumberButton);
+			Button headOfficeEmailButton = (Button) getActivity().findViewById(R.id.contactHeadOfficeEmailButton);
+			Button rehearsalsPhoneNumberButton1 = (Button) getActivity().findViewById(R.id.contactRehearsalsPhoneNumberButton1);
+			Button rehearsalsPhoneNumberButton2 = (Button) getActivity().findViewById(R.id.contactRehearsalsPhoneNumberButton2);
+			Button rehearsalsEmailButton = (Button) getActivity().findViewById(R.id.contactRehearsalsEmailButton);
+			
+			//assign listeners to each button
+			headOfficePhoneNumberButton.setOnClickListener(headOfficePhoneNumberButtonListener);
+			headOfficeEmailButton.setOnClickListener(headOfficeEmailButtonListener);
+			rehearsalsPhoneNumberButton1.setOnClickListener(rehearsalsPhoneNumberButton1Listener);
+			rehearsalsPhoneNumberButton2.setOnClickListener(rehearsalsPhoneNumberButton2Listener);
+			rehearsalsEmailButton.setOnClickListener(rehearsalsEmailButtonListener);
+		}
+		
 		Button facebookButton = (Button) getActivity().findViewById(R.id.contactFacebookButton);
 		Button twitterButton = (Button) getActivity().findViewById(R.id.contactTwitterButton);
 		Button youtubeButton = (Button) getActivity().findViewById(R.id.contactYoutubeButton);
 		Button spinningHalfButton = (Button) getActivity().findViewById(R.id.contactSpinningHalfButton);
 		
-		//assign listeners to each button
 		facebookButton.setOnClickListener(facebookButtonListener);
 		twitterButton.setOnClickListener(twitterButtonListener);
 		youtubeButton.setOnClickListener(youtubeButtonListener);
 		spinningHalfButton.setOnClickListener(spinningHalfButtonListener);
+		
+		
 	}
+	
+	public OnClickListener headOfficePhoneNumberButtonListener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0352221186"));
+			startActivity(intent);
+		}
+	};
+	
+	public OnClickListener headOfficeEmailButtonListener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			try{
+				Intent intent = new Intent(Intent.ACTION_SEND);
+				intent.setType("plain/text");
+				
+				intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"info@spinninghalf.com.au"});
+				intent.putExtra(Intent.EXTRA_SUBJECT, "GENERAL INQUIRY (from S.H. Android App)");
+				intent.putExtra(Intent.EXTRA_TEXT, "Gday Spinning Half, I'm in ya email. Stealing ya bandwidth.");
+				startActivity(intent);
+				} catch(ActivityNotFoundException e) {
+					Log.i(TAG, "email Activity not found.");
+				}
+		}
+	};
+	
+	public OnClickListener rehearsalsPhoneNumberButton1Listener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0352221186"));
+			startActivity(intent);
+		}
+	};
+	
+	public OnClickListener rehearsalsPhoneNumberButton2Listener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:0421866977"));
+			startActivity(intent);
+		}
+	};
+	
+	public OnClickListener rehearsalsEmailButtonListener = new OnClickListener() {
+		@Override
+		public void onClick(View v) {
+			try{
+				Intent intent = new Intent(Intent.ACTION_SEND);
+				intent.setType("plain/text");
+				
+				intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"bookings@spinninghalf.com.au"});
+				intent.putExtra(Intent.EXTRA_SUBJECT, "REHEARSAL INQUIRY (from S.H. Android App)");
+				intent.putExtra(Intent.EXTRA_TEXT, "Gday Spinning Half, I'm in ya email. Stealing ya bandwidth.");
+				startActivity(intent);
+				} catch(ActivityNotFoundException e) {
+					Log.i(TAG, "email Activity not found.");
+				}
+		}
+	};
 	
 	public OnClickListener facebookButtonListener = new OnClickListener() {
 		@Override

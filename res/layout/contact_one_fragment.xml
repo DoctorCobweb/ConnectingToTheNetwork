@@ -12,7 +12,7 @@
         android:id="@+id/contactHeadOfficeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10px"
+        android:layout_marginLeft="10dp"
         android:text="@string/contactHeadOffice"
         android:textSize="@dimen/large_heading"
         android:textColor="@color/headings"
@@ -23,27 +23,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficeStreetAddress"
-        android:layout_marginLeft="10px"/>
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/contactHeadOfficeCityRegionStateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficeCityRegionState" 
-        android:layout_marginLeft="10px"/>
-    <TextView
-        android:id="@+id/contactHeadOfficePhoneNumberTextView"
+        android:layout_marginLeft="10dp"/>
+    <Button
+        android:id="@+id/contactHeadOfficePhoneNumberButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficePhoneNumber" 
-        android:layout_marginLeft="10px"/>
+        android:layout_marginLeft="10dp"/>
     
-    <TextView
-        android:id="@+id/contactHeadOfficeEmailTextView"
+    <Button
+        android:id="@+id/contactHeadOfficeEmailButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficeEmail" 
-        android:layout_marginLeft="10px"/>
+        android:layout_marginLeft="10dp"/>
 
     <TextView
         android:id="@+id/BlankTextView"
@@ -58,7 +58,7 @@
         android:text="@string/contactRehearsals"
         android:textSize="@dimen/large_heading"
         android:textColor="@color/headings" 
-        android:layout_marginLeft="10px" 
+        android:layout_marginLeft="10dp" 
         android:textStyle="bold"/>
     
     <TextView
@@ -67,41 +67,59 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsalsStreetAddress" 
-        android:layout_marginLeft="10px"/>
+        android:layout_marginLeft="10dp"/>
     
     <TextView
         android:id="@+id/contactRehearsalsCityRegionStateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsalsCityRegionState" 
-        android:layout_marginLeft="10px"/>
+        android:layout_marginLeft="10dp"/>
 
 
-    <TextView
-        android:id="@+id/contactRehearsalsPhoneNumberTextView"
+    <Button
+        android:id="@+id/contactRehearsalsPhoneNumberButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/contactRehearsalsPhoneNumber" 
-        android:layout_marginLeft="10px"/>
+        android:text="@string/contactRehearsalsPhoneNumber1" 
+        android:layout_marginLeft="10dp"/>
     
-    <TextView
-        android:id="@+id/contactRehearsalsEmailTextView"
+    <Button
+        android:id="@+id/contactRehearsalsPhoneNumberButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contactRehearsalsPhoneNumber2" 
+        android:layout_marginLeft="10dp"/>
+    
+    <Button
+        android:id="@+id/contactRehearsalsEmailButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsalsEmail" 
-        android:layout_marginLeft="10px"/>
+        android:layout_marginLeft="10dp"/>
 
     <TextView
-        android:id="@+id/BlankTextView"
+        android:id="@+id/BlankTextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="" 
-        android:minHeight="50px"/>
+        android:text="" />
+    
+    <TextView
+        android:id="@+id/contactOnlineTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:text="@string/contactOnline"
+        android:textColor="@color/headings"
+        android:textSize="@dimen/large_heading"
+        android:textStyle="bold" />
 
     <TableRow
         android:id="@+id/tableRow1"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
+        
+        
 
         <Button
             android:id="@+id/contactFacebookButton"
@@ -109,28 +127,22 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/facebook_selector"
-            android:maxWidth="@dimen/buttonwidthmaxmobile"
-            android:minHeight="0dip"
             android:text="" />
         
         <Button
             android:id="@+id/contactTwitterButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:background="@drawable/twitter_selector"
-            android:maxWidth="@dimen/buttonwidthmaxmobile"
-            android:minHeight="0dip"
             android:text="" />
 
         <Button
             android:id="@+id/contactYoutubeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_weight="1"
             android:background="@drawable/youtube_selector"
-            android:maxWidth="@dimen/buttonwidthmaxmobile"
-            android:minHeight="0dip"
             android:text="" />
         
         <Button
@@ -139,8 +151,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@drawable/spinning_half_selector"
-            android:maxWidth="@dimen/buttonwidthmaxmobile"
-            android:minHeight="0dip"
             android:text="" />
 
     </TableRow>

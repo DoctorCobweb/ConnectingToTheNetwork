@@ -149,11 +149,10 @@
         to name a few. iii) External Festivals like the Indonesian Arts &amp; Food Festival (2012).</string>
     <string name="servicesDistributionBlurb3">If you are interested finding out more please contact us via the Contact Us Section.</string>
     <string name="servicesPhotography">Photography</string>
-    <string name="servicesPhotographyBlurb1">Band photos are the tip of the iceberg when it comes to dealing with a professional Photographer. They can contribute so much more to any project whether it be
-        birthday celebrations, wedding photos, baby photos or creative endevours where the idea is there but the application is needed to get it out of your head and onto (photo) paper. Good quality photos are just as important
-        now as they were before the advent of consumer hand held digital cameras; do you take your official wedding photos with an iPhone or something similar? No.</string>
+    <string name="servicesPhotographyBlurb1">Band photography is the tip of the iceberg when it comes to dealing with a professional Photographer. They can contribute so much more to any project whether it be
+        birthday celebrations, wedding photos, baby photos or creative endevours where the idea is there but the application is needed to get it out of your head and onto (photo) paper.</string>
     <string name="servicesPhotographyBlurb2">Spinning Half can wholeheartedly recommend the following young and enthusiastic Photographers who are continuously honing their craft and
-        are up to date, adept &amp; agile in \'all things Photoshop\'. They always produce quality results and have the knack &amp; aptitude for capturing that fleeting moment which photography is so good at conveying:</string>
+        are up to date, adept &amp; agile in \'all things Photoshop\'. They always produce quality results and have the knack &amp; aptitude for capturing that fleeting moment, which photography is so good at conveying.</string>
     <string name="servicesDesign">Design</string>
     <string name="servicesDesignBlurb1">Correct design is an absolutely crucial area for us to get right when promoting our shows. Our view is that good design enables the public to easily grasp a 
         clear and clean idea of what the event aims to achieve whilst conveying all the important &amp; neccessary information. That\'s why everything related to promoting our shows goes through 
@@ -169,8 +168,10 @@
     <string name="contactRehearsals">Rehearsals</string>
     <string name="contactRehearsalsStreetAddress">313 Bellarine St</string>
     <string name="contactRehearsalsCityRegionState">South Geelong, VIC, 3220</string>
-    <string name="contactRehearsalsPhoneNumber">(03) 5222 1186 or try 0421 866 977</string>
+    <string name="contactRehearsalsPhoneNumber1">(03) 5222 1186</string>
+    <string name="contactRehearsalsPhoneNumber2">0421 866 977</string>
     <string name="contactRehearsalsEmail">bookings@spinninghalf.com.au</string>
+    <string name="contactOnline">Online</string>
     
     
     
