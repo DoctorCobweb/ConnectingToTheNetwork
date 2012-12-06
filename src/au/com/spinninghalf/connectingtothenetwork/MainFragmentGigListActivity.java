@@ -27,7 +27,7 @@ public class MainFragmentGigListActivity extends FragmentActivity
 		
 		//Check whether the activity is using the layout version with
         //the  FrameLayout. If so, we must add the first fragment
-        if (findViewById(R.id.gig_guide_fragment_container) != null) {
+		if (findViewById(R.id.gig_guide_fragment_container) != null) {
         	
             //However, if we're being restored from a previous state,
             //then we don't need to do anything and should return or else
@@ -86,13 +86,13 @@ public class MainFragmentGigListActivity extends FragmentActivity
                 getSupportFragmentManager().findFragmentById(R.id.view_gig_fragment);
 
         if (viewGigFrag != null) {
-            //If article frag is available, we're in two-pane layout...
+            //If article frag is available, we're in TABLET two-pane layout...
 
             //Call a method in the ViewGigFragment to update its content
             viewGigFrag.updateGigView(id, position);
 
         } else {
-            //If the frag is not available, we're in the one-pane layout and must swap frags...
+            //If the frag is not available, we're in the MOBILE layout and must swap frags...
 
             //Create fragment and give it an argument for the selected article
             ViewGigFragment newFragment = new ViewGigFragment();

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
+<!-- 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/gig_guide_fragment_container"
     android:layout_width="match_parent"
@@ -6,3 +9,30 @@
     
 
 </FrameLayout>
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gig_guide_fragment_container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <Button
+        android:id="@+id/refreshGigGuideButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/headings"
+        android:minHeight="64dip"
+        android:text="REFRESH GIG GUIDE" />
+    
+    <ListView android:id="@id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:drawSelectorOnTop="false" />
+    
+    
+    
+    
+</LinearLayout>
+    

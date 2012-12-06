@@ -16,7 +16,9 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -92,6 +94,14 @@ public class GigListFragment extends SherlockListFragment {
         	return;
         }
     }
+	
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container,
+			                 Bundle savedInstanceState) {
+		return inflater.inflate(R.layout.gig_listing, container, false);
+		
+	}
 
 	
     @Override
@@ -99,6 +109,8 @@ public class GigListFragment extends SherlockListFragment {
         super.onStart();
         
         Log.i(TAG, "in onStart()");
+        
+        
 
         //When in two-pane layout, set the listview to highlight the selected list item
         //(We do this during onStart because at the point the listview is available.)
@@ -325,7 +337,6 @@ public class GigListFragment extends SherlockListFragment {
     		
     		//get rid of progress circle once you have the cursor.
     		//progress.setVisibility(View.GONE);
-    		
     		if (cursor.moveToFirst()) {
     			Log.d(TAG, "in onPostExecute." + "Cursor is non-empty");
     			cursor.moveToFirst();
