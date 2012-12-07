@@ -11,7 +11,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 
 public class MainFragmentGigListActivity extends FragmentActivity
-    implements GigListFragment.OnGigListSelectedListener {
+    implements GigListFragment.OnGigListSelectedListener, GigListFragment.OnGigListRefreshedListener {
 
 	private final String TAG = "MainFragmentGigListActivity";
 	private static final String ARG_ID = "id";
@@ -108,6 +108,28 @@ public class MainFragmentGigListActivity extends FragmentActivity
 
             //Commit the transaction
             transaction.commit();
+        }
+	}
+	
+	public void onGigListRefreshed() {
+		//add in refreshing code.
+		shapp.setUpdateGigGuideDatabase(true);
+		
+		
+		//Check whether the activity is using the layout version with
+        //the  FrameLayout. If so, we must add the first fragment
+		if (findViewById(R.id.gig_guide_fragment_container) != null) {
+        	
+            //Create an instance of GigListFragment
+            GigListFragment firstFragment = new GigListFragment();
+            Log.i(TAG, "in onGigListRefreshed() and below making new GigListFragment with a refreshed database.");
+            //In case this activity was started with special instructions from an Intent,
+            //pass the Intent's extras to the fragment as arguments:
+            //firstFragment.setArguments(getIntent().getExtras());
+
+            //Add the fragment to the 'fragment_container' FrameLayout
+            getSupportFragmentManager().beginTransaction()
+                    .add(R.id.gig_guide_fragment_container, firstFragment).commit();
         }
 	}
 }

@@ -1,11 +1,14 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
-//import com.actionbarsherlock.app.SherlockListFragment;
-
+//TODO
+//1. wire up the Refresh button to initiate downloading of gig guide from google app engine
+//2. once downloading is done, cause the list fragment to update its display (re attach a new version of the list fragment?).
+//
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.actionbarsherlock.app.SherlockActivity;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -19,13 +22,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class GigListFragment extends SherlockListFragment {
-	OnGigListSelectedListener mCallback;
+	OnGigListSelectedListener selectedCallback;
+	OnGigListRefreshedListener refreshCallback;
 	
 	public static final String ROW_ID = "row_id"; // Intent extra key
 	public static final String TAG = "GigListFragment";
@@ -53,6 +59,10 @@ public class GigListFragment extends SherlockListFragment {
 	public interface OnGigListSelectedListener {
 		public void onGigSelected(long id, int position);
 	}
+	
+	public interface OnGigListRefreshedListener {
+		public void onGigListRefreshed();
+	}
 
 	
 	@Override
@@ -62,12 +72,21 @@ public class GigListFragment extends SherlockListFragment {
         Log.i(TAG, "in onAttach()");
 
         //This makes sure that the container activity has implemented
-        //the callback interface. If not, it throws an exception.
+        //the onGigListSelectedListener callback interface. If not, it throws an exception.
         try {
-            mCallback = (OnGigListSelectedListener) activity;
+            selectedCallback = (OnGigListSelectedListener) activity;
         } catch (ClassCastException e) {
             throw new ClassCastException(activity.toString()
-                    + " must implement OnHeadlineSelectedListener");
+                    + " must implement OnGigListSelectedListener");
+        }
+        
+        //This makes sure that the container activity has implemented
+        //the onGigListRefreshedListener callback interface. If not, it throws an exception.
+        try {
+            refreshCallback = (OnGigListRefreshedListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnGigListRefreshedSelectedListener");
         }
     }
 	
@@ -110,6 +129,15 @@ public class GigListFragment extends SherlockListFragment {
         
         Log.i(TAG, "in onStart()");
         
+      //find the reference to the Refresh button
+        Button refreshButton = (Button) getActivity().findViewById(R.id.refreshGigGuideButton);
+        
+        if (refreshButton != null) {
+        	Log.i(TAG, "refreshButton is NOT null");
+        }
+        
+        refreshButton.setOnClickListener(refreshButtonListener);
+        
         
 
         //When in two-pane layout, set the listview to highlight the selected list item
@@ -126,22 +154,25 @@ public class GigListFragment extends SherlockListFragment {
     		DatabaseConnector _dbc = _shapp.getDatabaseConnector();
     		cursor = _dbc.getAllGigs();
         	
-        	//if the gig guide has already been downloaded, use the database version. dont re-download it!
-        	if (cursor.moveToFirst()) {
-        		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
-        	} else {
+    		if(shapp.getUpdateGigGuideDatabase() || !cursor.moveToFirst()) {
         		//download a fresh copy of the gig guide
         		Log.i(TAG, "in onStart() and there is a network connection available. DOWNLOADING THE GIG GUIDE CONTENT.");
         		new DownloadWebpageText().execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
-        	}
+        	} else if (cursor.moveToFirst()) {
+        		//if the gig guide has already been downloaded, use the database version. dont re-download it!
+        		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
+        	} 
+        	
+        	
         } else {
         	Toast.makeText(getActivity(), "No Network Connection available. Please try again when there is one", Toast.LENGTH_LONG).show();
         }
-   		
+        
+        
+   		/*
         //check to see if the gigs have already been downloaded, parsed and put into the database
         //from the onCreate() method in SpinningHalfApplication. 
-        //Otherwise, start downloading again...not optimal, i know. a TODO
-   		/*
+        //Otherwise, start downloading again...not optimal, i know. 
         if (!shapp.getDownloadFinished()) {
         	Log.i(TAG, "in onStart(). HAVENT_FINISHED_ORIGINAL_GIGLIST_DOWNLOAD: The downloading in SpinningHalfApplication's " +
         			"onCreate() has not finished. Start Again with download.");
@@ -259,13 +290,26 @@ public class GigListFragment extends SherlockListFragment {
     	//shapp.setSelectedGigPosition(position);
     	
         //Notify the parent activity of selected item
-        mCallback.onGigSelected(id, position);
+        selectedCallback.onGigSelected(id, position);
         
         //Set the item as checked to be highlighted when in two-pane layout
         getListView().setItemChecked(position, true);
         Log.i(TAG, "in onListItemClick and selectedGigPosition = " + this._selectedGigPosition);
     }
 	
+    
+    //Refresh button listener goes here
+	public OnClickListener refreshButtonListener = new OnClickListener() {
+		
+		@Override
+		public void onClick(View v) {
+			
+			Log.i(TAG, "hello from onClick in refreshButton");
+			
+			refreshCallback.onGigListRefreshed();
+		}
+	};
+    
     
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -355,7 +399,8 @@ public class GigListFragment extends SherlockListFragment {
     			Log.d(TAG, "in onPostExecute. " + "before setListAdapter");
     			
     		    setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
-    		    SpinningHalfApplication.getInstance().setDownloadFinished(true);
+    		    shapp.setDownloadFinished(true);
+    		    shapp.setUpdateGigGuideDatabase(false);
     		    Log.d(TAG, "in onPostExecute. " + "after setListAdapter");
     		    
     		    

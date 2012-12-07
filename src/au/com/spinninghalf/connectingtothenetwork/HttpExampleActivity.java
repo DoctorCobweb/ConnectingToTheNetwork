@@ -23,7 +23,8 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.actionbarsherlock.app.ActionBar.Tab;
 
-public class HttpExampleActivity extends SherlockFragmentActivity implements GigListFragment.OnGigListSelectedListener {
+public class HttpExampleActivity extends SherlockFragmentActivity 
+		implements GigListFragment.OnGigListSelectedListener, GigListFragment.OnGigListRefreshedListener {
 	
 	private static final String TAG = "HttpExampleActivity";
 	public static final String GIG_LIST_URL_KEY = "au.com.spinninghalf.connectingtothenetwork.giglisturl";
@@ -264,7 +265,29 @@ public class HttpExampleActivity extends SherlockFragmentActivity implements Gig
         }
 	}
     
-	
+	public void onGigListRefreshed() {
+		//add in refreshing code.
+		shapp.setUpdateGigGuideDatabase(true);
+		Log.i(TAG, "in onGigListRefreshed() at the TOP new GigListFragment with a refreshed database.");
+		
+		//Check whether the activity is using the layout version with
+        //the  FrameLayout. If so, we must add the first fragment
+		//if (findViewById(R.id.gig_guide_fragment_container) != null) {
+	    if (findViewById(R.id.MainFragmentContainer) != null) {	
+        	
+            //Create an instance of GigListFragment
+            GigListFragment firstFragment = new GigListFragment();
+            Log.i(TAG, "in onGigListRefreshed() and below making new GigListFragment with a refreshed database.");
+            //In case this activity was started with special instructions from an Intent,
+            //pass the Intent's extras to the fragment as arguments:
+            //firstFragment.setArguments(getIntent().getExtras());
+
+            //Add the fragment to the 'fragment_container' FrameLayout
+            getSupportFragmentManager().beginTransaction()
+                    //.add(R.id.gig_guide_fragment_container, firstFragment).commit();
+            		.add(R.id.MainFragmentContainer, firstFragment).commit();
+        }
+	}
 	  
 
 	  @Override
