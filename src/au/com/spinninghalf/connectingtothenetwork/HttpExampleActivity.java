@@ -106,7 +106,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity
 		      //TAB 3: Create and add the GIG GUIDE tab
 		      Tab gigGuideTab = actionBar.newTab();
 		      gigGuideTabListenerMobile = new TabListenerMobileList<GigListFragment>
-		        (this, R.id.MainFragmentContainer, GigListFragment.class);
+		        (this, R.id.MainFragmentContainer, "GIG_GUIDE_TAG", GigListFragment.class);
 		      gigGuideTab.setText("Gig Guide")
 		             .setContentDescription("Information on gigs.")
 		             .setTabListener(gigGuideTabListenerMobile);
@@ -285,7 +285,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity
             //Add the fragment to the 'fragment_container' FrameLayout
             getSupportFragmentManager().beginTransaction()
                     //.add(R.id.gig_guide_fragment_container, firstFragment).commit();
-            		.replace(R.id.MainFragmentContainer, refreshedFragment, "refreshedFragmentTag").commit();
+            		.replace(R.id.MainFragmentContainer, refreshedFragment, "GIG_GUIDE_TAG").commit();
         }
 	}
 	  
@@ -556,13 +556,15 @@ public class HttpExampleActivity extends SherlockFragmentActivity
 	    private FragmentActivity activity;
 	    private Class<T> fragmentClass;
 	    private int fragmentContainer;
+	    private String mTag;
 	  
 	    public TabListenerMobileList(FragmentActivity activity, int fragmentContainer, 
-	                       Class<T> fragmentClass) {
+	                       String tag, Class<T> fragmentClass) {
 	  
 	      this.activity = activity;
 	      this.fragmentContainer = fragmentContainer;
 	      this.fragmentClass = fragmentClass;
+	      this.mTag = tag;
 	    }
 	  
 	    //Called when a new tab has been selected
@@ -570,13 +572,14 @@ public class HttpExampleActivity extends SherlockFragmentActivity
 	    	ViewGigFragment vg = (ViewGigFragment) getSupportFragmentManager().findFragmentByTag("ViewGigTag");
 	    	Log.i(TAG, "g'day from onTabSelected in TabListenerMobileList");
 	    	
+	    	SherlockListFragment mFragment = (SherlockListFragment) this.activity.getSupportFragmentManager().findFragmentByTag(mTag);
 	    	
-	        if (fragment == null) {
+	        if (mFragment == null) {
 	      	    Log.i(TAG, "g'day from onTabSelected in TabListenerMobileList. GigListFragment == null");
 	    	    String fragmentName = fragmentClass.getName();
 	    	    fragment = (SherlockListFragment) Fragment.instantiate(activity, fragmentName); 
 	    	    ft.add(fragmentContainer, fragment, fragmentName);
-	        } else if (vg != null && fragment != null) {
+	        } else if (vg != null && mFragment != null) {
 	    	    Log.i(TAG, "g'day from onTabSelected in TabListenerMobileList. ViewGigFragment != null and GigListFragment != null");
 	    	    
 	    	    /*
@@ -590,7 +593,7 @@ public class HttpExampleActivity extends SherlockFragmentActivity
 	    	     */
 	        } else {
 	    	    Log.i(TAG, "g'day from onTabSelected in TabListenerMobileList. GigListFragment != null");
-	    	    ft.attach(fragment);
+	    	    ft.attach(mFragment);
 	        }
 	    }
 	  
@@ -599,12 +602,18 @@ public class HttpExampleActivity extends SherlockFragmentActivity
 	    public void onTabUnselected(Tab tab, FragmentTransaction ft) {
 	    	
 	    	Log.i(TAG, "g'day from onTabUnselected in TabListenerMobileList");
+	    	SherlockListFragment mFragment = (SherlockListFragment) this.activity.getSupportFragmentManager().findFragmentByTag(mTag); 
 	    	
 	    	ViewGigFragment vg = (ViewGigFragment) getSupportFragmentManager().findFragmentByTag("ViewGigTag");
-	    	if (fragment != null){
+	    	
+	    	if(fragment != null){
+	    		ft.detach(fragment);
+	    	}
+	    	
+	    	if (mFragment != null){
 	    		Log.i(TAG, "g'day from onTabUnselected in TabListenerMobileList AND fragment != null");
 	    		Log.i(TAG, "g'day from onTabUnselected in TabListenerMobileList, fragment != null, tagName = " + fragment.getTag());
-	    		ft.detach(fragment);
+	    		ft.detach(mFragment);
 	    		
 	    		if(fragment.isDetached()) {
 		    		Log.i(TAG, "g'day from onTabUnselected in TabListenerMobileList AND fragment IS DETATCHED.");
