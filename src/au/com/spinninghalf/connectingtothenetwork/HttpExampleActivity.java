@@ -159,7 +159,9 @@ public class HttpExampleActivity extends SherlockFragmentActivity
 		      actionBar.addTab(newsTab);
 		      
 		      
-		      //TAB 2: Create and add the REHEARSALS tab
+		      //TAB 2: Create and add the REHEARSALS tab//In case this activity was started with special instructions from an Intent,
+	            //pass the Intent's extras to the fragment as arguments:
+	            //firstFragment.setArguments(getIntent().getExtras());
 		      Tab rehearsalsTab = actionBar.newTab();
 		      rehearsalsTabListenerTablet = new TabListenerTablet2<RehearsalsFragmentTwo, RehearsalsFragmentThree>
 		         (this,  R.id.TabletFragmentContainer1, R.id.TabletFragmentContainer2,
@@ -276,16 +278,14 @@ public class HttpExampleActivity extends SherlockFragmentActivity
 	    if (findViewById(R.id.MainFragmentContainer) != null) {	
         	
             //Create an instance of GigListFragment
-            GigListFragment firstFragment = new GigListFragment();
+            GigListFragment refreshedFragment = new GigListFragment();
             Log.i(TAG, "in onGigListRefreshed() and below making new GigListFragment with a refreshed database.");
-            //In case this activity was started with special instructions from an Intent,
-            //pass the Intent's extras to the fragment as arguments:
-            //firstFragment.setArguments(getIntent().getExtras());
+            
 
             //Add the fragment to the 'fragment_container' FrameLayout
             getSupportFragmentManager().beginTransaction()
                     //.add(R.id.gig_guide_fragment_container, firstFragment).commit();
-            		.add(R.id.MainFragmentContainer, firstFragment).commit();
+            		.replace(R.id.MainFragmentContainer, refreshedFragment, "refreshedFragmentTag").commit();
         }
 	}
 	  
@@ -602,8 +602,16 @@ public class HttpExampleActivity extends SherlockFragmentActivity
 	    	
 	    	ViewGigFragment vg = (ViewGigFragment) getSupportFragmentManager().findFragmentByTag("ViewGigTag");
 	    	if (fragment != null){
+	    		Log.i(TAG, "g'day from onTabUnselected in TabListenerMobileList AND fragment != null");
+	    		Log.i(TAG, "g'day from onTabUnselected in TabListenerMobileList, fragment != null, tagName = " + fragment.getTag());
 	    		ft.detach(fragment);
+	    		
+	    		if(fragment.isDetached()) {
+		    		Log.i(TAG, "g'day from onTabUnselected in TabListenerMobileList AND fragment IS DETATCHED.");
+		    	}
 	    	}
+	    	
+	    	
 	    	
 	    	
 	    	//you must detach the ViewGigFragment if user selects another Tab whilst viewing ViewGigFragment.
