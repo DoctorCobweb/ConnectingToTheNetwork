@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class ManagementCastIronPinataActivity extends Activity {
-	public static final String CAST_IRON_PINATA_SOUNDCLOUD = "http://www.triplejunearthed.com/CastIronPinata";
+	public static final String CAST_IRON_PINATA_SOUNDCLOUD = "https://soundcloud.com/cast-iron-pinata";
 	public static final String CAST_IRON_PINATA_YOUTUBE = "http://www.youtube.com/user/CASTIRONPINATA?feature=watch";
 	public static final String CAST_IRON_PINATA_FACEBOOK = "http://www.facebook.com/castironpinata";
 	

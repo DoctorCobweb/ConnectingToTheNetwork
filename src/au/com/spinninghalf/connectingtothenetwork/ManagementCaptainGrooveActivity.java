@@ -14,7 +14,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 public class ManagementCaptainGrooveActivity extends Activity {
-	public static final String CAPTAIN_GROOVE_SOUNDCLOUD = "http://www.triplejunearthed.com/CaptainGroove";
+	public static final String CAPTAIN_GROOVE_SOUNDCLOUD = "https://soundcloud.com/captaingroove";
 	public static final String CAPTAIN_GROOVE_YOUTUBE = "http://www.youtube.com/user/madigroove?feature=watch";
 	public static final String CAPTAIN_GROOVE_FACEBOOK = "https://www.facebook.com/cngroove";
 	

@@ -153,13 +153,17 @@ public class GigListFragment extends SherlockListFragment {
         	SpinningHalfApplication _shapp = SpinningHalfApplication.getInstance();
     		DatabaseConnector _dbc = _shapp.getDatabaseConnector();
     		cursor = _dbc.getAllGigs();
+    		
+    		final ProgressBar progress = (ProgressBar)getActivity().findViewById(R.id.progressBarGigList);
         	
     		if(shapp.getUpdateGigGuideDatabase() || !cursor.moveToFirst()) {
         		//download a fresh copy of the gig guide
         		Log.i(TAG, "in onStart() and there is a network connection available. DOWNLOADING THE GIG GUIDE CONTENT.");
-        		new DownloadWebpageText().execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
+        		
+        		new DownloadWebpageText(progress).execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
         	} else if (cursor.moveToFirst()) {
         		//if the gig guide has already been downloaded, use the database version. dont re-download it!
+        		progress.setVisibility(View.GONE);
         		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
         	} 
         	
@@ -321,7 +325,7 @@ public class GigListFragment extends SherlockListFragment {
     	outState.putLong(GigListFragment.ARG_SELECTED_GIG_ID, this._selectedGigId);
     	outState.putInt(GigListFragment.ARG_SELECTED_GIG_POSITION, this._selectedGigPosition);
     	
-    	if ( cursor != null && cursor.moveToFirst()) {
+    	if (cursor != null && cursor.moveToFirst()) {
     		this.cursor.close();
     	}
     	SpinningHalfApplication.getInstance().getDatabaseConnector().close();
@@ -334,11 +338,11 @@ public class GigListFragment extends SherlockListFragment {
     //webpage as an InputStream. Finally, the InputStream is converted into a string, 
     //which is displayed in the UI thread by the onPostExecute method.
     private class DownloadWebpageText extends AsyncTask<String, Void, Cursor> {
-    	//private final ProgressBar progress;
+    	private final ProgressBar progress;
     	
-    	//public DownloadWebpageText(final ProgressBar progress) {
-    	//	this.progress = progress;
-    	//}
+    	public DownloadWebpageText(final ProgressBar progress) {
+    		this.progress = progress;
+    	}
     	
     	
     	@Override
@@ -346,7 +350,7 @@ public class GigListFragment extends SherlockListFragment {
     		Log.i(TAG, "in doInBackground");
     		
     		//this calls onProgressUpdate() to begin the ProgressBar circle animation.
-    		//publishProgress();
+    		publishProgress();
     		
     		Cursor cursor;
     		DatabaseConnector dbc = new DatabaseConnector(getActivity());
@@ -365,7 +369,7 @@ public class GigListFragment extends SherlockListFragment {
     		super.onProgressUpdate();
     		
     		//make the ProgressBar circle appear. Hey Presto.
-    		//progress.setVisibility(View.VISIBLE);
+    		progress.setVisibility(View.VISIBLE);
     	}
     	
     	
@@ -380,7 +384,7 @@ public class GigListFragment extends SherlockListFragment {
     		int gig_show_index;
     		
     		//get rid of progress circle once you have the cursor.
-    		//progress.setVisibility(View.GONE);
+    		progress.setVisibility(View.GONE);
     		if (cursor.moveToFirst()) {
     			Log.d(TAG, "in onPostExecute." + "Cursor is non-empty");
     			cursor.moveToFirst();

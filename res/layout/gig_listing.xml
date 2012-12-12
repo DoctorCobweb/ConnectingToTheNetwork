@@ -25,6 +25,13 @@
         android:minHeight="48dip"
         android:textStyle="bold"
         android:text="REFRESH GIG GUIDE" />
+
+    <ProgressBar
+        android:id="@+id/progressBarGigList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/buttonpadding" />
     
     <ListView android:id="@id/android:list"
         android:layout_width="match_parent"
