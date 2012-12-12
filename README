@@ -10,11 +10,9 @@ features:
 
 
 TODOS
--investigate AsyncTask and it not properly closing the database, and or, the current cursor when there is a configuration change i.e. screen rotation. weird errors in log but then on the surface of the user it seems fine. hmmmm.
--add in slick content & customize views. black aint back for this app.
+-add in slick content & customize views.
 -home landing screen?
--note to future me: no.fucking.adds okay. keep it slick and dont bug their eyeballs with o. keep it slick and dont bug their eyeballs with obtrusive low res crap. keep it slick and dont bug their eyeballs with obtrusive low res crap. keep it slick and dont bug their eyeballs with obtrusive low res crapbtrusive low res crap.
+-add text content to management & services pages.
+-tablet layout optimised version.
 
 
-
-will push commits once they're ready, more soon dudes.
