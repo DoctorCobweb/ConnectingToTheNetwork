@@ -13,29 +13,26 @@
             android:id="@+id/servicesPhotographyHeading"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/headings"
-            android:textStyle="bold"
+            android:layout_marginTop="@dimen/textpadding"
             android:gravity="center"
+            android:text="@string/servicesPhotography"
+            android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
-            android:text="@string/servicesPhotography" />
+            android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/servicesPhotographyTextView1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/servicesPhotographyBlurb1" />
+             android:id="@+id/servicesPhotographyTextView1"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="@dimen/textpadding"
+             android:text="@string/servicesPhotographyBlurb1" />
          
           <TextView
-            android:id="@+id/servicesPhotographyTextView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/servicesPhotographyBlurb2" />
-
-          <TextView
-              android:id="@+id/textView1"
-              android:layout_width="fill_parent"
+              android:id="@+id/servicesPhotographyTextView2"
+              android:layout_width="wrap_content"
               android:layout_height="wrap_content"
-              android:text="" />
+              android:layout_margin="@dimen/textpadding"
+              android:text="@string/servicesPhotographyBlurb2" />
           
           <Button
               android:id="@+id/servicesPhotographyBrentonFordButton"

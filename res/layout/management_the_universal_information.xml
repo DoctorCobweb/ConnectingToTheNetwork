@@ -13,6 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/textpadding"
             android:text="The Universal Information"
             android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
@@ -29,10 +30,11 @@
             android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/managementTheUniversalInformationBiographyBlurb1TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementTheUniversalInformationBiographyBlurb1" />
+             android:id="@+id/managementTheUniversalInformationBiographyBlurb1TextView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="@dimen/textpadding"
+             android:text="@string/managementTheUniversalInformationBiographyBlurb1" />
          
           <TextView
             android:id="@+id/managementTheUniversalInformationReleasesTextView"
@@ -45,10 +47,11 @@
             android:textStyle="bold" />
           
           <TextView
-            android:id="@+id/managementTheUniversalInformationDescriptionBlurb2TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementTheUniversalInformationReleasesBlurb2" />
+              android:id="@+id/managementTheUniversalInformationDescriptionBlurb2TextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/textpadding"
+              android:text="@string/managementTheUniversalInformationReleasesBlurb2" />
           
            <TextView
             android:id="@+id/managementTheUniversalInformationBandDescriptionTextView"
@@ -61,10 +64,11 @@
             android:textStyle="bold" />
            
            <TextView
-            android:id="@+id/managementTheUniversalInformationDescriptionBlurb3TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementTheUniversalInformationDescriptionBlurb3" />
+               android:id="@+id/managementTheUniversalInformationDescriptionBlurb3TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="@dimen/textpadding"
+               android:text="@string/managementTheUniversalInformationDescriptionBlurb3" />
            
            <TextView
             android:id="@+id/managementTheUniversalInformationBandInterestsTextView"
@@ -77,9 +81,11 @@
             android:textStyle="bold" />
            
            <TextView
-            android:id="@+id/managementTheUniversalInformationBandInterestsBlurb4TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementTheUniversalInformationBandInterestsBlurb4" />
+               android:id="@+id/managementTheUniversalInformationBandInterestsBlurb4TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="@dimen/textpadding"
+               android:text="@string/managementTheUniversalInformationBandInterestsBlurb4" />
+
     </LinearLayout>
 </ScrollView>

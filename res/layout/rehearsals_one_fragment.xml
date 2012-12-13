@@ -35,12 +35,14 @@
             android:id="@+id/rehearsalsHeadingTextView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/textpadding"
             android:layout_span="2"
             android:gravity="center"
             android:text="@string/rehearsals"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:textColor="@color/headings"
             android:textStyle="bold" />
+
     </TableRow>
 
     <TableRow
@@ -104,6 +106,7 @@
             android:id="@+id/rehearsalsBigRoomBlurb1TextView"
             android:layout_width="0sp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsBigRoomBlurb1" />
 
@@ -111,8 +114,10 @@
             android:id="@+id/rehearsalsSmallRoomBlurb1TextView"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsSmallRoomBlurb1" />
+
     </TableRow>
 
     <TableRow
@@ -124,6 +129,7 @@
             android:id="@+id/rehearsalsBigRoomBlurb2TextView"
             android:layout_width="0sp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsBigRoomBlurb2" />
 
@@ -131,8 +137,10 @@
             android:id="@+id/rehearsalsSmallRoomBlurb2TextView"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsSmallRoomBlurb2" />
+
     </TableRow>
 
     <TableRow
@@ -144,6 +152,7 @@
             android:id="@+id/rehearsalsBigRoomBlurb3TextView"
             android:layout_width="0sp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsBigRoomBlurb3" />
 
@@ -151,8 +160,10 @@
             android:id="@+id/rehearsalsSmallRoomBlurb3TextView"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsSmallRoomBlurb3" />
+
     </TableRow>
 
     <TableRow
@@ -164,6 +175,7 @@
             android:id="@+id/rehearsalsBigRoomBlurb4TextView"
             android:layout_width="0sp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsBigRoomBlurb4" />
 
@@ -171,8 +183,10 @@
             android:id="@+id/rehearsalsSmallRoomBlurb4TextView"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsSmallRoomBlurb4" />
+
     </TableRow>
 
     <TableRow
@@ -184,6 +198,7 @@
             android:id="@+id/rehearsalsBigRoomBlurb5TextView"
             android:layout_width="0sp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsBigRoomBlurb5" />
 
@@ -191,8 +206,10 @@
             android:id="@+id/rehearsalsSmallRoomBlurb5TextView"
             android:layout_width="0sp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/textpadding"
             android:layout_weight="1"
             android:text="@string/rehearsalsSmallRoomBlurb5" />
+
     </TableRow>
 
     <TableRow
@@ -342,12 +359,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
+            android:layout_marginLeft="@dimen/textpadding"
             android:layout_span="2"
             android:gravity="left"
+            android:paddingLeft="10sp"
             android:text="@string/rehearsalsAdditionalInfo"
             android:textColor="@color/headings"
-            android:textStyle="bold" 
-            android:paddingLeft="10sp"/>
+            android:textStyle="bold" />
+
     </TableRow>
 
     <TableRow
@@ -359,10 +378,13 @@
             android:id="@+id/rehearsalsAdditionalInfo1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/textpadding"
+            android:layout_marginRight="@dimen/textpadding"
             android:layout_span="2"
             android:paddingLeft="5sp"
             android:paddingRight="5sp"
             android:text="@string/rehearsalsAdditionalInfo1" />
+
     </TableRow>
 
     <TableRow
@@ -374,10 +396,13 @@
             android:id="@+id/rehearsalsAdditionalInfo2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/textpadding"
+            android:layout_marginRight="@dimen/textpadding"
             android:layout_span="2"
             android:paddingLeft="5sp"
             android:paddingRight="5sp"
             android:text="@string/rehearsalsAdditionalInfo2" />
+
     </TableRow>
 
     <TableRow
@@ -389,10 +414,13 @@
             android:id="@+id/rehearsalsAdditionalInfo3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/textpadding"
+            android:layout_marginRight="@dimen/textpadding"
             android:layout_span="2"
             android:paddingLeft="5sp"
             android:paddingRight="5sp"
             android:text="@string/rehearsalsAdditionalInfo3" />
+
     </TableRow>
 
     

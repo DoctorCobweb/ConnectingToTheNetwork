@@ -13,6 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/textpadding"
             android:text="Captain Groove Information"
             android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
@@ -29,10 +30,11 @@
             android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/managementCaptainGrooveInformationBiographyBlurb1TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementCaptainGrooveInformationBiographyBlurb1" />
+             android:id="@+id/managementCaptainGrooveInformationBiographyBlurb1TextView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="@dimen/textpadding"
+             android:text="@string/managementCaptainGrooveInformationBiographyBlurb1" />
          
           <TextView
             android:id="@+id/managementCaptainGrooveInformationReleasesTextView"
@@ -45,10 +47,11 @@
             android:textStyle="bold" />
           
           <TextView
-            android:id="@+id/managementCaptainGrooveInformationDescriptionBlurb2TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementCaptainGrooveInformationReleasesBlurb2" />
+              android:id="@+id/managementCaptainGrooveInformationDescriptionBlurb2TextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/textpadding"
+              android:text="@string/managementCaptainGrooveInformationReleasesBlurb2" />
           
            <TextView
             android:id="@+id/managementCaptainGrooveInformationBandDescriptionTextView"
@@ -61,10 +64,11 @@
             android:textStyle="bold" />
            
            <TextView
-            android:id="@+id/managementCaptainGrooveInformationDescriptionBlurb3TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementCaptainGrooveInformationDescriptionBlurb3" />
+               android:id="@+id/managementCaptainGrooveInformationDescriptionBlurb3TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="@dimen/textpadding"
+               android:text="@string/managementCaptainGrooveInformationDescriptionBlurb3" />
            
            <TextView
             android:id="@+id/managementCaptainGrooveInformationBandInterestsTextView"
@@ -77,9 +81,11 @@
             android:textStyle="bold" />
            
            <TextView
-            android:id="@+id/managementCaptainGrooveInformationBandInterestsBlurb4TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementCaptainGrooveInformationBandInterestsBlurb4" />
+               android:id="@+id/managementCaptainGrooveInformationBandInterestsBlurb4TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="@dimen/textpadding"
+               android:text="@string/managementCaptainGrooveInformationBandInterestsBlurb4" />
+
     </LinearLayout>
 </ScrollView>

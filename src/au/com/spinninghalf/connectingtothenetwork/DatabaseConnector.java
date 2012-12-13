@@ -5,8 +5,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
 
@@ -51,7 +51,8 @@ public class DatabaseConnector
    public void insertGig(String _gig_id, 
 		   				 String _author, 
 		   				 String _show, 
-		   				 String _date, 
+		   				 String _date,
+		   				 String _venue,
 		   				 String _description, 
 		   				 String _price, 
 		   				 String _tixUrl) 
@@ -63,6 +64,7 @@ public class DatabaseConnector
       newGig.put("author", _author);
       newGig.put("show", _show);
       newGig.put("date", _date);
+      newGig.put("venue", _venue);
       newGig.put("description", _description);
       newGig.put("price", _price);
       newGig.put("tixUrl", _tixUrl);	  
@@ -76,7 +78,8 @@ public class DatabaseConnector
 		   		         String _gig_id, //returns a Cursor containing  {_id, shows} columns
 				         String _author, 
 				         String _show, 
-				         String _date, 
+				         String _date,
+				         String _venue,
 				         String _description, 
 				         String _price, 
 				         String _tixUrl) 
@@ -86,6 +89,7 @@ public class DatabaseConnector
       editGig.put("author", _author);
       editGig.put("show", _show);
       editGig.put("date", _date);
+      editGig.put("venue", _venue);
       editGig.put("description", _description);
       editGig.put("price", _price);
       editGig.put("tixUrl", _tixUrl);
@@ -134,7 +138,7 @@ public class DatabaseConnector
    
    public Cursor getErrorMsgInCursorForm(String error) {
 	   Log.d(TAG, "in getErrorMsgInCursorForm.");
-	   insertGig(error, error, error, error, error, error, error);
+	   insertGig(error, error, error, error, error, error, error, error);
 	   
 	   return database.query(GIGS_TABLE, null, "gig_id=" + error, null, null, null, null);
    }
@@ -155,7 +159,7 @@ public class DatabaseConnector
          // query to create a new table named contacts
          String createQuery = "CREATE TABLE " + GIGS_TABLE +
             "(_id integer primary key autoincrement," +
-            "gig_id TEXT, author TEXT, show TEXT, date TEXT, description TEXT," +
+            "gig_id TEXT, author TEXT, show TEXT, date TEXT, venue TEXT, description TEXT," +
             "price TEXT, tixUrl TEXT);";
                   
          db.execSQL(createQuery); // execute the query

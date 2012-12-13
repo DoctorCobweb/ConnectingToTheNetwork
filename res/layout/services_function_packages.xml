@@ -12,17 +12,26 @@
             android:id="@+id/servicesFunctionPackageHeadingTextView"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/headings"
-            android:textStyle="bold"
+            android:layout_marginTop="@dimen/textpadding"
             android:gravity="center"
             android:text="@string/servicesFunctionPackages"
-            android:textSize="@dimen/large_heading" />
+            android:textColor="@color/headings"
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
         
         <TextView
             android:id="@+id/servicesFunctionPackageBlurb1TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textpadding"
             android:text="@string/servicesFunctionPackagesBlurb1" />
+        
+        <TextView
+            android:id="@+id/servicesFunctionPackageBlurb2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textpadding"
+            android:text="@string/servicesFunctionPackagesBlurb2" />
 
         <GridView
             android:id="@+id/servicesFunctionPackageGridView"
@@ -32,10 +41,11 @@
         </GridView>
         
         <TextView
-            android:id="@+id/servicesFunctionPakageBlurb2TextView"
+            android:id="@+id/servicesFunctionPakageBlurb3TextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/servicesFunctionPackagesBlurb2" />
+            android:layout_margin="@dimen/textpadding"
+            android:text="@string/servicesFunctionPackagesBlurb3" />
 
     </LinearLayout>
     

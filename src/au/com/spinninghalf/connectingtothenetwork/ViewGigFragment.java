@@ -9,21 +9,17 @@ package au.com.spinninghalf.connectingtothenetwork;
 
 //import com.actionbarsherlock.app.SherlockFragment;
 
-import com.actionbarsherlock.app.SherlockFragment;
-import com.actionbarsherlock.app.SherlockFragmentActivity;
-
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.actionbarsherlock.app.SherlockFragment;
 
 public class ViewGigFragment extends SherlockFragment {
 	private final static String TAG = "ViewGigFragment";

@@ -24,12 +24,14 @@ public class ViewGigActivity extends Activity {
 	final static String ARG_INIT = "init";
 	final static String ARG_SHOW = "show_text";
 	final static String ARG_DATE = "date_text";
+	final static String ARG_VENUE = "venue_text";
 	final static String ARG_DESCRIPTION = "description_text";
 	final static String ARG_PRICE = "price_text";
 	final static String ARG_TIX_URL = "tix_url_text";
 	int mInit = -1;
 	TextView showTextView;
     TextView dateTextView;
+    TextView venueTextView;
     TextView descriptionTextView;
     TextView priceTextView;
     TextView  tixUrlTextView;
@@ -40,6 +42,7 @@ public class ViewGigActivity extends Activity {
     //used for setting the Bundle strings of the textViews when using a savedInstanceState
     private String defaultShowString = "";
     private String defaultDateString = "";
+    private String defaultVenueString = "";
     private String defaultDescriptionString = "";
     private String defaultPriceString = "";
     private String defaultTixUrlString = "";
@@ -64,6 +67,7 @@ public class ViewGigActivity extends Activity {
 		
 		showTextView = (TextView) findViewById(R.id.showTextView);
 	    dateTextView = (TextView) findViewById(R.id.dateTextView);
+	    venueTextView = (TextView) findViewById(R.id.venueTextView);
 	    descriptionTextView = (TextView) findViewById(R.id.descriptionTextView);
 	    priceTextView = (TextView) findViewById(R.id.priceTextView);
 	    tixUrlTextView = (TextView) findViewById(R.id.tixUrlTextView); 
@@ -139,6 +143,7 @@ public class ViewGigActivity extends Activity {
 		        //get the column index for each data item
 		        int showIndex = result.getColumnIndex("show");
 		        int dateIndex = result.getColumnIndex("date");
+		        int venueIndex = result.getColumnIndex("venue");
 		        int descriptionIndex = result.getColumnIndex("description");
 		        int priceIndex = result.getColumnIndex("price");
 		        int tixUrlIndex = result.getColumnIndex("tixUrl");
@@ -146,6 +151,7 @@ public class ViewGigActivity extends Activity {
 		        //fill TextViews with the retrieved data
 		        showTextView.setText(result.getString(showIndex));
 		        dateTextView.setText(result.getString(dateIndex));
+		        venueTextView.setText(result.getString(venueIndex));
 		        descriptionTextView.setText(result.getString(descriptionIndex));
 		        priceTextView.setText(result.getString(priceIndex));
 		        tixUrlTextView.setText(result.getString(tixUrlIndex));
@@ -161,6 +167,7 @@ public class ViewGigActivity extends Activity {
 	        	//fill TextViews with the strings saved in the Bundle data passed into onCreate().
 	        	showTextView.setText(defaultShowString);
 	        	dateTextView.setText(defaultDateString);
+	        	venueTextView.setText(defaultVenueString);
 	        	descriptionTextView.setText(defaultDescriptionString);
 	        	priceTextView.setText(defaultPriceString);
 	        	tixUrlTextView.setText(defaultTixUrlString);
@@ -192,6 +199,7 @@ public class ViewGigActivity extends Activity {
 	    //save the text fields in the TextViews to the Bundle.
 	    outState.putString(ViewGigActivity.ARG_SHOW, (showTextView.getText()).toString());
 	    outState.putString(ViewGigActivity.ARG_DATE, (dateTextView.getText()).toString());
+	    outState.putString(ViewGigActivity.ARG_VENUE, (venueTextView.getText()).toString());
 	    outState.putString(ViewGigActivity.ARG_DESCRIPTION, (descriptionTextView.getText()).toString());
 	    outState.putString(ViewGigActivity.ARG_PRICE, (priceTextView.getText()).toString());
 	    outState.putString(ViewGigActivity.ARG_TIX_URL, (tixUrlTextView.getText()).toString());

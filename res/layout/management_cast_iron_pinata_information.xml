@@ -13,6 +13,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="@dimen/textpadding"
             android:text="Cast Iron Pinata Information"
             android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
@@ -29,10 +30,11 @@
             android:textStyle="bold" />
         
          <TextView
-            android:id="@+id/managementCastIronPinataInformationBiographyBlurb1TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementCastIronPinataInformationBiographyBlurb1" />
+             android:id="@+id/managementCastIronPinataInformationBiographyBlurb1TextView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_margin="@dimen/textpadding"
+             android:text="@string/managementCastIronPinataInformationBiographyBlurb1" />
          
           <TextView
             android:id="@+id/managementCastIronPinataInformationReleasesTextView"
@@ -45,10 +47,11 @@
             android:textStyle="bold" />
           
           <TextView
-            android:id="@+id/managementCastIronPinataInformationDescriptionBlurb2TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementCastIronPinataInformationReleasesBlurb2" />
+              android:id="@+id/managementCastIronPinataInformationDescriptionBlurb2TextView"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_margin="@dimen/textpadding"
+              android:text="@string/managementCastIronPinataInformationReleasesBlurb2" />
           
            <TextView
             android:id="@+id/managementCastIronPinataInformationBandDescriptionTextView"
@@ -61,10 +64,11 @@
         	android:textStyle="bold" />
            
            <TextView
-            android:id="@+id/managementCastIronPinataInformationDescriptionBlurb3TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementCastIronPinataInformationDescriptionBlurb3" />
+               android:id="@+id/managementCastIronPinataInformationDescriptionBlurb3TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="@dimen/textpadding"
+               android:text="@string/managementCastIronPinataInformationDescriptionBlurb3" />
            
            <TextView
             android:id="@+id/managementCastIronPinataInformationBandInterestsTextView"
@@ -77,10 +81,11 @@
             android:textStyle="bold" />
            
            <TextView
-            android:id="@+id/managementCastIronPinataInformationBandInterestsBlurb4TextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/managementCastIronPinataInformationBandInterestsBlurb4" />
+               android:id="@+id/managementCastIronPinataInformationBandInterestsBlurb4TextView"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:layout_margin="@dimen/textpadding"
+               android:text="@string/managementCastIronPinataInformationBandInterestsBlurb4" />
         
     </LinearLayout>
     

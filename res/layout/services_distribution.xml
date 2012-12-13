@@ -12,28 +12,32 @@
             android:id="@+id/servicesDistributionHeading"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/headings"
-            android:textStyle="bold"
+            android:layout_marginTop="@dimen/textpadding"
             android:gravity="center"
+            android:text="@string/servicesDistribution"
+            android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
-            android:text="@string/servicesDistribution" />
+            android:textStyle="bold" />
         
         <TextView
             android:id="@+id/servicesDistributionTextView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textpadding"
             android:text="@string/servicesDistributionBlurb1" />
         
         <TextView
             android:id="@+id/servicesDistributionTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textpadding"
             android:text="@string/servicesDistributionBlurb2" />
         
         <TextView
             android:id="@+id/servicesDistributionTextView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textpadding"
             android:text="@string/servicesDistributionBlurb3" />
         
     </LinearLayout>

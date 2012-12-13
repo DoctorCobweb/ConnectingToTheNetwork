@@ -12,28 +12,32 @@
             android:id="@+id/servicesPublicityHeading"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/headings"
-            android:textStyle="bold"
+            android:layout_marginTop="@dimen/textpadding"
             android:gravity="center"
+            android:text="@string/servicesPublicity"
+            android:textColor="@color/headings"
             android:textSize="@dimen/large_heading"
-            android:text="@string/servicesPublicity" />
+            android:textStyle="bold" />
         
         <TextView
             android:id="@+id/servicesPublicityTextView1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textpadding"
             android:text="@string/servicesPublicityBlurb1" />
         
         <TextView
             android:id="@+id/servicesPublicityTextView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textpadding"
             android:text="@string/servicesPublicityBlurb2" />
         
         <TextView
             android:id="@+id/servicesPublicityTextView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="@dimen/textpadding"
             android:text="@string/servicesPublicityBlurb3" />
         
     </LinearLayout>

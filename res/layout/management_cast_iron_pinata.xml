@@ -12,11 +12,12 @@
             android:id="@+id/managementCastIronPinataHeading"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/textpadding"
             android:gravity="center"
-            android:textStyle="bold"
             android:text="@string/managementCastIronPinata"
             android:textColor="@color/headings"
-            android:textSize="@dimen/large_heading" />
+            android:textSize="@dimen/large_heading"
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/managementCastIronPinataBannerImageView"

@@ -8,8 +8,9 @@
     <string name="titleGigTimeline">Gig Listing</string>
     <string name="label_show">Show</string>
     <string name="label_date">Date</string>
+    <string name="label_venue">Venue</string>
     <string name="label_description">Description</string>
-    <string name="label_price">Price</string>
+    <string name="label_price">Price $</string>
     <string name="label_tixUrl">Ticket Link</string>
     <string name="showGreeting">Please select a gig to view.</string>
     
@@ -98,10 +99,21 @@
     <string name="managementTheUniversalInformationBandInterestsBlurb4">Coming up with new almalgamated words to reference movie attributes.</string>
     
     <string name="managementCaptainGrooveInformationHeading">Captain Groove Information</string>
-    <string name="managementCaptainGrooveInformationBiographyBlurb1">This is your Captain speaking &#8230; GROOVE!</string>
+    <string name="managementCaptainGrooveInformationBiographyBlurb1">The musical monster that is Captain Groove began accidentally. To begin with it was a jam &#8230; Five jazz students who\'d all had enough 
+        of playing standards, started to groove on just one long satisfying chord. Someone began to sing and with a nod, everyone willingly went with it. The spontaneous and organic vibe that the band 
+        had created was unexpected and ground-breaking. The success they have enjoyed with their following in the first two years as a grooving unit has been profound.
+		With moments reflecting the stylings of Queen, this 5-piece band breaks down into just-as-many-part harmonies. Having all studied jazz music and improvisation (Victorian College of the Arts, 
+		Monash University and NMIT), their style is sophisticated but dancable. Their odd time signatures and less-than-traditional structures are intricate, yet still more than friendly to the ear. 
+		 
+		Today Captain Groove continue to write and perform their new age grooves to new and approving fans in Melbourne and beyond and is rapidly growing into a recognisable act with talent around the town. 
+		Currently recording their debut album featuring heavy, rhythm-set grooves, full-blown Hammond organ sounds and a barrage of sweet vocal harmonies, this is rock music you could show to your parents. 
+		Captain Groove manage to keep their crowds dancing AND listening. If you are into rock, fusion, funk, disco or porn you will love this band.</string>
     <string name="managementCaptainGrooveInformationReleasesBlurb2">Currently in the making.</string>
-    <string name="managementCaptainGrooveInformationDescriptionBlurb3">This is your Captain speaking &#8230; GROOVE!</string>
-    <string name="managementCaptainGrooveInformationBandInterestsBlurb4">GROOVE!</string>
+    <string name="managementCaptainGrooveInformationDescriptionBlurb3">This is a band that has never happened before, combining elements of jazz fusion, funk and disco all tied together with rock. 
+        The band\'s sound includes an authentic Hammond organ and rotating 
+		Leslie speaker to achieve a highly sought after vintage sound. Captain Groove\'s sound borderlines the 60\'s and 70\'s with a new and youthful vibe.</string>
+    <string name="managementCaptainGrooveInformationBandInterestsBlurb4">Influences range from but are not limited to The Beatles, Pink Floyd, Queen and Muse to Jeff Beck, Mahavishnu Orchestra, 
+        Bryan Scary and Yellowjackets.</string>
     <string name="managementApplyBlurb1">If you would like to be considered for Management under the prestigious Spinning Half banner, please send an email titled accordingly via the Contact Us Section. To help the process 
         along, please include any documents which you think may be relevant i.e. press kits, links to your music, videos, EPKs &amp; any other useful content that will help us get back to you with an informed offering. 
         The type of management we can offer you depends on our current roster but nonetheless, we will earnestly try to help out you in some way, shape or form.</string>
@@ -119,10 +131,11 @@
     
     <string name="servicesFunctionPackages">Function Packages</string>
     <string name="servicesFunctionPackagesBlurb1">For all your important occassions like weddings, 18th and 21st birthdays, uni functions and general coporate events we can supply tailored 
-        function packages for you. Depending on the event, you can choose which components you will need: PA system, lighting, Djs, band &amp; PA operators. We have experience all these areas and 
+        function packages for you.</string>
+    <string name="servicesFunctionPackagesBlurb2">Depending on the event, you can choose which components you will need: PA system, lighting, Djs, band &amp; PA operators. We have experience all these areas and 
         know how crucial it is to get right, first time. Basically our aim is for you to have the idea of what the event will be and we will sort out all the neccessary details required to 
         deliver the event. Let us figure it out for you! Please have a look at the photos below to get a better idea of what can we do.</string>
-    <string name="servicesFunctionPackagesBlurb2">If you are interested in finding out our rates for a particular function please contact us via the Contact Us Section.</string>
+    <string name="servicesFunctionPackagesBlurb3">If you are interested in finding out our rates for a particular function please contact us via the Contact Us Section.</string>
     <string name="servicesPublicity">Publicity</string>
     <string name="servicesPublicityBlurb1">Do you want your newly recorded music to get out there, hitting all forms of media accross the country? And do you want to tour your music around Australia and play it out in 
         prestigious music venues to appreciative punters? These are all questions we aim to answer with our Publicity Initiative. Through the use of our preestablished nationwide networks involving Booking Agents, 

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
@@ -70,6 +71,7 @@ public class DownloadAndParseGigs {
     		String gig_id = null;
     		String author = null;
     		String date = null;
+    		String venue = null;
     		String description = null;
     		String show = null;
     		String price = null;
@@ -91,47 +93,45 @@ public class DownloadAndParseGigs {
     					} else {
     						author = NO_XML_CONTENT;
     					}
-    					//Log.i(TAG, author + " 2");
     				} else if ( "date".equals(currentTag)) {
     					if (xpp.getText() != null && xpp.getText() != "") {
     					    date = xpp.getText();
     					} else {
     						date = NO_XML_CONTENT;
     					}
-    					//Log.i(TAG, date + " 3");
+    				} else if ( "venue".equals(currentTag)) {
+    					if (xpp.getText() != null && xpp.getText() != "") {
+    					    venue = xpp.getText();
+    					} else {
+    						venue = NO_XML_CONTENT;
+    					}
     				} else if ("description".equals(currentTag)) {
     					if (xpp.getText() != null && xpp.getText() != "") {
     					    description = xpp.getText();
     					} else {
     						description = NO_XML_CONTENT;
     					}
-    					//Log.i(TAG, description + " 4");
     				} else if ("show".equals(currentTag)) {
     					if (xpp.getText() != null && xpp.getText() != "") {
     				        show = xpp.getText();
     					} else {
     						show = NO_XML_CONTENT;
     					}
-    					//Log.i(TAG, show + " 5");
     				} else if ("price".equals(currentTag)) {
     					if (xpp.getText() != null && xpp.getText() != "") {
     					    price = xpp.getText();
     					} else {
     						price = NO_XML_CONTENT;
     					}
-    					//Log.i(TAG, price + " 6");
     				} else if ("tixUrl".equals(currentTag)) {
     					if (xpp.getText() != null && xpp.getText() != "") {
     					    tixUrl = xpp.getText();
     					} else {
     						tixUrl = NO_XML_CONTENT;
     					}
-    					//Log.i(TAG, tixUrl + " 7");
     				}
     			} else if (eventType == XmlPullParser.END_TAG) {
-    				//Log.i(TAG, "in end tag");
     				if ("gig".equals(xpp.getName())) {
-    					//Log.i(TAG, "HI from end /"gig/" element");
     					boolean flag = false; //set to true if the gig already has been inserted into the db.
     					
     					//a cursor with 1 column, namely "gig_id" for every gig in the android db.
@@ -144,26 +144,20 @@ public class DownloadAndParseGigs {
     						}
     						gigIdCursor.moveToNext(); //increment to the next row in the cursor.
     					}
-    					//gigIdCursor.close(); //?
     					if (!flag) {
     					//insert the new gig DETAILS into the database
-    					dbc.insertGig(gig_id, author, show, date, description, price, tixUrl);
+    					dbc.insertGig(gig_id, author, show, date, venue, description, price, tixUrl);
     					}
     					
     					//increment the gig counter
     					gigCounter++;
     				}
     			}
-    			//Log.i(TAG, "before next()");
     			eventType = xpp.next();
-    			//Log.i(TAG, Integer.toString(eventType));
-    			//currentTag1 = xpp.getName();
-    			//Log.i(TAG, "currentTag1: "+ currentTag1);
     		}
     		return dbc.getAllGigs();
     		
     	}   finally {
-    		//allGigsCursor.close();
     		Log.i(TAG, "in finally block");
     		Log.i(TAG, "gigCounter is= " + gigCounter);
     		if (is != null) {
@@ -206,6 +200,7 @@ public class DownloadAndParseGigs {
     		String gig_id = null;
     		String author = null;
     		String date = null;
+    		String venue = null;
     		String description = null;
     		String show = null;
     		String price = null;
@@ -235,6 +230,12 @@ public class DownloadAndParseGigs {
     						date = NO_XML_CONTENT;
     					}
     					//Log.i(TAG, date + " 3");
+    				} else if ( "venue".equals(currentTag)) {
+    					if (xpp.getText() != null && xpp.getText() != "") {
+    					    venue = xpp.getText();
+    					} else {
+    						venue = NO_XML_CONTENT;
+    					}
     				} else if ("description".equals(currentTag)) {
     					if (xpp.getText() != null && xpp.getText() != "") {
     					    description = xpp.getText();
@@ -288,7 +289,7 @@ public class DownloadAndParseGigs {
     					
     					if (!flag) {
     					//insert the new gig DETAILS into the database
-    					dbc.insertGig(gig_id, author, show, date, description, price, tixUrl);
+    					dbc.insertGig(gig_id, author, show, date, venue, description, price, tixUrl);
     					}
     					
     					//increment the gig counter
