@@ -25,8 +25,10 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
+import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
@@ -175,7 +177,7 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
      * care of switch to the correct paged in the ViewPager whenever the selected
      * tab changes.
      */
-    public class TabsAdapter extends FragmentPagerAdapter
+    public class TabsAdapter extends FragmentStatePagerAdapter
             implements ActionBar.TabListener, ViewPager.OnPageChangeListener {
         private final Context mContext;
         private final ActionBar mActionBar;
@@ -225,6 +227,11 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
             return Fragment.instantiate(mContext, info.clss.getName(), info.args);
         }
         
+        @Override
+        public int getItemPosition(Object object) {
+        	return POSITION_NONE;
+        }
+        
         /*
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
@@ -235,6 +242,7 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
         	return new GigListFragment();
         }
         */
+        
 
         @Override
         public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -272,18 +280,45 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
         	
         	//SherlockListFragment mFragment = (SherlockListFragment) getSupportFragmentManager().findFragmentByTag(mTag); 
         	
+        	notifyDataSetChanged();
         	
+        	/*
         	//THIS IS CRASHING THE APP AFTER REFRESHING THE GIG LIST.
         	//results in the old giglistfragment over the top of the new one (i think). 
         	//the old one has an empty cursor, hence viewing a gig is empty textviews.
         	if(shapp.getUpdateGigGuideDatabase()) {
+        		Log.i(TAG, "HELLO FROM onTabReselected + we are updating the gig guide!!!");
         		//Create an instance of GigListFragment
-                GigListFragment refreshedFragment = new GigListFragment();
-                getSupportFragmentManager().beginTransaction()
-        			.replace(R.id.pager, refreshedFragment, "GIG_LIST_TAG").commit();
-                 // .replace(R.id.MainFragmentContainer, refreshedFragment, "GIG_GUIDE_TAG").commit();
+                //GigListFragment refreshedFragment = new GigListFragment();
+                //getSupportFragmentManager().beginTransaction()
+        		//  .replace(R.id.pager, refreshedFragment, "GIG_LIST_TAG");
+                 //.replace(R.id.MainFragmentContainer, refreshedFragment).commit();
+        		
+        		
+        		super.destroyItem(mViewPager, 2, mViewPager);
+        		super.instantiateItem(mViewPager, 2);
+        		
+        		//mViewPager.setCurrentItem(2);
         	}
+        	*/
         }
     }
+    
+    /*
+    public class WebViewPager extends ViewPager {
+        public WebViewPager(Context context, AttributeSet attrs) {
+            super(context, attrs);
+        }
+
+        @Override
+        protected boolean canScroll(View v, boolean checkV, int dx, int x, int y) {
+            if (v instanceof ExtendedWebView) {
+                return ((ExtendedWebView) v).canScrollHor(-dx);
+            } else {
+                return super.canScroll(v, checkV, dx, x, y);
+            }
+        }
+    }
+    */
 }
 

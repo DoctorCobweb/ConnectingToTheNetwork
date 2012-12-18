@@ -5,7 +5,9 @@ package au.com.spinninghalf.connectingtothenetwork;
 
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +25,10 @@ public class NewsFragmentOne extends SherlockFragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 		View mainView = inflater.inflate(R.layout.news_one_fragment, container, false);
+		//ExtendedWebView webView = new ExtendedWebView(getActivity());
 		WebView webView = (WebView) mainView.findViewById(R.id.webview);
 		webView.loadUrl(NewsFragmentOne.SPINNING_HALF_WEBSITE_URI);
-		
+		webView.setHorizontalScrollBarEnabled(true);
 		webView.getSettings().setBuiltInZoomControls(true);
 		
 		return mainView;
@@ -54,6 +57,27 @@ public class NewsFragmentOne extends SherlockFragment {
 		super.onStop();
 		
 		
+	}
+	
+	public class ExtendedWebView extends WebView {
+	    public ExtendedWebView(Context context) {
+	        super(context);
+	    }
+
+	    public ExtendedWebView(Context context, AttributeSet attrs) {
+	        super(context, attrs);
+	    }
+
+	    public boolean canScrollHor(int direction) {
+	        final int offset = computeHorizontalScrollOffset();
+	        final int range = computeHorizontalScrollRange() - computeHorizontalScrollExtent();
+	        if (range == 0) return false;
+	        if (direction < 0) {
+	            return offset > 0;
+	        } else {
+	            return offset < range - 1;
+	        }
+	    }
 	}
 	
 /*	
