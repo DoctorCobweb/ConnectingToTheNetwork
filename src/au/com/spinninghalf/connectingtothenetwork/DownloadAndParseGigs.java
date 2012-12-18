@@ -37,6 +37,7 @@ public class DownloadAndParseGigs {
 	    	e.printStackTrace();
 	    	return dbc.getErrorMsgInCursorForm(IO_ERROR);
 		}
+    	
     }
 	
 	public Cursor downloadAndParse(String myUrl, DatabaseConnector dbc) throws IOException, XmlPullParserException {
@@ -52,11 +53,13 @@ public class DownloadAndParseGigs {
     		conn.setRequestMethod("GET");
     		conn.setDoInput(true);
     		//Starts the query
+    		Log.i(TAG, "1");
     		conn.connect();
+    		Log.i(TAG, "2");
     		int response = conn.getResponseCode();
     		Log.d(TAG, "This response is: " + response);
     		is = conn.getInputStream();
-    		
+    		Log.i(TAG, "2.5");
     		//parse the xml
     		XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
     		factory.setNamespaceAware(true);
@@ -134,6 +137,8 @@ public class DownloadAndParseGigs {
     				if ("gig".equals(xpp.getName())) {
     					boolean flag = false; //set to true if the gig already has been inserted into the db.
     					
+    					Log.i(TAG, "3");
+    					
     					//a cursor with 1 column, namely "gig_id" for every gig in the android db.
     					Cursor gigIdCursor = dbc.getGigIdColumnVals(); 
     					gigIdCursor.moveToFirst();
@@ -144,11 +149,14 @@ public class DownloadAndParseGigs {
     						}
     						gigIdCursor.moveToNext(); //increment to the next row in the cursor.
     					}
+    					
+    					Log.i(TAG, "4");
+    					
     					if (!flag) {
     					//insert the new gig DETAILS into the database
     					dbc.insertGig(gig_id, author, show, date, venue, description, price, tixUrl);
     					}
-    					
+    					Log.i(TAG, "5");
     					//increment the gig counter
     					gigCounter++;
     				}

@@ -41,6 +41,7 @@ public class GigListFragment extends SherlockListFragment {
 	DatabaseConnector dbc;
 	private Cursor cursor = null;
 	int layout;
+	private Button refreshButton;
 	
 	private static final String ARG_SELECTED_GIG_ID = "GigListFragment_selected_gig_id";
 	private static final String ARG_SELECTED_GIG_POSITION = "GigListFragment_selected_gig_position";
@@ -126,10 +127,16 @@ public class GigListFragment extends SherlockListFragment {
         Log.i(TAG, "in onStart()");
         
       //find the reference to the Refresh button
-        Button refreshButton = (Button) getActivity().findViewById(R.id.refreshGigGuideButton);
+        refreshButton = (Button) getActivity().findViewById(R.id.refreshGigGuideButton);
+        
         
         if (refreshButton != null) {
         	Log.i(TAG, "refreshButton is NOT null");
+        	
+        	//set the refresh bar to not been seen originally.
+        	//only once the gig guide is loaded should it show.
+        	//also, when the user selects to refresh, it should not still be seen.
+        	refreshButton.setVisibility(View.INVISIBLE);
         }
         
         refreshButton.setOnClickListener(refreshButtonListener);
@@ -159,6 +166,8 @@ public class GigListFragment extends SherlockListFragment {
         		new DownloadWebpageText(progress).execute(SpinningHalfApplication.SPINNINGHALF_GIGLIST_WEBSERVICE);
         	} else if (cursor.moveToFirst()) {
         		//if the gig guide has already been downloaded, use the database version. dont re-download it!
+        		//and add in the refresh button.
+        		refreshButton.setVisibility(View.VISIBLE);
         		progress.setVisibility(View.GONE);
         		setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
         	} 
@@ -298,7 +307,7 @@ public class GigListFragment extends SherlockListFragment {
     }
 	
     
-    //Refresh button listener goes here
+    //Refresh button listener goes hereButton
 	public OnClickListener refreshButtonListener = new OnClickListener() {
 		
 		@Override
@@ -399,6 +408,10 @@ public class GigListFragment extends SherlockListFragment {
     			Log.d(TAG, "in onPostExecute. " + "before setListAdapter");
     			
     		    setListAdapter(new SimpleCursorAdapter(getActivity(), layout, cursor, from, to)); // set contactView's adapter
+    		    
+    		    //add in the refresh button once the gig list is display.
+    		    //otherwise, there will be no way to refresh originally.
+    		    refreshButton.setVisibility(View.VISIBLE);
     		    shapp.setDownloadFinished(true);
     		    shapp.setUpdateGigGuideDatabase(false);
     		    Log.d(TAG, "in onPostExecute. " + "after setListAdapter");
