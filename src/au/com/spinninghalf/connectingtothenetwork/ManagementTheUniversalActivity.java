@@ -1,5 +1,7 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -38,6 +40,19 @@ public class ManagementTheUniversalActivity extends Activity {
 		listenButton.setOnClickListener(listenButtonListener);
 		watchButton.setOnClickListener(watchButtonListener);
 		socialButton.setOnClickListener(socialButtonListener);
+	}
+	
+	@Override
+	  public void onStart() {
+	    super.onStart();
+	    EasyTracker.getInstance().activityStart(this); // Add this method.
+	  }
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		
+		EasyTracker.getInstance().activityStop(this); // Add this method.
 	}
 	
 	public OnClickListener informationButtonListener = new OnClickListener() {

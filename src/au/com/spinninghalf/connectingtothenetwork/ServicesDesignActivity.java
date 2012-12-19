@@ -1,5 +1,7 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -33,6 +35,8 @@ public class ServicesDesignActivity extends Activity {
 		
 		Log.i(TAG, "in onStart()");
 		
+		EasyTracker.getInstance().activityStart(this); // Add this method.
+		
 		GridView gridview = (GridView) findViewById(R.id.servicesDesignGridView);
         gridview.setAdapter(new ServicesDesignImageAdapter(this));
 
@@ -54,6 +58,13 @@ public class ServicesDesignActivity extends Activity {
         });
 		
 		
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		
+		EasyTracker.getInstance().activityStop(this); // Add this method.
 	}
 
 

@@ -8,6 +8,8 @@ better to start a new activity, send it the selected gig id & position and let t
 seems to a lot more simpler, and work. 
 */
 
+import com.google.analytics.tracking.android.EasyTracker;
+
 import android.app.Activity;
 import android.database.Cursor;
 import android.os.AsyncTask;
@@ -81,11 +83,16 @@ public class ViewGigActivity extends Activity {
 	}
 	
 	@Override
+	  public void onStart() {
+	    super.onStart();
+	    EasyTracker.getInstance().activityStart(this); // Add this method.
+	  }
+	
+	@Override
 	public void onPause() {
 		super.onPause();
 	   	
 		Log.i(TAG,"in onPause()");
-	    	
 	}
 	    
 	@Override
@@ -93,7 +100,8 @@ public class ViewGigActivity extends Activity {
 	    super.onStop();
 	    	
 	    Log.i(TAG,"in onStop()");
-	    }    
+	    EasyTracker.getInstance().activityStop(this); // Add this method.
+	}    
 
 	    
 	public void updateGigView(long id, int position) {

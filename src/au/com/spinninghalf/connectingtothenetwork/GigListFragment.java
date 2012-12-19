@@ -1,9 +1,5 @@
 package au.com.spinninghalf.connectingtothenetwork;
 
-//TODO
-//1. wire up the Refresh button to initiate downloading of gig guide from google app engine
-//2. once downloading is done, cause the list fragment to update its display (re attach a new version of the list fragment?).
-//
 import android.app.Activity;
 import android.content.Context;
 import android.database.Cursor;
@@ -24,6 +20,8 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockListFragment;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Tracker;
 
 public class GigListFragment extends SherlockListFragment {
 	OnGigListSelectedListener selectedCallback;
@@ -34,6 +32,7 @@ public class GigListFragment extends SherlockListFragment {
 	private static final String ERROR = "Error";
 	private static final String IO_ERROR = "IO Error";
 	private static final String XPP_ERROR = "XmlPullParser Error";
+	private static final long EASYTRACKER_REFRESH_BUTTON = 1;
 	
 	// map each gigs's show name to a TextView in the ListView layout
     public static String[] from = new String[] { "show" };
@@ -125,6 +124,10 @@ public class GigListFragment extends SherlockListFragment {
         super.onStart();
         
         Log.i(TAG, "in onStart()");
+        
+        Context context = getActivity();
+        EasyTracker.getInstance().setContext(context);
+        
         
       //find the reference to the Refresh button
         refreshButton = (Button) getActivity().findViewById(R.id.refreshGigGuideButton);
@@ -312,8 +315,10 @@ public class GigListFragment extends SherlockListFragment {
 		
 		@Override
 		public void onClick(View v) {
-			
 			Log.i(TAG, "hello from onClick in refreshButton");
+			
+			Tracker tracker = EasyTracker.getTracker();
+			tracker.trackEvent("ui_action", "button_press", "refresh_gig_guide_button", null);
 			
 			refreshCallback.onGigListRefreshed();
 		}

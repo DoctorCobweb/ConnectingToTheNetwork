@@ -32,6 +32,8 @@ import android.util.Log;
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.ActionBar.Tab;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.google.analytics.tracking.android.EasyTracker;
+import com.google.analytics.tracking.android.Tracker;
 
 //import au.com.spinninghalf.connectingtothenetwork.R;
 
@@ -53,6 +55,7 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
 	
 	private long _selectedGigId = -1;
 	private int _selectedGigPosition = -1;
+	private static final long EASYTRACKER_REFRESH_BUTTON = 1;
 	
 	SpinningHalfApplication shapp;
 	
@@ -104,6 +107,14 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
         }
     }
     
+	@Override
+	  public void onStart() {
+	    super.onStart();
+	    EasyTracker.getInstance().activityStart(this); // Add this method.
+	  }
+	
+
+    
 	//implementation of the single method from GigListFragment inner interface.
 	//used in communicating user selections made in the GigListFragment to the Activity.
 	public void onGigSelected(long id, int position) {
@@ -142,6 +153,8 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
             //GigListFragment refreshedFragment = new GigListFragment();
             Log.i(TAG, "in onGigListRefreshed() and below making new GigListFragment with a refreshed database.");
             
+            Tracker myTracker = EasyTracker.getTracker();
+            myTracker.trackEvent("ui_action", "button_press", "onGigListRefreshed_method_call", null);
             
             mTabsAdapter.onPageSelected(2);
             
@@ -152,6 +165,13 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
                     //.add(R.id.gig_guide_fragment_container, firstFragment).commit();
             		.replace(R.id.pager, refreshedFragment, "GIG_GUIDE_TAG").commit();
             		*/
+	}
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		
+		EasyTracker.getInstance().activityStop(this); // Add this method.
 	}
 	  
 
