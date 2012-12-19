@@ -15,6 +15,20 @@
         android:label="@string/app_name"
         android:name=".SpinningHalfApplication"
         >
+        
+        <activity
+            android:name=".LandingPageActivity"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.Sherlock"
+            android:noHistory="true" >
+            
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!--
         <activity
             android:name=".ActionBarTabsPager"
             android:label="@string/app_name"
@@ -25,7 +39,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-       
+       -->
         
         <!-- 
         <activity
@@ -38,10 +52,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
         -->
         
-        
+        <activity android:name=".ActionBarTabsPager"
+            android:theme="@style/Theme.Sherlock" />
         <activity android:name=".ViewGigActivity" />
         <activity android:name=".GigListActivity" />
         <activity android:name=".ViewGig" />

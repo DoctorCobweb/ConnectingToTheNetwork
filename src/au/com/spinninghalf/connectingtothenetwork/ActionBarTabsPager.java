@@ -68,6 +68,8 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //getWindow().setWindowAnimations(android.R.anim.slide_in_left);
+        //overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         
         shapp = SpinningHalfApplication.getInstance();
         
