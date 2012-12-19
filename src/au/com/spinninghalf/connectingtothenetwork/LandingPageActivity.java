@@ -3,8 +3,9 @@ package au.com.spinninghalf.connectingtothenetwork;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.util.Log;
+
+import com.google.analytics.tracking.android.EasyTracker;
 
 public class LandingPageActivity extends Activity {
 	private static final String TAG = "LandingPageActivity";
@@ -41,7 +42,24 @@ public class LandingPageActivity extends Activity {
 				};
 				myThread.start();
 	}
+	
+	@Override
+	public void onStart() {
+		super.onStart();
+		
+		EasyTracker.getInstance().activityStart(this); 
+	}
+	
+	
+	@Override
+	public void onStop() {
+		super.onStop();
+		
+		EasyTracker.getInstance().activityStop(this); // Add this method.
+	}
 }
+
+
 		
 		
 		
