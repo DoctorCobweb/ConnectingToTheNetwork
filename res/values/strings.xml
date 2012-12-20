@@ -18,7 +18,7 @@
     <string name="headOffice">Head Office</string>
     <string name="headOfficeStreetAddress">Suite 3/2 Fenwick St South</string>
     <string name="headOfficeCityRegionState">Geelong, VIC 3220</string>
-    <string name="headOfficePhoneNumber">ph: (03) 5222 1186</string>
+    <string name="headOfficePhoneNumber">(03) 5222 1186</string>
     <string name="headOfficeEmail">info@spinninghalf.com.au</string>
     
     <string name="rehearsalsMobileNumber">0421 866 977</string>

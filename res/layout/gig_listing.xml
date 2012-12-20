@@ -10,21 +10,25 @@
 
 </FrameLayout>
 -->
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/gig_guide_fragment_container"
-    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/textpadding"
+    android:layout_marginRight="@dimen/textpadding"
+    android:orientation="vertical" >
     
     <Button
         android:id="@+id/refreshGigGuideButton"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#00cc66"
-        android:minHeight="48dip"
-        android:textStyle="bold"
-        android:text="REFRESH GIG GUIDE" />
+        android:layout_gravity="right"
+        android:layout_margin="@dimen/buttonpadding"
+        android:background="@drawable/refresh_selector"
+        android:minHeight="32dp"
+        android:minWidth="32dp"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <ProgressBar
         android:id="@+id/progressBarGigList"
@@ -33,14 +37,13 @@
         android:layout_gravity="center"
         android:layout_margin="@dimen/buttonpadding" />
     
-    <ListView android:id="@id/android:list"
+    <ListView
+        android:id="@id/android:list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="@dimen/textpadding"
         android:layout_weight="1"
         android:drawSelectorOnTop="false" />
-    
-    
-    
     
 </LinearLayout>
     

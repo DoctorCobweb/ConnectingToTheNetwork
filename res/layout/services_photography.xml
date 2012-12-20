@@ -6,13 +6,14 @@
     <LinearLayout
         android:id="@+id/servicesPhotographyMainLinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical" >
 
         <TextView
             android:id="@+id/servicesPhotographyHeading"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/buttonpadding"
             android:layout_marginTop="@dimen/textpadding"
             android:gravity="center"
             android:text="@string/servicesPhotography"
@@ -36,14 +37,26 @@
           
           <Button
               android:id="@+id/servicesPhotographyBrentonFordButton"
+              android:background="@drawable/rounded_text_view"
               android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
+              android:layout_height="fill_parent"
+              android:layout_marginBottom="@dimen/textpadding"
+              android:layout_marginLeft="@dimen/buttonpadding"
+              android:layout_marginRight="@dimen/buttonpadding"
+              android:paddingBottom="@dimen/textpadding"
+              android:paddingTop="@dimen/textpadding"
               android:text="Brenton Ford Photography" />
               
           <Button
               android:id="@+id/servicesPhotographyLeikographyButton"
+              android:background="@drawable/rounded_text_view"
               android:layout_width="fill_parent"
-              android:layout_height="wrap_content"
+              android:layout_height="fill_parent"
+              android:layout_marginBottom="@dimen/buttonpadding"
+              android:layout_marginLeft="@dimen/buttonpadding"
+              android:layout_marginRight="@dimen/buttonpadding"
+              android:paddingBottom="@dimen/textpadding"
+              android:paddingTop="@dimen/textpadding"
               android:text="Leikography" />
           
     </LinearLayout>

@@ -3,34 +3,48 @@
    android:layout_width="match_parent" 
    android:layout_height="wrap_content" 
    android:layout_weight="1">
-   <TableLayout android:layout_width="match_parent" 
-      android:layout_height="wrap_content"
-      android:stretchColumns="1"
-      android:shrinkColumns="1" 
-      android:layout_margin="5dp">
-      <TableRow android:id="@+id/showTableRow"
-         android:layout_width="wrap_content" 
-         android:layout_height="wrap_content">
+
+   <TableLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_margin="5dp"
+       android:shrinkColumns="1"
+       android:stretchColumns="1" >
+
+      <TableRow
+          android:id="@+id/showTableRow"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent" >
+
          <TextView android:id="@+id/showLabelTextView" 
             style="@style/GigLabelTextView"
-            android:text="@string/label_show"></TextView>
-         <TextView android:id="@+id/showTextView"
+            android:text="@string/label_show"/>
+
+         <TextView
+             android:id="@+id/showTextView"
              style="@style/GigTextView"
-             android:text="@string/showGreeting" 
-            ></TextView>
+             android:background="@drawable/rounded_text_view"
+             android:padding="@dimen/textpadding"
+             android:text="@string/showGreeting" />
+
       </TableRow>
 
+      
       <TableRow android:id="@+id/dateTableRow"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content">
+         
          <TextView android:id="@+id/dateLabelTextView" 
             style="@style/GigLabelTextView"
-            android:text="@string/label_date"></TextView>
-         <TextView android:id="@+id/dateTextView"
+            android:text="@string/label_date"/>
+
+         <TextView
+             android:id="@+id/dateTextView"
              style="@style/GigTextView"
-            ></TextView>
+             android:background="@drawable/rounded_text_view"
+             android:padding="@dimen/textpadding" />
+
       </TableRow>
-      
       
       
       <TableRow android:id="@+id/venueTableRow"
@@ -41,42 +55,64 @@
             style="@style/GigLabelTextView"
             android:text="@string/label_venue" />
          
-         <TextView android:id="@+id/venueTextView"
-            style="@style/GigTextView" />
+         <TextView
+             android:id="@+id/venueTextView"
+             style="@style/GigTextView"
+             android:background="@drawable/rounded_text_view"
+             android:padding="@dimen/textpadding" />
+
       </TableRow>
+      
 
       <TableRow android:id="@+id/descriptionTableRow"
          android:layout_width="match_parent"
          android:layout_height="wrap_content">
+         
          <TextView android:id="@+id/descriptionLabelTextView" 
             style="@style/GigLabelTextView"
-            android:text="@string/label_description"></TextView>
-         <TextView android:id="@+id/descriptionTextView"
-             android:layout_width="wrap_content"
-         android:layout_height="wrap_content"
-         style="@style/GigTextView"
-            ></TextView>
+            android:text="@string/label_description"/>
+
+         <TextView
+             android:id="@+id/descriptionTextView"
+             style="@style/GigTextView"
+             android:background="@drawable/rounded_text_view"
+             android:padding="@dimen/textpadding" />
+
       </TableRow>
 
+      
       <TableRow android:id="@+id/priceTableRow"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content">
+         
          <TextView android:id="@+id/priceLabelTextView" 
             style="@style/GigLabelTextView"
-            android:text="@string/label_price"></TextView>
-         <TextView android:id="@+id/priceTextView"
-            style="@style/GigTextView"></TextView>
+            android:text="@string/label_price"/>
+
+         <TextView
+             android:id="@+id/priceTextView"
+             style="@style/GigTextView"
+             android:background="@drawable/rounded_text_view"
+             android:padding="@dimen/textpadding"/>
+
       </TableRow>
 
+      
       <TableRow android:id="@+id/tixUrlTableRow"
          android:layout_width="wrap_content"
          android:layout_height="wrap_content">
+         
          <TextView android:id="@+id/tixUrlLabelTextView" 
             style="@style/GigLabelTextView"
-            android:text="@string/label_tixUrl"></TextView>
-         <TextView android:id="@+id/tixUrlTextView"
+            android:text="@string/label_tixUrl"/>
+
+         <TextView
+             android:id="@+id/tixUrlTextView"
+             style="@style/GigTextView"
              android:autoLink="web"
-            style="@style/GigTextView"></TextView>
+             android:background="@drawable/rounded_text_view"
+             android:padding="@dimen/textpadding" />
+
       </TableRow>
    </TableLayout>
 </ScrollView>

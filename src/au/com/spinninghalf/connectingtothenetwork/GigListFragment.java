@@ -36,7 +36,8 @@ public class GigListFragment extends SherlockListFragment {
 	
 	// map each gigs's show name to a TextView in the ListView layout
     public static String[] from = new String[] { "show" };
-    public static int[] to = new int[] { android.R.id.text1 }; 
+    //public static int[] to = new int[] { android.R.id.text1 };
+    public static int[] to = new int[] { R.id.gig_guide_list_item_text_view };
 	DatabaseConnector dbc;
 	private Cursor cursor = null;
 	int layout;
@@ -95,9 +96,13 @@ public class GigListFragment extends SherlockListFragment {
         
         shapp = SpinningHalfApplication.getInstance();
         
+        /*
         //We need to use a different list item layout for devices older than Honeycomb
         this.layout = Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB ?
                 android.R.layout.simple_list_item_activated_1 : android.R.layout.simple_list_item_1;
+                */
+        
+        this.layout=R.layout.gig_guide_list_item;
         
         if(savedInstanceState != null) {
         	this._selectedGigId = savedInstanceState.getLong(ARG_SELECTED_GIG_ID);

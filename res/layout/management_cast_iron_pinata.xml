@@ -77,6 +77,8 @@
 	            android:id="@+id/managementCastIronPinataInformation"
 	            android:layout_width="fill_parent"
 	            android:layout_height="wrap_content"
+	            android:layout_marginLeft="@dimen/textpadding"
+	            android:layout_marginRight="@dimen/textpadding"
 	            android:layout_marginTop="@dimen/textpadding"
 	            android:gravity="center"
 	            android:text="@string/managementCastIronPinataInformationBiographyBlurb1" />

@@ -3,9 +3,11 @@
     <dimen name="buttonwidthmaxmobile">64dip</dimen>
     <dimen name="buttonheightmaxmobile">64dip</dimen>
     <dimen name="buttonpadding">10dip</dimen>
+    <dimen name="listviewminheight">48dip</dimen>
     <dimen name="textpadding">10dip</dimen>
+    <dimen name="textpadding_halved">5dip</dimen>
     <dimen name="large_heading">20dip</dimen>
-    <dimen name="medium_text">16dip</dimen>
+    <dimen name="medium_text">18dip</dimen>
     <dimen name="maxheightbanner">100dip</dimen>
     <dimen name="smalltext">12dp</dimen>
 </resources>
