@@ -38,30 +38,36 @@
 	    	android:layout_height="match_parent" >
 	    	
 	           <TableRow
-	            android:id="@+id/tableRow0"
-	        	android:layout_width="wrap_content"
-	            android:layout_height="match_parent">
+	               android:id="@+id/tableRow0"
+	               android:layout_width="wrap_content"
+	               android:layout_height="match_parent"
+	               android:layout_marginLeft="@dimen/buttonpadding" >
 	            
 		        <Button
 		            android:id="@+id/managementCastIronPinataButton2"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
-		            android:layout_weight="1"
-		            android:text="Listen" />
+		            android:layout_weight="0"
+		            android:background="@drawable/soundcloud_selector"
+		            android:text="" />
 		        
 		        <Button
 		            android:id="@+id/managementCastIronPinataButton3"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
-		            android:layout_weight="1"
-		            android:text="Watch" />
+		            android:layout_marginLeft="@dimen/buttonpadding"
+		            android:layout_weight="0"
+		            android:background="@drawable/youtube_selector"
+		            android:text="" />
 		        
 		        <Button
 		            android:id="@+id/managementCastIronPinataButton4"
 		            android:layout_width="fill_parent"
 		            android:layout_height="wrap_content"
-		            android:layout_weight="1"
-		            android:text="Social" />
+		            android:layout_marginLeft="@dimen/buttonpadding"
+		            android:layout_weight="0"
+		            android:background="@drawable/facebook_selector"
+		            android:text="" />
 		        
 	        	</TableRow>
 	        	
