@@ -54,15 +54,15 @@ public class ContactFragmentOne extends SherlockFragment {
 		
 		shapp = SpinningHalfApplication.getInstance();
 		
+		//find all the button references
+		Button headOfficePhoneNumberButton = (Button) getActivity().findViewById(R.id.contactHeadOfficePhoneNumberButton);
+		Button headOfficeEmailButton = (Button) getActivity().findViewById(R.id.contactHeadOfficeEmailButton);
+		Button rehearsalsPhoneNumberButton1 = (Button) getActivity().findViewById(R.id.contactRehearsalsPhoneNumberButton1);
+		Button rehearsalsPhoneNumberButton2 = (Button) getActivity().findViewById(R.id.contactRehearsalsPhoneNumberButton2);
+		Button rehearsalsEmailButton = (Button) getActivity().findViewById(R.id.contactRehearsalsEmailButton);
+		
 		//only assign listeners which will intent a call if the device has telephony capabilities.
 		if(shapp.getTelephonyCapability()){
-			//find all the button references
-			Button headOfficePhoneNumberButton = (Button) getActivity().findViewById(R.id.contactHeadOfficePhoneNumberButton);
-			Button headOfficeEmailButton = (Button) getActivity().findViewById(R.id.contactHeadOfficeEmailButton);
-			Button rehearsalsPhoneNumberButton1 = (Button) getActivity().findViewById(R.id.contactRehearsalsPhoneNumberButton1);
-			Button rehearsalsPhoneNumberButton2 = (Button) getActivity().findViewById(R.id.contactRehearsalsPhoneNumberButton2);
-			Button rehearsalsEmailButton = (Button) getActivity().findViewById(R.id.contactRehearsalsEmailButton);
-			
 			//assign listeners to each button
 			headOfficePhoneNumberButton.setOnClickListener(headOfficePhoneNumberButtonListener);
 			headOfficeEmailButton.setOnClickListener(headOfficeEmailButtonListener);
@@ -100,8 +100,8 @@ public class ContactFragmentOne extends SherlockFragment {
 				intent.setType("plain/text");
 				
 				intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"info@spinninghalf.com.au"});
-				intent.putExtra(Intent.EXTRA_SUBJECT, "GENERAL INQUIRY (from S.H. Android App)");
-				intent.putExtra(Intent.EXTRA_TEXT, "Gday Spinning Half, I'm in ya email. Stealing ya bandwidth.");
+				intent.putExtra(Intent.EXTRA_SUBJECT, "GENERAL INQUIRY (from Android App)");
+				intent.putExtra(Intent.EXTRA_TEXT, "G'day Spinning Half,");
 				startActivity(intent);
 				} catch(ActivityNotFoundException e) {
 					Log.i(TAG, "email Activity not found.");
@@ -133,8 +133,8 @@ public class ContactFragmentOne extends SherlockFragment {
 				intent.setType("plain/text");
 				
 				intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"bookings@spinninghalf.com.au"});
-				intent.putExtra(Intent.EXTRA_SUBJECT, "REHEARSAL INQUIRY (from S.H. Android App)");
-				intent.putExtra(Intent.EXTRA_TEXT, "Gday Spinning Half, I'm in ya email. Stealing ya bandwidth.");
+				intent.putExtra(Intent.EXTRA_SUBJECT, "REHEARSAL INQUIRY (from Android App)");
+				intent.putExtra(Intent.EXTRA_TEXT, "G'day Spinning Half,");
 				startActivity(intent);
 				} catch(ActivityNotFoundException e) {
 					Log.i(TAG, "email Activity not found.");

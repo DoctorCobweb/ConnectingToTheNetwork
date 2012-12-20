@@ -7,4 +7,5 @@
     <dimen name="large_heading">20dip</dimen>
     <dimen name="medium_text">16dip</dimen>
     <dimen name="maxheightbanner">100dip</dimen>
+    <dimen name="smalltext">12dp</dimen>
 </resources>

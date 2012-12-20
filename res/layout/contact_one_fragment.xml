@@ -4,7 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout
+        android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+    
+<TableLayout 
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
     
@@ -35,8 +40,15 @@
     
     <TableRow
         android:id="@+id/tableRow0"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent" >
+        
+        <TextView
+        android:id="@+id/contactHeadOfficePhoneNumberTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Landline"
+        android:layout_marginLeft="10dp"/>
 
     <Button
         android:id="@+id/contactHeadOfficePhoneNumberButton"
@@ -44,8 +56,22 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttonpadding"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/contact_spinning_half_office_phone_animation"
-        android:text="" />
+        android:text="@string/headOfficePhoneNumber" />
+    
+    </TableRow>
+    
+    
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    
+        <TextView
+        android:id="@+id/contactHeadOfficeEmailTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Email"
+        android:layout_marginLeft="10dp"/>
     
     <Button
         android:id="@+id/contactHeadOfficeEmailButton"
@@ -53,16 +79,23 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttonpadding"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/contact_spinning_half_office_email_animation"
-        android:text="" />
+        android:text="@string/headOfficeEmail"
+        android:textSize="@dimen/smalltext" />
     
     </TableRow>
+    
+    
+</TableLayout>
 
     <TextView
         android:id="@+id/BlankTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="" />
+    
+    <TableLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent">
     
     <TextView
         android:id="@+id/contactOnlineTextView"
@@ -75,7 +108,7 @@
         android:textStyle="bold" />
 
     <TableRow
-        android:id="@+id/tableRow1"
+        android:id="@+id/tableRow2"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
         
@@ -117,12 +150,18 @@
 
     </TableRow>
     
+    </TableLayout>
+    
     <TextView
         android:id="@+id/BlankTextView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="" />
     
+    
+    <TableLayout
+        android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/contactRehearsalsTextView"
@@ -150,9 +189,16 @@
         android:layout_marginLeft="10dp"/>
     
     <TableRow
-        android:id="@+id/tableRow2"
+        android:id="@+id/tableRow3"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
+        
+        <TextView
+        android:id="@+id/contactRehearsalsPhoneNumberTextView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Landline"
+        android:layout_marginLeft="10dp"/>
 
     <Button
         android:id="@+id/contactRehearsalsPhoneNumberButton1"
@@ -160,8 +206,21 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttonpadding"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/contact_spinning_half_rehearsals_phone_1_animation"
-        android:text="" />
+        android:text="@string/rehearsalsPhoneNumber" />
+    
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    
+        <TextView
+        android:id="@+id/contactRehearsalsPhoneNumberTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Mobile"
+        android:layout_marginLeft="10dp"/>
     
     <Button
         android:id="@+id/contactRehearsalsPhoneNumberButton2"
@@ -169,19 +228,36 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttonpadding"
         android:layout_marginLeft="10dp"
-        android:background="@drawable/contact_spinning_half_rehearsals_phone_2_animation"
-        android:text="" />
+        android:text="@string/rehearsalsMobileNumber"
+         />
     
-    <Button
-        android:id="@+id/contactRehearsalsEmailButton"
+    </TableRow>
+    
+    <TableRow
+        android:id="@+id/tableRow5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    
+        <TextView
+        android:id="@+id/contactRehearsalsEmailTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="10dp"
-        android:background="@drawable/contact_spinning_half_rehearsals_email_animation"
-        android:text="" />
-
+        android:text="@string/Email"
+        android:layout_marginLeft="10dp"/>
+    
+    	<Button
+    	    android:id="@+id/contactRehearsalsEmailButton"
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:layout_margin="@dimen/buttonpadding"
+    	    android:layout_marginLeft="10dp"
+    	    android:text="@string/rehearsalsEmail"
+    	    android:textSize="@dimen/smalltext" />
+    
     </TableRow>
+
 </TableLayout>
+
+</LinearLayout>
 
 </ScrollView>

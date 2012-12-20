@@ -30,13 +30,12 @@ public class ManagementTomMilekActivity extends Activity {
 		setContentView(R.layout.management_tom_milek);
 		
 		//find references to each button
-		Button informationButton = (Button) findViewById(R.id.managementTomMilekButton1);
 		Button listenButton = (Button) findViewById(R.id.managementTomMilekButton2);
 		Button watchButton = (Button) findViewById(R.id.managementTomMilekButton3);
 		Button socialButton = (Button) findViewById(R.id.managementTomMilekButton4);
 		
 		//attach the OnClickListeners to each button.
-		informationButton.setOnClickListener(informationButtonListener);
+		//informationButton.setOnClickListener(informationButtonListener);
 		listenButton.setOnClickListener(listenButtonListener);
 		watchButton.setOnClickListener(watchButtonListener);
 		socialButton.setOnClickListener(socialButtonListener);

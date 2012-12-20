@@ -30,13 +30,12 @@ public class ManagementCaptainGrooveActivity extends Activity {
 		setContentView(R.layout.management_captain_groove);
 		
 		//find references to each button
-		Button informationButton = (Button) findViewById(R.id.managementCaptainGrooveButton1);
 		Button listenButton = (Button) findViewById(R.id.managementCaptainGrooveButton2);
 		Button watchButton = (Button) findViewById(R.id.managementCaptainGrooveButton3);
 		Button socialButton = (Button) findViewById(R.id.managementCaptainGrooveButton4);
 		
 		//attach the OnClickListeners to each button.
-		informationButton.setOnClickListener(informationButtonListener);
+		//informationButton.setOnClickListener(informationButtonListener);
 		listenButton.setOnClickListener(listenButtonListener);
 		watchButton.setOnClickListener(watchButtonListener);
 		socialButton.setOnClickListener(socialButtonListener);

@@ -30,13 +30,12 @@ public class ManagementTheUniversalActivity extends Activity {
 		setContentView(R.layout.management_the_universal);
 		
 		//find references to each button
-		Button informationButton = (Button) findViewById(R.id.managementTheUniversalButton1);
 		Button listenButton = (Button) findViewById(R.id.managementTheUniversalButton2);
 		Button watchButton = (Button) findViewById(R.id.managementTheUniversalButton3);
 		Button socialButton = (Button) findViewById(R.id.managementTheUniversalButton4);
 		
 		//attach the OnClickListeners to each button.
-		informationButton.setOnClickListener(informationButtonListener);
+		//informationButton.setOnClickListener(informationButtonListener);
 		listenButton.setOnClickListener(listenButtonListener);
 		watchButton.setOnClickListener(watchButtonListener);
 		socialButton.setOnClickListener(socialButtonListener);

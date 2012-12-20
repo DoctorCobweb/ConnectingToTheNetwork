@@ -1,54 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent" >
 
-    <LinearLayout
+<LinearLayout
+    	xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" >
-
-        <TextView
-            android:id="@+id/managementCastIronPinataHeading"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/textpadding"
-            android:gravity="center"
-            android:text="@string/managementCastIronPinata"
-            android:textColor="@color/headings"
-            android:textSize="@dimen/large_heading"
-            android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/managementCastIronPinataBannerImageView"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:maxHeight="@dimen/maxheightbanner"
-            android:src="@drawable/cast_iron_pinata_banner" />
-
-        <Button
-            android:id="@+id/managementCastIronPinataButton1"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Information" />
         
-        <Button
-            android:id="@+id/managementCastIronPinataButton2"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Listen" />
-        
-        <Button
-            android:id="@+id/managementCastIronPinataButton3"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Watch" />
-        
-        <Button
-            android:id="@+id/managementCastIronPinataButton4"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Social" />
-        
-    </LinearLayout>
-</ScrollView>
+     <TextView
+        android:id="@+id/managementCastIronPinataHeading"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/textpadding"
+        android:gravity="center"
+        android:text="@string/managementCastIronPinata"
+        android:textColor="@color/headings"
+        android:textSize="@dimen/large_heading"
+        android:textStyle="bold" />
+     
+    <ImageView
+        android:id="@+id/managementCastIronPinataBannerImageView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:maxHeight="@dimen/maxheightbanner"
+        android:src="@drawable/cast_iron_pinata_banner" />
+    
+	<ScrollView
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+	    <LinearLayout
+	        android:layout_width="match_parent"
+	        android:layout_height="match_parent"
+	        android:orientation="vertical" >
+	        
+	       <TableLayout 
+	    	android:layout_width="match_parent"
+	    	android:layout_height="match_parent" >
+	    	
+	           <TableRow
+	            android:id="@+id/tableRow0"
+	        	android:layout_width="wrap_content"
+	            android:layout_height="match_parent">
+	            
+		        <Button
+		            android:id="@+id/managementCastIronPinataButton2"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="Listen" />
+		        
+		        <Button
+		            android:id="@+id/managementCastIronPinataButton3"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="Watch" />
+		        
+		        <Button
+		            android:id="@+id/managementCastIronPinataButton4"
+		            android:layout_width="fill_parent"
+		            android:layout_height="wrap_content"
+		            android:layout_weight="1"
+		            android:text="Social" />
+		        
+	        	</TableRow>
+	        	
+	        </TableLayout>
+	        
+	        <TextView
+	            android:id="@+id/managementCastIronPinataInformation"
+	            android:layout_width="fill_parent"
+	            android:layout_height="wrap_content"
+	            android:layout_marginTop="@dimen/textpadding"
+	            android:gravity="center"
+	            android:text="@string/managementCastIronPinataInformationBiographyBlurb1" />
+	        
+	    </LinearLayout>
+	    
+    </ScrollView>
+    
+</LinearLayout>

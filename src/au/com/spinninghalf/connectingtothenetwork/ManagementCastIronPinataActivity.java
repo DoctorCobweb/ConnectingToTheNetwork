@@ -30,13 +30,12 @@ public class ManagementCastIronPinataActivity extends Activity {
 		setContentView(R.layout.management_cast_iron_pinata);
 		
 		//find references to each button
-		Button informationButton = (Button) findViewById(R.id.managementCastIronPinataButton1);
 		Button listenButton = (Button) findViewById(R.id.managementCastIronPinataButton2);
 		Button watchButton = (Button) findViewById(R.id.managementCastIronPinataButton3);
 		Button socialButton = (Button) findViewById(R.id.managementCastIronPinataButton4);
 		
 		//attach the OnClickListeners to each button.
-		informationButton.setOnClickListener(informationButtonListener);
+		//informationButton.setOnClickListener(informationButtonListener);
 		listenButton.setOnClickListener(listenButtonListener);
 		watchButton.setOnClickListener(watchButtonListener);
 		socialButton.setOnClickListener(socialButtonListener);
