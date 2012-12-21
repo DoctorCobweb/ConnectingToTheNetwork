@@ -13,7 +13,7 @@
             android:gravity="center"
             android:textStyle="bold"
             android:text="@string/managementTheSoulenikoes"
-            android:textColor="@color/headings"
+            android:textColor="@color/orange"
             android:textSize="@dimen/large_heading" />
 
         <ImageView

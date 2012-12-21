@@ -15,7 +15,7 @@
             android:layout_marginTop="@dimen/textpadding"
             android:gravity="center"
             android:text="@string/servicesTraining"
-            android:textColor="@color/headings"
+            android:textColor="@color/orange"
             android:textSize="@dimen/large_heading"
             android:textStyle="bold" />
         
