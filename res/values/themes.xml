@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+      <!-- style for the tabs -->
+    <style name="MyActionBarTabStyle" parent="@style/Theme.Sherlock">
+        <item name="android:background">@drawable/actionbar_tab_bg</item>
+        <item name="android:paddingLeft">32dp</item>
+        <item name="android:paddingRight">32dp</item>
+    </style>
+    <style name="SpinningHalfStyle" parent="@style/Theme.Sherlock">
+        <item name="android:actionBarTabStyle">@style/MyActionBarTabStyle</item>
+        <item name="android:paddingLeft">32dp</item>
+        <item name="android:paddingRight">32dp</item>
+    </style>
+    
+    <style name="Theme.Styled" parent="Theme.Sherlock.Light.DarkActionBar">
+    	<item name="actionBarStyle">@style/Widget.Styled.ActionBar</item>
+    	<item name="android:actionBarStyle">@style/Widget.Styled.ActionBar</item>
+	</style>
+
+	<style name="Widget.Styled.ActionBar" parent="Widget.Sherlock.Light.ActionBar.Solid.Inverse">
+    	<item name="background">@drawable/ic_action_spinning_half_tab_style</item>
+    	<item name="android:background">@drawable/ic_action_spinning_half_tab_style</item>
+
+    	<item name="backgroundSplit">@drawable/ic_action_spinning_half_tab_style</item>
+    	<item name="android:backgroundSplit">@drawable/ic_action_spinning_half_tab_style</item>
+	</style>
+</resources>

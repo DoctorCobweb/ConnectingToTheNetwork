@@ -40,7 +40,7 @@
             android:gravity="center"
             android:text="@string/rehearsals"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:textColor="@color/headings"
+            android:textColor="@color/orange"
             android:textStyle="bold" />
 
     </TableRow>
@@ -81,7 +81,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="@string/rehearsalsBigRoom"
-            android:textColor="@color/headings"
+            android:textColor="@color/orange"
             android:textStyle="bold" 
             android:paddingLeft="10sp"/>
 
@@ -92,7 +92,7 @@
             android:layout_weight="1"
             android:gravity="left"
             android:text="@string/rehearsalsSmallRoom"
-            android:textColor="@color/headings"
+            android:textColor="@color/orange"
             android:textStyle="bold" 
             android:paddingLeft="10sp"/>
     </TableRow>
@@ -248,99 +248,7 @@
         android:minHeight="15sp" >
     </TableRow>
 
-    <!-- 
-    <TableRow
-        android:id="@+id/tableRow3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="0sp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:text="@string/rehearsalsLocation"
-            android:textColor="@color/headings"
-            android:textStyle="bold" 
-            android:paddingLeft="10sp"/>
-
-        <TextView
-            android:id="@+id/textView1"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="left"
-            android:text="@string/rehearsalsBookings"
-            android:textColor="@color/headings"
-            android:textStyle="bold" 
-            android:paddingLeft="10sp"/>
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="0sp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/rehearsalsStreetAddress" 
-            android:paddingLeft="10sp"/>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/headOfficePhoneNumber" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="0sp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="@string/rehearsalsCityRegionState" 
-            android:paddingLeft="10sp"/>
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/andreMobile" />
-    </TableRow>
-
-    <TableRow
-        android:id="@+id/tableRow6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:id="@+id/textView7"
-            android:layout_width="0sp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:text="@string/rehearsalsEmail" />
-    </TableRow>
-
-    -->
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -364,7 +272,7 @@
             android:gravity="left"
             android:paddingLeft="10sp"
             android:text="@string/rehearsalsAdditionalInfo"
-            android:textColor="@color/headings"
+            android:textColor="@color/orange"
             android:textStyle="bold" />
 
     </TableRow>

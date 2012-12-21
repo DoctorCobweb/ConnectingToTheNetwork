@@ -17,10 +17,10 @@
         android:id="@+id/contactHeadOfficeTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/buttonpadding"
         android:layout_marginTop="@dimen/textpadding"
         android:text="@string/contactHeadOffice"
-        android:textColor="@color/headings"
+        android:textColor="@color/white"
         android:textSize="@dimen/large_heading"
         android:textStyle="bold" />
 
@@ -29,14 +29,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficeStreetAddress"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="@dimen/buttonpadding"/>
 
     <TextView
         android:id="@+id/contactHeadOfficeCityRegionStateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactHeadOfficeCityRegionState" 
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="@dimen/buttonpadding"/>
     
     <TableRow
         android:id="@+id/tableRow0"
@@ -58,7 +58,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/buttonpadding"
         android:drawableLeft="@drawable/device_access_call"
         android:paddingLeft="@dimen/textpadding"
         android:paddingRight="@dimen/textpadding"
@@ -88,7 +88,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/buttonpadding"
         android:drawableLeft="@drawable/content_email"
         android:paddingLeft="@dimen/textpadding"
         android:paddingRight="@dimen/textpadding"
@@ -114,9 +114,9 @@
         android:id="@+id/contactOnlineTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/buttonpadding"
         android:text="@string/contactOnline"
-        android:textColor="@color/headings"
+        android:textColor="@color/white"
         android:textSize="@dimen/large_heading"
         android:textStyle="bold" />
 
@@ -174,7 +174,7 @@
     
     <TableLayout
         android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    	android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/contactRehearsalsTextView"
@@ -182,24 +182,23 @@
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsals"
         android:textSize="@dimen/large_heading"
-        android:textColor="@color/headings" 
-        android:layout_marginLeft="10dp" 
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/buttonpadding" 
         android:textStyle="bold"/>
     
     <TextView
         android:id="@+id/contactRehearsalsStreetAddressTextView"
-        android:textSize="@dimen/medium_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsalsStreetAddress" 
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="@dimen/buttonpadding"/>
     
     <TextView
         android:id="@+id/contactRehearsalsCityRegionStateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contactRehearsalsCityRegionState" 
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginLeft="@dimen/buttonpadding"/>
     
     <TableRow
         android:id="@+id/tableRow3"
@@ -221,7 +220,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/buttonpadding"
         android:drawableLeft="@drawable/device_access_call"
         android:paddingLeft="@dimen/textpadding"
         android:text="@string/rehearsalsPhoneNumber" />
@@ -248,7 +247,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="@dimen/buttonpadding"
         android:drawableLeft="@drawable/device_access_call"
         android:paddingLeft="@dimen/textpadding"
         android:text="@string/rehearsalsMobileNumber" />
@@ -275,7 +274,7 @@
     	    android:layout_width="wrap_content"
     	    android:layout_height="wrap_content"
     	    android:layout_margin="@dimen/buttonpadding"
-    	    android:layout_marginLeft="10dp"
+    	    android:layout_marginLeft="@dimen/buttonpadding"
     	    android:drawableLeft="@drawable/content_email"
     	    android:paddingLeft="@dimen/textpadding"
     	    android:paddingRight="@dimen/textpadding"

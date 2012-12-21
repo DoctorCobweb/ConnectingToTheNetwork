@@ -22,6 +22,8 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Shader.TileMode;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -85,6 +87,21 @@ public class ActionBarTabsPager extends SherlockFragmentActivity
         final ActionBar bar = getSupportActionBar();
         bar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         bar.setDisplayOptions(0, ActionBar.DISPLAY_SHOW_TITLE);
+        
+        /*
+        BitmapDrawable bg = (BitmapDrawable)getResources().getDrawable(R.drawable.ic_action_spinning_half_tab_style);
+        bg.setTileModeXY(TileMode.REPEAT, TileMode.REPEAT);
+        getSupportActionBar().setBackgroundDrawable(bg);
+        */
+
+        /*
+        BitmapDrawable bgSplit = (BitmapDrawable)getResources().getDrawable(R.drawable.ic_action_spinning_half_tab_style);
+        bgSplit.setTileModeXY(TileMode.REPEAT, TileMode.REPEAT);
+        getSupportActionBar().setSplitBackgroundDrawable(bgSplit);
+        */
+        
+        
+        
 
         mTabsAdapter = new TabsAdapter(this, mViewPager);
         

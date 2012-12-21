@@ -4,6 +4,7 @@
     <color name="black">#000000</color>
     <color name="headings">#ffcc00</color>
     <color name="subHeadings">#cc9900</color>
-    <color name="orange">#ff6103</color>
+    <color name="orange">#F85713</color>
+    <color name="green">#9ccb19</color>
     
 </resources>
