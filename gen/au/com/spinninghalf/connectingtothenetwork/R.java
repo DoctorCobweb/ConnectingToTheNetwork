@@ -837,6 +837,7 @@ containing a value of this type.
         public static final int smalltext=0x7f08001a;
         public static final int textpadding=0x7f080015;
         public static final int textpadding_halved=0x7f080016;
+        public static final int zero=0x7f08001b;
     }
     public static final class drawable {
         public static final int ab_bottom_solid_spinninghalf=0x7f020000;
@@ -1018,44 +1019,45 @@ containing a value of this type.
         public static final int rehearsals2=0x7f0200b0;
         public static final int rehearsals3=0x7f0200b1;
         public static final int rounded_button_view_green=0x7f0200b2;
-        public static final int rounded_text_view=0x7f0200b3;
-        public static final int selectable_background_spinninghalf=0x7f0200b4;
-        public static final int services_design_button_animation=0x7f0200b5;
-        public static final int services_distribution_button_animation=0x7f0200b6;
-        public static final int services_function_packages_button_animation=0x7f0200b7;
-        public static final int services_photography_brenton_ford_button_animation=0x7f0200b8;
-        public static final int services_photography_button_animation=0x7f0200b9;
-        public static final int services_photography_leikography_button_animation=0x7f0200ba;
-        public static final int services_publicity_button_animation=0x7f0200bb;
-        public static final int services_training_button_animation=0x7f0200bc;
-        public static final int soundcloud_icon=0x7f0200bd;
-        public static final int soundcloud_selector=0x7f0200be;
-        public static final int spinner_ab_default_spinninghalf=0x7f0200bf;
-        public static final int spinner_ab_disabled_spinninghalf=0x7f0200c0;
-        public static final int spinner_ab_focused_spinninghalf=0x7f0200c1;
-        public static final int spinner_ab_pressed_spinninghalf=0x7f0200c2;
-        public static final int spinner_background_ab_spinninghalf=0x7f0200c3;
-        public static final int spinning_half_logo=0x7f0200c4;
-        public static final int spinning_half_selector=0x7f0200c5;
-        public static final int spinning_half_stadium=0x7f0200c6;
-        public static final int tab_indicator_ab_spinninghalf=0x7f0200c7;
-        public static final int tab_selected_focused_spinninghalf=0x7f0200c8;
-        public static final int tab_selected_pressed_spinninghalf=0x7f0200c9;
-        public static final int tab_selected_spinninghalf=0x7f0200ca;
-        public static final int tab_unselected_focused_spinninghalf=0x7f0200cb;
-        public static final int tab_unselected_pressed_spinninghalf=0x7f0200cc;
-        public static final int textview_border=0x7f0200cd;
-        public static final int the_soulenikoes_banner=0x7f0200ce;
-        public static final int the_soulenikoes_logo=0x7f0200cf;
-        public static final int the_universal_banner=0x7f0200d0;
-        public static final int the_universal_logo=0x7f0200d1;
-        public static final int tom_milek_banner=0x7f0200d2;
-        public static final int tom_milek_logo=0x7f0200d3;
-        public static final int training_icon=0x7f0200d4;
-        public static final int twitter=0x7f0200d5;
-        public static final int twitter_selector=0x7f0200d6;
-        public static final int youtube=0x7f0200d7;
-        public static final int youtube_selector=0x7f0200d8;
+        public static final int rounded_button_view_selector=0x7f0200b3;
+        public static final int rounded_text_view=0x7f0200b4;
+        public static final int selectable_background_spinninghalf=0x7f0200b5;
+        public static final int services_design_button_animation=0x7f0200b6;
+        public static final int services_distribution_button_animation=0x7f0200b7;
+        public static final int services_function_packages_button_animation=0x7f0200b8;
+        public static final int services_photography_brenton_ford_button_animation=0x7f0200b9;
+        public static final int services_photography_button_animation=0x7f0200ba;
+        public static final int services_photography_leikography_button_animation=0x7f0200bb;
+        public static final int services_publicity_button_animation=0x7f0200bc;
+        public static final int services_training_button_animation=0x7f0200bd;
+        public static final int soundcloud_icon=0x7f0200be;
+        public static final int soundcloud_selector=0x7f0200bf;
+        public static final int spinner_ab_default_spinninghalf=0x7f0200c0;
+        public static final int spinner_ab_disabled_spinninghalf=0x7f0200c1;
+        public static final int spinner_ab_focused_spinninghalf=0x7f0200c2;
+        public static final int spinner_ab_pressed_spinninghalf=0x7f0200c3;
+        public static final int spinner_background_ab_spinninghalf=0x7f0200c4;
+        public static final int spinning_half_logo=0x7f0200c5;
+        public static final int spinning_half_selector=0x7f0200c6;
+        public static final int spinning_half_stadium=0x7f0200c7;
+        public static final int tab_indicator_ab_spinninghalf=0x7f0200c8;
+        public static final int tab_selected_focused_spinninghalf=0x7f0200c9;
+        public static final int tab_selected_pressed_spinninghalf=0x7f0200ca;
+        public static final int tab_selected_spinninghalf=0x7f0200cb;
+        public static final int tab_unselected_focused_spinninghalf=0x7f0200cc;
+        public static final int tab_unselected_pressed_spinninghalf=0x7f0200cd;
+        public static final int textview_border=0x7f0200ce;
+        public static final int the_soulenikoes_banner=0x7f0200cf;
+        public static final int the_soulenikoes_logo=0x7f0200d0;
+        public static final int the_universal_banner=0x7f0200d1;
+        public static final int the_universal_logo=0x7f0200d2;
+        public static final int tom_milek_banner=0x7f0200d3;
+        public static final int tom_milek_logo=0x7f0200d4;
+        public static final int training_icon=0x7f0200d5;
+        public static final int twitter=0x7f0200d6;
+        public static final int twitter_selector=0x7f0200d7;
+        public static final int youtube=0x7f0200d8;
+        public static final int youtube_selector=0x7f0200d9;
     }
     public static final class id {
         public static final int BlankTextView=0x7f05003b;
@@ -1601,7 +1603,6 @@ containing a value of this type.
         public static final int titleGigTimeline=0x7f0a0014;
     }
     public static final class style {
-        public static final int ButtonStyle=0x7f0b005b;
         public static final int DialogWindowTitle_Sherlock=0x7f0b0036;
         public static final int DialogWindowTitle_Sherlock_Light=0x7f0b0037;
         public static final int GigLabelTextView=0x7f0b0059;
@@ -1621,6 +1622,7 @@ containing a value of this type.
         public static final int Sherlock___Widget_Holo_ListView=0x7f0b0026;
         public static final int Sherlock___Widget_Holo_Spinner=0x7f0b0023;
         public static final int Sherlock___Widget_SearchAutoCompleteTextView=0x7f0b0033;
+        public static final int SpinningHalfButtonStyle=0x7f0b005b;
         public static final int SpinningHalfStyle=0x7f0b0066;
         public static final int TextAppearance_Sherlock_DialogWindowTitle=0x7f0b0048;
         public static final int TextAppearance_Sherlock_Light_DialogWindowTitle=0x7f0b0049;
@@ -1650,7 +1652,6 @@ containing a value of this type.
         public static final int Theme_Sherlock_Light_Dialog=0x7f0b0058;
         public static final int Theme_Sherlock_Light_NoActionBar=0x7f0b0056;
         public static final int Theme_Sherlock_NoActionBar=0x7f0b0055;
-        public static final int Theme_Styled=0x7f0b0067;
         public static final int Theme_spinninghalf=0x7f0b005c;
         /**  this style is only referenced in a Light.DarkActionBar based theme 
          */
@@ -1702,7 +1703,6 @@ containing a value of this type.
         public static final int Widget_Sherlock_SearchAutoCompleteTextView=0x7f0b0034;
         public static final int Widget_Sherlock_Spinner_DropDown_ActionBar=0x7f0b0024;
         public static final int Widget_Sherlock_TextView_SpinnerItem=0x7f0b0032;
-        public static final int Widget_Styled_ActionBar=0x7f0b0068;
         public static final int spinninghalf_ActionBarTabStyle=0x7f0b0061;
         public static final int spinninghalf_DropDownListView=0x7f0b0060;
         public static final int spinninghalf_DropDownNav=0x7f0b0062;

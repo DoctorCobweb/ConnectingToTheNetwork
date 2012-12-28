@@ -54,15 +54,10 @@
 
     <Button
         android:id="@+id/contactHeadOfficePhoneNumberButton"
-        android:background="@drawable/rounded_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="@dimen/buttonpadding"
+        style="@style/SpinningHalfButtonStyle"
         android:drawableLeft="@drawable/device_access_call"
-        android:paddingLeft="@dimen/textpadding"
-        android:paddingRight="@dimen/textpadding"
-        android:text="@string/headOfficePhoneNumber" />
+        android:text="@string/headOfficePhoneNumber"
+        android:textColor="@color/white" />
     
     </TableRow>
     
@@ -84,15 +79,10 @@
     
     <Button
         android:id="@+id/contactHeadOfficeEmailButton"
-        android:background="@drawable/rounded_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="@dimen/buttonpadding"
+        style="@style/SpinningHalfButtonStyle"
         android:drawableLeft="@drawable/content_email"
-        android:paddingLeft="@dimen/textpadding"
-        android:paddingRight="@dimen/textpadding"
         android:text="@string/headOfficeEmail"
+        android:textColor="@color/white"
         android:textSize="@dimen/smalltext" />
     
     </TableRow>
@@ -216,14 +206,10 @@
 
     <Button
         android:id="@+id/contactRehearsalsPhoneNumberButton1"
-        android:background="@drawable/rounded_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="@dimen/buttonpadding"
+        style="@style/SpinningHalfButtonStyle"
         android:drawableLeft="@drawable/device_access_call"
-        android:paddingLeft="@dimen/textpadding"
-        android:text="@string/rehearsalsPhoneNumber" />
+        android:text="@string/rehearsalsPhoneNumber"
+        android:textColor="@color/white" />
     
     </TableRow>
     
@@ -243,14 +229,10 @@
     
     <Button
         android:id="@+id/contactRehearsalsPhoneNumberButton2"
-        android:background="@drawable/rounded_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/buttonpadding"
-        android:layout_marginLeft="@dimen/buttonpadding"
+        style="@style/SpinningHalfButtonStyle"
         android:drawableLeft="@drawable/device_access_call"
-        android:paddingLeft="@dimen/textpadding"
-        android:text="@string/rehearsalsMobileNumber" />
+        android:text="@string/rehearsalsMobileNumber"
+        android:textColor="@color/white" />
     
     </TableRow>
     
@@ -270,15 +252,10 @@
     
     	<Button
     	    android:id="@+id/contactRehearsalsEmailButton"
-    	    android:background="@drawable/rounded_text_view"
-    	    android:layout_width="wrap_content"
-    	    android:layout_height="wrap_content"
-    	    android:layout_margin="@dimen/buttonpadding"
-    	    android:layout_marginLeft="@dimen/buttonpadding"
+    	    style="@style/SpinningHalfButtonStyle"
     	    android:drawableLeft="@drawable/content_email"
-    	    android:paddingLeft="@dimen/textpadding"
-    	    android:paddingRight="@dimen/textpadding"
     	    android:text="@string/rehearsalsEmail"
+    	    android:textColor="@color/white"
     	    android:textSize="@dimen/smalltext" />
     
     </TableRow>

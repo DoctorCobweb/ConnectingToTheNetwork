@@ -10,4 +10,5 @@
     <dimen name="medium_text">18dip</dimen>
     <dimen name="maxheightbanner">100dip</dimen>
     <dimen name="smalltext">12dp</dimen>
+    <dimen name="zero">0dip</dimen>
 </resources>

@@ -5,6 +5,22 @@
     
     <TextView
         android:id="@+id/gig_guide_list_item_text_view"
+        style="@style/SpinningHalfButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/zero"
+        android:layout_margin="@dimen/zero"
+        android:layout_marginLeft="@dimen/zero"
+        android:paddingLeft="@dimen/zero"
+        android:paddingRight="@dimen/zero"
+        android:gravity="center"
+        android:minHeight="@dimen/listviewminheight"
+        android:textColor="@color/white"
+        android:textSize="@dimen/medium_text"
+        android:textStyle="bold" />
+    <!-- 
+    <TextView
+        android:id="@+id/gig_guide_list_item_text_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="@dimen/textpadding_halved"
@@ -15,5 +31,7 @@
         android:textColor="@color/white"
         android:textSize="@dimen/medium_text"
         android:textStyle="bold" />
+        
+        -->
 
 </LinearLayout>
