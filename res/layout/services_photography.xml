@@ -40,18 +40,19 @@
               style="@style/SpinningHalfButtonStyle"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+              android:minHeight="48dip"
               android:text="Brenton Ford Photography"
-              android:textColor="@color/white"
-              />
+              android:textColor="@color/white" />
               
           <Button
               android:id="@+id/servicesPhotographyLeikographyButton"
               style="@style/SpinningHalfButtonStyle"
               android:layout_width="fill_parent"
               android:layout_height="fill_parent"
+              android:minHeight="48dip"
+              android:minWidth="48dip"
               android:text="Leikography"
-              android:textColor="@color/white"
-              />
+              android:textColor="@color/white" />
           
     </LinearLayout>
     
