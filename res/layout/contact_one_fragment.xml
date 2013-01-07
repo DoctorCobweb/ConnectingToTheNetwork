@@ -140,6 +140,7 @@
             android:layout_margin="@dimen/buttonpadding"
             android:layout_weight="1"
             android:background="@drawable/youtube_selector"
+            android:maxHeight="64dip"
             android:text="" />
         
         <Button
