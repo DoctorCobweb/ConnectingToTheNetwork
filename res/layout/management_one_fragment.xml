@@ -42,17 +42,17 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1" >
-
+        
         <Button
-            android:id="@+id/managementTomMilekButton"
+            android:id="@+id/managementCaptainGrooveButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_tom_milek_button_animation"
-            android:gravity="center"
+            android:background="@drawable/management_captain_groove_button_animation"
             android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />
+
 
         <Button
             android:id="@+id/managementTheUniversalButton"
@@ -83,11 +83,11 @@
             android:textSize="@dimen/large_heading" />
 
         <Button
-            android:id="@+id/managementCaptainGrooveButton"
+            android:id="@+id/managementBlankButton"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/management_captain_groove_button_animation"
+            android:background="@drawable/management_blank_button_animation"
             android:text=""
             android:textColor="@color/white"
             android:textSize="@dimen/large_heading" />

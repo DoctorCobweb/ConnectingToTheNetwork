@@ -205,10 +205,10 @@
     <string name="rehearsals">Rehearsals</string>
     <string name="spinningHalfRehearsals">Spinning Half Rehearsals</string>
     <string name="rehearsalsPhrase">A place to make noise that feels like home without the neighbours complaining.</string>
-    <string name="rehearsalsBigRoom">Big Room</string>
-    <string name="rehearsalsSmallRoom">Small Room</string>
-    <string name="rehearsalsBigRoomBlurb1">Premier large room </string>
-    <string name="rehearsalsSmallRoomBlurb1">Original smaller studio room</string>
+    <string name="rehearsalsBigRoom">Big Band Room</string>
+    <string name="rehearsalsSmallRoom">Studio Room</string>
+    <string name="rehearsalsBigRoomBlurb1">Renovated living space</string>
+    <string name="rehearsalsSmallRoomBlurb1">Studio tracking room</string>
     <string name="rehearsalsBigRoomBlurb2">Vocal and Drum PA</string>
     <string name="rehearsalsSmallRoomBlurb2">Flown vocal PA</string>
     <string name="rehearsalsBigRoomBlurb3">Kitchen and Couches</string>
@@ -217,6 +217,7 @@
     <string name="rehearsalsSmallRoomBlurb4">4 hour session</string>
     <string name="rehearsalsBigRoomBlurb5">$50 per session</string>
     <string name="rehearsalsSmallRoomBlurb5">$40 per session</string>
+    <string name="rehearsalsAdditionalInfo0">Please see \'Contact\' section for address.</string>
     <string name="rehearsalsAdditionalInfo">Additional Info</string>
     <string name="rehearsalsAdditionalInfo2">There are no curfews. Rehearse through the night if need be.</string>
     <string name="rehearsalsAdditionalInfo1">5 Piece Drum Kit and Bass Amp Available, $10 each.</string>
@@ -231,7 +232,7 @@
         <item >Big Room. Vocal foldbacks.</item>
     </string-array>
     <string-array name="servicesFunctionPackagesPhotoLabels">
-        <item >Wedding PA, operator and band supplied by Spinning Half.</item>
+        <item >PA, operator and bands can be supplied by Spinning Half.</item>
         <item >Deakin Uni O-Week lunch time event. PA, operators and band supplied by Spinning Half.</item>
         <item >Wedding PA and band supplied.</item>
     </string-array>

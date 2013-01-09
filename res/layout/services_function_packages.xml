@@ -37,7 +37,10 @@
             android:id="@+id/servicesFunctionPackageGridView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/buttonpadding"
+            android:layout_marginRight="@dimen/buttonpadding"
             android:numColumns="3" >
+
         </GridView>
         
         <TextView

@@ -34,7 +34,7 @@ public class ManagementFragmentOne extends SherlockFragment {
 		//get references to all the buttons
 		Button castIronPinataButton = (Button) getActivity().findViewById(R.id.managementCastIronPinataButton);
 		Button theSoulenikoesButton = (Button) getActivity().findViewById(R.id.managementTheSoulenikoesButton);
-		Button tomMilekButton = (Button) getActivity().findViewById(R.id.managementTomMilekButton);
+		//Button tomMilekButton = (Button) getActivity().findViewById(R.id.managementTomMilekButton);
 		Button theUniversalButton = (Button) getActivity().findViewById(R.id.managementTheUniversalButton);
 		Button captainGrooveButton = (Button) getActivity().findViewById(R.id.managementCaptainGrooveButton);
 		Button leikographyButton = (Button) getActivity().findViewById(R.id.managementLeikographyButton);
@@ -42,7 +42,7 @@ public class ManagementFragmentOne extends SherlockFragment {
 		//assign listeners to the buttons
 		castIronPinataButton.setOnClickListener(castIronPinataButtonListener);
 		theSoulenikoesButton.setOnClickListener(theSoulenikoesButtonListener);
-		tomMilekButton.setOnClickListener(tomMilekButtonListener);
+		//tomMilekButton.setOnClickListener(tomMilekButtonListener);
 		theUniversalButton.setOnClickListener(theUniversalButtonListener);
 		captainGrooveButton.setOnClickListener(captainGrooveButtonListener);
 		leikographyButton.setOnClickListener(leikographyButtonListener);
