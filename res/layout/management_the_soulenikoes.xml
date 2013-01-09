@@ -49,6 +49,7 @@
 		                    android:layout_height="wrap_content"
 		                    android:layout_weight="0"
 		                    android:background="@drawable/soundcloud_selector"
+		                    android:minWidth="48dip"
 		                    android:text="" />
         
         <Button
@@ -58,6 +59,7 @@
             android:layout_marginLeft="@dimen/buttonpadding"
             android:layout_weight="0"
             android:background="@drawable/youtube_selector"
+            android:minWidth="48dip"
             android:text="" />
         
         <Button
@@ -67,6 +69,7 @@
             android:layout_marginLeft="@dimen/buttonpadding"
             android:layout_weight="0"
             android:background="@drawable/facebook_selector"
+            android:minWidth="48dip"
             android:text="" />
 		        
 	        	</TableRow>

@@ -122,6 +122,7 @@
             android:layout_margin="@dimen/buttonpadding"
             android:layout_weight="1"
             android:background="@drawable/facebook_selector"
+            android:minWidth="48dip"
             android:text="" />
         
         <Button
@@ -131,6 +132,7 @@
             android:layout_margin="@dimen/buttonpadding"
             android:layout_weight="1"
             android:background="@drawable/twitter_selector"
+            android:minWidth="48dip"
             android:text="" />
 
         <Button
@@ -141,6 +143,7 @@
             android:layout_weight="1"
             android:background="@drawable/youtube_selector"
             android:maxHeight="64dip"
+            android:minWidth="48dip"
             android:text="" />
         
         <Button
@@ -150,6 +153,8 @@
             android:layout_margin="@dimen/buttonpadding"
             android:layout_weight="1"
             android:background="@drawable/spinning_half_selector"
+            android:minHeight="48dip"
+            android:minWidth="48dip"
             android:text="" />
 
     </TableRow>
